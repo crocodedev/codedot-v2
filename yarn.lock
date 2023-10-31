@@ -1918,7 +1918,7 @@
   dependencies:
     import-meta-resolve "^2.2.0"
 
-"@sveltejs/kit@^1.0.0":
+"@sveltejs/kit@^1.27.2":
   version "1.27.2"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.27.2.tgz#b11e857bd92a3f12bbedae6b07db359fb996d869"
   integrity sha512-2w2VbPpK8DI3QCSVa2UNAv5sKNks1LT8GsEdpk41ffOyO2znGx2ZwcRWacsqlvh3d9lncZuDdANvCbTbuKvy3Q==
