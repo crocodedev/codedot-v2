@@ -61,9 +61,11 @@
                   {review.reviewText}
                 </p>
                 <div class="reviews__user-wrapper">
-                  <div class="reviews__user-img-wrapper">
-                    <img src={imageUrl(review.reviewImg)} alt="" class="reviews__user-img" />
-                  </div>
+                  {#if review?.reviewImg}
+                    <div class="reviews__user-img-wrapper">
+                      <img src={imageUrl(review?.reviewImg)} alt="" class="reviews__user-img" />
+                    </div>
+                  {/if}
                   <div class="reviews__user-data">
                     <span class="reviews__name"> {review.reviewAuthor}</span>
                     <span class="reviews__jobtitle">{review.reviewJob}</span>

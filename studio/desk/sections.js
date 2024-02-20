@@ -4,7 +4,6 @@ export default () =>
   S.list()
     .title('Content')
     .items([
-      // Добавьте другие разделы, если они есть
       S.listItem()
         .title('Sections')
         .icon(() => 'view-list')

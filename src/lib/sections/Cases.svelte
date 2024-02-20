@@ -302,6 +302,7 @@
       justify-content: space-between;
       position: absolute;
       border: 1px solid #ffffff33;
+      background-color: #00000033;
       backdrop-filter: blur(15px);
       z-index: 10;
 
