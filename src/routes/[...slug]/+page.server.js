@@ -19,6 +19,8 @@ export async function load({ params, url }) {
     }
   }
 
+  console.log(pageData)
+
   if (slug == 'cases') {
     if (pageData) {
       let secondQuery = `*[_type == "Cases"] {
@@ -30,10 +32,16 @@ export async function load({ params, url }) {
           slug
         }
       }`
-
       let secondResponse = await sanityFetch(secondQuery)
       secondData = secondResponse.reduce((accumulator, current) => {
-        accumulator.push(...current.casesList)
+        current.casesList.forEach((item) => {
+          const isUnique = accumulator.every(
+            (existingItem) => existingItem.slug.current !== item.slug.current
+          )
+          if (isUnique) {
+            accumulator.push(item)
+          }
+        })
         return accumulator
       }, [])
     }

@@ -21,6 +21,8 @@
     }
   })
 
+  console.log(data.secondData)
+
   register()
 
   onMount(async () => {
@@ -68,7 +70,6 @@
       arrayTest = data.secondData
     }
   })
-
   $: clearActive = () => (activeTags = [])
 
   $: handleTogleActive = (tag) => {
@@ -418,6 +419,7 @@
       border-radius: 40px;
       border: 1px solid #ffffff33;
       backdrop-filter: blur(15px);
+      background-color: rgba(0, 0, 0, 0.2);
       z-index: 10;
 
       @include media-breakpoint-down(md) {
