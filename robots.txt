@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /
+Disallow: /cgi-bin
+Disallow: /css
+Disallow: /js
+Disallow: /images/
+Disallow: /admin/
+Host: codedot-v2.netlify.app
+Sitemap: http://codedot-v2.netlify.app/sitemap.xml
