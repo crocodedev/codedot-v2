@@ -7,10 +7,10 @@
     <div class="container">
       <div class="jobs__wrapper">
         <h2 class="jobs__title">{data.jobsTitle}</h2>
-        <div class="jobs__search-wrapper">
+        <!-- <div class="jobs__search-wrapper">
           <input type="text" class="jobs__search" placeholder="Find your role..." />
           <button class="jobs__search-btn"><img src="../icons/Search.svg" alt="" /></button>
-        </div>
+        </div> -->
         <div class="jobs__items">
           {#each data.jobsItems as jobItem}
             <div class="jobs__item">
@@ -29,7 +29,7 @@
           <div class="jobs__item">
             <div class="jobs__cannot-wrapper">
               <p class="jobs__cannot">CANNOT FIND A SUITABLE VACANCY? DROP US A LINE</p>
-              <a href="#" class="jobs__cannot-link">welcome@code.dot</a>
+              <a href="mailto:welcome@code.dot" class="jobs__cannot-link">welcome@code.dot</a>
             </div>
           </div>
         </div>
@@ -53,6 +53,7 @@
     }
     &__title {
       font-weight: 600;
+      margin-bottom: 40px;
 
       @include media-breakpoint-down(lg) {
         font-size: 40px;

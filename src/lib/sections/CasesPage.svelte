@@ -6,23 +6,6 @@
 
   let categoryCounts = []
 
-  data.secondData.forEach((item) => {
-    const category = item.category
-
-    const existingCategory = categoryCounts.find((c) => c.category === category)
-
-    if (existingCategory) {
-      existingCategory.count += 1
-    } else {
-      categoryCounts.push({
-        category: category,
-        count: 1,
-      })
-    }
-  })
-
-  console.log(data.secondData)
-
   register()
 
   onMount(async () => {
@@ -68,6 +51,22 @@
       arrayTest = data.secondData.filter((el) => activeTags.includes(el.category))
     } else {
       arrayTest = data.secondData
+      arrayTest.forEach((item) => {
+        const category = item.category
+
+        const existingCategory = categoryCounts.find((c) => c.category === category)
+
+        if (existingCategory) {
+          existingCategory.count += 1
+        } else {
+          categoryCounts.push({
+            category: category,
+            count: 1,
+          })
+        }
+      })
+
+      console.log(categoryCounts)
     }
   })
   $: clearActive = () => (activeTags = [])
@@ -96,7 +95,7 @@
                   activeTags.length === 0 ? 'casespage__filtertag--active' : ''
                 }`}
               >
-                All cases ({data.secondData.length + 1})
+                All cases ({data.secondData.length})
               </swiper-slide>
 
               {#each categoryCounts as categoryInfo}
