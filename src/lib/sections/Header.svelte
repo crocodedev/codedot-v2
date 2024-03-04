@@ -283,10 +283,9 @@
 
     &__content {
       border-radius: 20px 0px 0px 20px;
-      display: flex;
 
       @include media-breakpoint-down(xl) {
-        width: 230px;
+        width: 0;
         background-color: rgb(218 244 254);
         top: 0px;
         right: -100%;
@@ -301,9 +300,13 @@
         padding-left: 30px;
         padding-right: 20px;
         padding-bottom: 40px;
+        display: none;
 
         &--active {
+          display: flex;
+
           right: 0px;
+          width: 230px;
         }
       }
 
@@ -580,7 +583,9 @@
       align-items: center;
       justify-content: center;
       background: #006185;
-      box-shadow: 0px -5px 0 0px #006185, 0px 5px 0 0px #006185;
+      box-shadow:
+        0px -5px 0 0px #006185,
+        0px 5px 0 0px #006185;
 
       @include media-breakpoint-up(xl) {
         display: none;

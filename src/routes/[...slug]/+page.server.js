@@ -19,8 +19,6 @@ export async function load({ params, url }) {
     }
   }
 
-  console.log(pageData)
-
   if (slug == 'cases') {
     if (pageData) {
       let secondQuery = `*[_type == "Cases"] {

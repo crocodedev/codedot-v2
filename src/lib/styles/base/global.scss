@@ -26,8 +26,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  // justify-content: space-between;
-
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
   }

@@ -18,6 +18,7 @@
           </div>
           <div class="footer__text">{data.textFooter}</div>
           <button class="footer__btn" on:click={openModal}>Contact us</button>
+
           <div class="footer__copyright">
             <span>© 2023 Codedot Agency.</span>
             <span>All Rights Reserved — <a href="/" class="link">Privacy policy</a></span>
@@ -37,6 +38,19 @@
         </div>
       </div>
     </div>
+    <div class="footer__contacts">
+      <div class="container">
+        <div class="footer__contacts-wrapper">
+          <p>
+            Our address: <span class="footer__contacts-address">Vitebsk, 56A Chkalova str.</span>
+          </p>
+          <span>
+            Contact Us:
+            <a href="tel:+74950000007" class="footer__contacts-phone"> +74950000007 </a>
+          </span>
+        </div>
+      </div>
+    </div>
   </footer>
 {/if}
 
@@ -46,16 +60,47 @@
   .footer {
     @include media-breakpoint-down(lg) {
       padding-top: 100px;
-      padding-bottom: 40px;
     }
 
     @include media-breakpoint-up(lg) {
       padding-top: 112px;
-      padding-bottom: 112px;
+    }
+
+    &__contacts-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+      font-weight: 600;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 14px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 18px;
+      }
+    }
+
+    &__contacts-phone {
+      color: white;
+    }
+
+    &__contacts {
+      background-color: #006185;
+
+      @include media-breakpoint-down(lg) {
+        padding: 20px 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 40px 0;
+      }
     }
 
     &__wrapper {
       display: grid;
+      padding-bottom: 30px;
 
       @include media-breakpoint-down(xl) {
         grid-template-columns: 1fr;
