@@ -82,6 +82,7 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_sass: string;
 	export const npm_package_devDependencies_svelte: string;
 	export const npm_package_devDependencies_svelte_preprocess: string;
+	export const npm_package_devDependencies_svelte_sitemap: string;
 	export const npm_package_devDependencies_vite: string;
 	export const npm_package_devDependencies__sveltejs_adapter_auto: string;
 	export const npm_package_devDependencies__sveltejs_kit: string;
@@ -215,6 +216,7 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_sass: string;
 		npm_package_devDependencies_svelte: string;
 		npm_package_devDependencies_svelte_preprocess: string;
+		npm_package_devDependencies_svelte_sitemap: string;
 		npm_package_devDependencies_vite: string;
 		npm_package_devDependencies__sveltejs_adapter_auto: string;
 		npm_package_devDependencies__sveltejs_kit: string;

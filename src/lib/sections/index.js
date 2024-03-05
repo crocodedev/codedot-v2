@@ -6,6 +6,7 @@ import Counters from '$lib/sections/Counters.svelte'
 import Cases from '$lib/sections/Cases.svelte'
 import Text from '$lib/sections/Text.svelte'
 import Services from '$lib/sections/Services.svelte'
+import Breadcrumps from '$lib/sections/Breadcrumps.svelte'
 import Technologies from '$lib/sections/Technologies.svelte'
 import Review from '$lib/sections/Review.svelte'
 import Code from '$lib/sections/Code.svelte'
@@ -38,6 +39,7 @@ export {
   Counters,
   Cases,
   Text,
+  Breadcrumps,
   Services,
   Technologies,
   Review,

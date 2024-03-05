@@ -15,6 +15,7 @@ export default {
     {type: 'Review'},
     {type: 'Code'},
     {type: 'Footer'},
+    {type: 'Breadcrumps'},
     {type: 'AboutHero'},
     {type: 'Roadmap'},
     {type: 'OurMission'},

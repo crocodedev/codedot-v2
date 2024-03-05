@@ -1,6 +1,8 @@
 <script>
   import * as Sections from '$lib/sections'
   export let data
+
+  console.log(data)
   let activeModal
   import ErrorPage from '../../lib/sections/ErrorPage.svelte'
 

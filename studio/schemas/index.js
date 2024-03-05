@@ -17,6 +17,7 @@ import digital from './sections/digital'
 import dignity from './sections/dignity'
 import expect from './sections/expect'
 import footer from './sections/footer'
+import breadcrumps from './sections/breadcrumps'
 import header from './sections/header'
 import hero from './sections/hero'
 import jobHero from './sections/jobHero'
@@ -59,6 +60,7 @@ export const schemaTypes = [
   header,
   code,
   aboutHero,
+  breadcrumps,
   roadmap,
   ourMission,
   careers,

@@ -37,16 +37,17 @@
     position: relative;
 
     @include media-breakpoint-down(md) {
-      top: -100px;
+      top: -125px;
     }
 
     @include media-breakpoint-between(md, lg) {
-      top: -105px;
+      top: -125px;
     }
 
     @include media-breakpoint-up(lg) {
-      top: -118px;
+      top: -145px;
     }
+
     &__title {
       text-transform: uppercase;
       @include media-breakpoint-down(md) {

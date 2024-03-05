@@ -126,7 +126,7 @@
                       <p class="casespage__name">{item.name}</p>
                       <p class="casespage__tag">{item.category}</p>
                     </div>
-                    <a href={`${item.slug?.current}/`}>
+                    <a href={`${item.slug?.current}`}>
                       <img src="../icons/arrow-btn.svg" alt="" class="casespage__item-arrow" />
                     </a>
                   </div>
@@ -146,7 +146,7 @@
                       <p class="casespage__name">{item.name}</p>
                       <p class="casespage__tag">{item.category}</p>
                     </div>
-                    <a href={`${item.slug?.current}/`}>
+                    <a href={`${item.slug?.current}`}>
                       <img src="../icons/arrow-btn.svg" alt="" class="casespage__item-arrow" />
                     </a>
                   </div>

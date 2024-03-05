@@ -61,7 +61,7 @@
           <div class="header__nav-dropdown-content-wrapper">
             <div class="header__nav-dropdown-content-list">
               {#each navItem.navSubItems as navSubItem}
-                <a href={`${navSubItem.navSubItemLink}/`} class="header__nav-item">
+                <a href={`${navSubItem.navSubItemLink}`} class="header__nav-item">
                   {navSubItem.navSubItemName}
                 </a>
               {/each}
@@ -94,8 +94,7 @@
           <div class="header__nav">
             {#each data.navItems as navItem}
               {#if !navItem.navSubItems}
-                <a href={`${navItem.navItemLink}/`} class="header__nav-item"
-                  >{navItem.navItemName}</a
+                <a href={`${navItem.navItemLink}`} class="header__nav-item">{navItem.navItemName}</a
                 >
               {/if}
               {#if navItem.navSubItems}
@@ -133,7 +132,7 @@
         <div class="header__nav">
           {#each data.navItems as navItem}
             {#if !navItem.navSubItems}
-              <a href={`${navItem.navItemLink}/`} class="header__nav-item">{navItem.navItemName}</a>
+              <a href={`${navItem.navItemLink}`} class="header__nav-item">{navItem.navItemName}</a>
             {/if}
             {#if navItem.navSubItems}
               <a href="/services/" class="header__nav-item dropdown">
@@ -157,6 +156,11 @@
 
 <style lang="scss">
   @import '../styles/base/mixins.scss';
+
+  .breadcrumps__wrapper {
+    position: absolute;
+    z-index: 2;
+  }
 
   .header {
     position: sticky;

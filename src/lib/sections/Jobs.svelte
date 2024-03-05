@@ -20,7 +20,7 @@
               </div>
               <div class="jobs__requirements">
                 <span class="jobs__requirements-text">{jobItem.jobRequirements}</span>
-                <a href={`${jobItem.jobLink}/`} class="jobs__btn">
+                <a href={`${jobItem.jobLink}`} class="jobs__btn">
                   <img src="../icons/arrow-btn.svg" alt="" class="jobs__icon" />
                 </a>
               </div>
