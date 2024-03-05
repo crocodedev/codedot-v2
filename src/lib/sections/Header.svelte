@@ -61,13 +61,13 @@
           <div class="header__nav-dropdown-content-wrapper">
             <div class="header__nav-dropdown-content-list">
               {#each navItem.navSubItems as navSubItem}
-                <a href={navSubItem.navSubItemLink} class="header__nav-item">
+                <a href={`${navSubItem.navSubItemLink}/`} class="header__nav-item">
                   {navSubItem.navSubItemName}
                 </a>
               {/each}
             </div>
             <div class="header__nav-dropdown-link">
-              <a href="/services" class="header__nav-link">
+              <a href="/services/" class="header__nav-link">
                 All {navItem.navItemName.toLowerCase()}
               </a>
               <span class="arrow" />
@@ -94,7 +94,9 @@
           <div class="header__nav">
             {#each data.navItems as navItem}
               {#if !navItem.navSubItems}
-                <a href={navItem.navItemLink} class="header__nav-item">{navItem.navItemName}</a>
+                <a href={`${navItem.navItemLink}/`} class="header__nav-item"
+                  >{navItem.navItemName}</a
+                >
               {/if}
               {#if navItem.navSubItems}
                 <a
@@ -131,10 +133,10 @@
         <div class="header__nav">
           {#each data.navItems as navItem}
             {#if !navItem.navSubItems}
-              <a href={navItem.navItemLink} class="header__nav-item">{navItem.navItemName}</a>
+              <a href={`${navItem.navItemLink}/`} class="header__nav-item">{navItem.navItemName}</a>
             {/if}
             {#if navItem.navSubItems}
-              <a href="/services" class="header__nav-item dropdown">
+              <a href="/services/" class="header__nav-item dropdown">
                 <p>{navItem.navItemName}</p>
                 <div class="header__nav-item-icon" />
               </a>

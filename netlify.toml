@@ -1,13 +1,8 @@
 [[redirects]]
-from = "/"
-to = "/"
-status = 301
-
-[[redirects]]
-from = "/cases"
-to = "/cases/"
-status = 301
-
+  from = "/*"
+  to = "/:splat/"
+  status = 301
+  force = true
 
 
 
