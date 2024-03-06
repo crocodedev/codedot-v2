@@ -1,17 +1,20 @@
 [[redirects]]
+  from = "/cases"
+  to = "/cases/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/:splat/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://codedot-v2.netlify.app/cases/cases"
-  to = "https://codedot-v2.netlify.app/cases/cases/"
+  from = "/cases/cases"
+  to = "/cases/cases/"
   status = 301
   force = true
-
-
-
 
 
 [[headers]]
