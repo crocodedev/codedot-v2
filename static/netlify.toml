@@ -1,20 +1,9 @@
 [[redirects]]
-  from = "/cases"
-  to = "/cases/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/*"
   to = "/:splat/"
   status = 301
   force = true
 
-[[redirects]]
-  from = "/cases"
-  to = "/cases/"
-  status = 301
-  force = true
 
 
 [[headers]]
