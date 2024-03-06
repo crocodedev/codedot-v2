@@ -4,6 +4,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/cases"
+  to = "/cases/"
+  status = 301
+  force = true
+
 
 
 
