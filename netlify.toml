@@ -5,8 +5,8 @@
   force = true
 
 [[redirects]]
-  from = "/cases"
-  to = "/cases/"
+  from = "https://codedot-v2.netlify.app/cases/cases"
+  to = "https://codedot-v2.netlify.app/cases/cases/"
   status = 301
   force = true
 
