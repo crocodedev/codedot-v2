@@ -11,8 +11,8 @@
   force = true
 
 [[redirects]]
-  from = "/cases/cases"
-  to = "/cases/cases/"
+  from = "/cases"
+  to = "/cases/"
   status = 301
   force = true
 
