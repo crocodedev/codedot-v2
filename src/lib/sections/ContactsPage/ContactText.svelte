@@ -166,11 +166,11 @@
             <p class="contact-us__title">Contact Us</p>
             <div class="contact-us__text-wrapper">
               <p>
-                Our address: <span class="contact-us__address">Vitebsk, 56A Chkalova str.</span>
+                Our address: <span class="contact-us__address">{data.address}</span>
               </p>
               <span>
                 Our cell number:
-                <a href="tel:+74950000007" class="contact-us__phone"> +74950000007 </a>
+                <a href="tel:+74950000007" class="contact-us__phone">{data.cellNumber}</a>
               </span>
             </div>
           </div>
