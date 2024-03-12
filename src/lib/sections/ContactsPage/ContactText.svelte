@@ -1,8 +1,10 @@
 <script>
+  import ContactMap from './ContactMap.svelte'
+
   export let data
   import { TelInput, normalizedCountries } from 'svelte-tel-input'
 
-  let selectedCountry = 'PL'
+  let selectedCountry = 'BY'
   let value = ''
   let classInput = 'tel-input'
   let valid = true
@@ -155,184 +157,192 @@
   }
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-
 {#if data}
-  <section class="job-text">
+  <section class="contact-us">
     <div class="container">
-      <div class="job-text__wrapper">
-        <div class="job-text__text-wrapper">
-          {#each data.jobTextItems as jobTextItem}
-            <div class="job-text__item">
-              <span class="job-text__name">{jobTextItem.itemName}</span>
-              <ul class="job-text__list">
-                {#each jobTextItem.richTextBlock as richItem}
-                  <li>{richItem.children[0].text}</li>
-                {/each}
-              </ul>
+      <div class="contact-us__main-inner">
+        <div class="contact-us__wrapper">
+          <div class="contact-us__info">
+            <p class="contact-us__title">Contact Us</p>
+            <div class="contact-us__text-wrapper">
+              <p>
+                Our address: <span class="contact-us__address">Vitebsk, 56A Chkalova str.</span>
+              </p>
+              <span>
+                Our cell number:
+                <a href="tel:+74950000007" class="contact-us__phone"> +74950000007 </a>
+              </span>
             </div>
-          {/each}
+          </div>
+          <svelte:component this={ContactMap} />
         </div>
-        <form
-          action="#"
-          class="job-text__form"
-          on:submit|preventDefault={handleSubmit}
-          enctype="multipart/form-data"
-        >
-          {#if succes == true}
-            <div class="job-text__success">
-              <div class="job-text__succes-icon-wrapper">
-                <img src="../icons/success.svg" alt="succes-icon" class="job-text__succes-icon" />
+        <div class="job-text__wrapper">
+          <p class="job-text__title">Let’s discuss your project</p>
+          <form
+            action="#"
+            class="job-text__form"
+            on:submit|preventDefault={handleSubmit}
+            enctype="multipart/form-data"
+          >
+            {#if succes == true}
+              <div class="job-text__success">
+                <div class="job-text__succes-icon-wrapper">
+                  <img src="../icons/success.svg" alt="succes-icon" class="job-text__succes-icon" />
+                </div>
+                <p class="job-text__succes-title">Thank you</p>
+                <p class="job-text__succes-text">Your CV has been successfully submitted</p>
               </div>
-              <p class="job-text__succes-title">Thank you</p>
-              <p class="job-text__succes-text">Your CV has been successfully submitted</p>
-            </div>
-          {/if}
-          <span class="job-text__job-name">Senior Fullstack Developer</span>
-          <div class="job-text__inputs">
-            <div class="job-text__input-wrapper">
-              <label for="name" class="job-text__input-name">Name</label>
-              <input
-                type="job-text__input"
-                name="name"
-                class={errors.name ? 'job-text__input job-text__input--error' : 'job-text__input'}
-                bind:value={name}
-                on:input={() => validateForm()}
-              />
-              {#if errors.name}
-                <span class="job-text__error-text">{errors.name}</span>
-              {/if}
-            </div>
-            <div class="job-text__input-wrapper">
-              <label for="last-name" class="job-text__input-name">Last name</label>
-              <input
-                type="job-text__input"
-                name="last-name"
-                class={errors.lastName
-                  ? 'job-text__input job-text__input--error'
-                  : 'job-text__input'}
-                bind:value={lastName}
-                on:input={() => validateForm()}
-              />
-              {#if errors.lastName && lastName === ''}
-                <span class="job-text__error-text">{errors.lastName}</span>
-              {/if}
-            </div>
-            <div class="job-text__input-wrapper">
-              <label for="email" class="job-text__input-name">Email</label>
-              <input
-                type="text"
-                name="email"
-                class={errors.email ? 'job-text__input job-text__input--error' : 'job-text__input'}
-                bind:value={email}
-                on:input={() => validateForm()}
-              />
-              {#if errors.email}
-                <span class="job-text__error-text">{errors.email}</span>
-              {/if}
-            </div>
-            <div class="job-text__input-wrapper">
-              <label for="phone" class="job-text__label">Phone</label>
-              <div
-                class={errors.phone ? 'job-text__input job-text__input--error' : 'job-text__input'}
-              >
-                <div class="job-text__phone-list">
-                  <div class="job-text__phone-item">
-                    <span class={`job-text__phone-flag flag flag-${flag}`} on:click={handleList} />
-                    <span class="job-text__phone-prefix">
-                      {prefix}
-                    </span>
-                    <input type="hidden" id="phone" name="phone" bind:value={phone} />
-                    <TelInput
-                      bind:country={selectedCountry}
-                      bind:value
-                      bind:valid
-                      bind:detailedValue
-                      bind:class={classInput}
-                      on:change={(e) => handleInput(e)}
-                    />
-                  </div>
-
-                  <div
-                    class={openList
-                      ? 'job-text__phone-list-items job-text__phone-list-items--active'
-                      : 'job-text__phone-list-items '}
-                  >
-                    <div class="job-text__phone-search-wrapper">
-                      <span class="job-text__phone-search-icon">🔎</span>
-                      <input
-                        type="search"
-                        class="job-text__phone-search-input"
-                        on:input={(e) => handleFilter(e)}
+            {/if}
+            <div class="job-text__inputs">
+              <div class="job-text__input-wrapper">
+                <label for="name" class="job-text__input-name">Name</label>
+                <input
+                  type="job-text__input"
+                  name="name"
+                  class={errors.name ? 'job-text__input job-text__input--error' : 'job-text__input'}
+                  bind:value={name}
+                  on:input={() => validateForm()}
+                />
+                {#if errors.name}
+                  <span class="job-text__error-text">{errors.name}</span>
+                {/if}
+              </div>
+              <div class="job-text__input-wrapper">
+                <label for="last-name" class="job-text__input-name">Last name</label>
+                <input
+                  type="job-text__input"
+                  name="last-name"
+                  class={errors.lastName
+                    ? 'job-text__input job-text__input--error'
+                    : 'job-text__input'}
+                  bind:value={lastName}
+                  on:input={() => validateForm()}
+                />
+                {#if errors.lastName && lastName === ''}
+                  <span class="job-text__error-text">{errors.lastName}</span>
+                {/if}
+              </div>
+              <div class="job-text__input-wrapper">
+                <label for="email" class="job-text__input-name">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  class={errors.email
+                    ? 'job-text__input job-text__input--error'
+                    : 'job-text__input'}
+                  bind:value={email}
+                  on:input={() => validateForm()}
+                />
+                {#if errors.email}
+                  <span class="job-text__error-text">{errors.email}</span>
+                {/if}
+              </div>
+              <div class="job-text__input-wrapper">
+                <label for="phone" class="job-text__label">Phone</label>
+                <div
+                  class={errors.phone
+                    ? 'job-text__input job-text__input--error'
+                    : 'job-text__input'}
+                >
+                  <div class="job-text__phone-list">
+                    <div class="job-text__phone-item">
+                      <!-- svelte-ignore a11y-click-events-have-key-events -->
+                      <span
+                        class={`job-text__phone-flag flag flag-${flag}`}
+                        on:click={handleList}
+                      />
+                      <span class="job-text__phone-prefix">
+                        {prefix}
+                      </span>
+                      <input type="hidden" id="phone" name="phone" bind:value={phone} />
+                      <TelInput
+                        bind:country={selectedCountry}
+                        bind:value
+                        bind:valid
+                        bind:detailedValue
+                        bind:class={classInput}
+                        on:change={(e) => handleInput(e)}
                       />
                     </div>
-                    {#each normalizedCountries as currentCountry (currentCountry.id)}
-                      {#if currentCountry.name.toLowerCase().includes(filter.toLowerCase())}
-                        <span
-                          class="job-text__phone-list-item"
-                          on:click={selectMask}
-                          data-flag={currentCountry.iso2.toLowerCase()}
-                          data-prefix={`+${currentCountry.dialCode}`}
-                        >
+
+                    <div
+                      class={openList
+                        ? 'job-text__phone-list-items job-text__phone-list-items--active'
+                        : 'job-text__phone-list-items '}
+                    >
+                      <div class="job-text__phone-search-wrapper">
+                        <span class="job-text__phone-search-icon">🔎</span>
+                        <input
+                          type="search"
+                          class="job-text__phone-search-input"
+                          on:input={(e) => handleFilter(e)}
+                        />
+                      </div>
+                      {#each normalizedCountries as currentCountry (currentCountry.id)}
+                        {#if currentCountry.name.toLowerCase().includes(filter.toLowerCase())}
+                          <!-- svelte-ignore a11y-click-events-have-key-events -->
                           <span
-                            class={`job-text__phone-flag flag flag-${currentCountry.iso2.toLowerCase()}`}
-                          />
-                          <span class="job-text__phone-prefix">
-                            {currentCountry.name} (+{currentCountry.dialCode})
+                            class="job-text__phone-list-item"
+                            on:click={selectMask}
+                            data-flag={currentCountry.iso2.toLowerCase()}
+                            data-prefix={`+${currentCountry.dialCode}`}
+                          >
+                            <span
+                              class={`job-text__phone-flag flag flag-${currentCountry.iso2.toLowerCase()}`}
+                            />
+                            <span class="job-text__phone-prefix">
+                              {currentCountry.name} (+{currentCountry.dialCode})
+                            </span>
                           </span>
-                        </span>
-                      {/if}
-                    {/each}
+                        {/if}
+                      {/each}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {#if errors.phone}
-                <span class="job-text__error-text">{errors.phone}</span>
-              {/if}
-            </div>
-            <div class="job-text__input-wrapper job-text__input-wrapper--textarea">
-              <label for="comments" class="job-text__input-name">Comments</label>
-              <textarea
-                name="comments"
-                id="comments"
-                class="job-text__input"
-                bind:value={comments}
-              />
-            </div>
-            <div class="job-text__file-input">
-              <input
-                type="file"
-                name="file"
-                if="file"
-                bind:value={file}
-                on:change={(e) => selectFile(e)}
-                on:input={() => validateForm()}
-                class="job-text__file"
-                accept=" .doc, .docx, .pdf"
-              />
-              <img src="../icons/Paper.svg" alt="" lass="job-text__file-icon" />
-              <div class="job-text__file-text-wrapper">
-                {#if textName === ''}
-                  <span>DROP YOUR CV HERE, OR BROWSE</span>
-                  <span>Supports: DOC, DOCX, PDF, max size 5 Mb</span>
-                {/if}
-                {#if textName !== ''}
-                  <span>{textName}</span>
+                {#if errors.phone}
+                  <span class="job-text__error-text">{errors.phone}</span>
                 {/if}
               </div>
-              {#if errors.file}
-                <span class="job-text__error-text">{errors.file}</span>
-              {/if}
+              <div class="job-text__input-wrapper job-text__input-wrapper--textarea">
+                <label for="comments" class="job-text__input-name">Comments</label>
+                <textarea
+                  name="comments"
+                  id="comments"
+                  class="job-text__input"
+                  bind:value={comments}
+                />
+              </div>
+              <div class="job-text__file-input">
+                <input
+                  type="file"
+                  name="file"
+                  if="file"
+                  bind:value={file}
+                  on:change={(e) => selectFile(e)}
+                  on:input={() => validateForm()}
+                  class="job-text__file"
+                  accept=" .doc, .docx, .pdf"
+                />
+                <img src="../icons/Paper.svg" alt="" lass="job-text__file-icon" />
+                <div class="job-text__file-text-wrapper">
+                  {#if textName === ''}
+                    <span>DROP YOUR CV HERE, OR BROWSE</span>
+                    <span>Supports: DOC, DOCX, PDF, max size 5 Mb</span>
+                  {/if}
+                  {#if textName !== ''}
+                    <span>{textName}</span>
+                  {/if}
+                </div>
+                {#if errors.file}
+                  <span class="job-text__error-text">{errors.file}</span>
+                {/if}
+              </div>
+              <button type="submit" class="btn btn--fullwidth">Apply</button>
             </div>
-            <button type="submit" class="btn btn--fullwidth">Apply</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-
-    <div class={statusError ? 'job-text__notice job-text__notice--active' : 'job-text__notice'}>
-      {errorText}
     </div>
   </section>
 {/if}
@@ -340,7 +350,120 @@
 <style lang="scss">
   @import '../../styles/base/mixins.scss';
 
+  .contact-us {
+    padding-bottom: 60px;
+    &__main-inner {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-down(lg) {
+        gap: 60px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        gap: 120px;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      padding-top: 20px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-top: 40px;
+    }
+
+    &__wrapper {
+      display: grid;
+      align-items: center;
+
+      @include media-breakpoint-down(lg) {
+        gap: 40px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 2fr 3fr;
+      }
+    }
+
+    &__title {
+      font-weight: 900;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 36px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 48px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-down(lg) {
+        gap: 25px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        gap: 50px;
+      }
+    }
+
+    &__text-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 16px;
+        gap: 15px;
+      }
+
+      @include media-breakpoint-between(lg, xl) {
+        font-size: 18px;
+        gap: 20px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        font-size: 20px;
+        gap: 30px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        font-size: 25px;
+        gap: 40px;
+      }
+
+      p {
+        font-weight: 700;
+
+        span {
+          font-weight: 400;
+        }
+      }
+
+      span {
+        font-weight: 700;
+
+        a {
+          font-weight: 400;
+          color: #006185;
+        }
+      }
+    }
+  }
   .job-text {
+    &__title {
+      font-weight: 900;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 36px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 48px;
+      }
+    }
+
     @include media-breakpoint-down(lg) {
       padding-top: 140px;
       padding-bottom: 100px;

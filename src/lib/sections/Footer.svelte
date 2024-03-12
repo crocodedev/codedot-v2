@@ -38,19 +38,6 @@
         </div>
       </div>
     </div>
-    <div class="footer__contacts">
-      <div class="container">
-        <div class="footer__contacts-wrapper">
-          <p>
-            Our address: <span class="footer__contacts-address">Vitebsk, 56A Chkalova str.</span>
-          </p>
-          <span>
-            Contact Us:
-            <a href="tel:+74950000007" class="footer__contacts-phone"> +74950000007 </a>
-          </span>
-        </div>
-      </div>
-    </div>
   </footer>
 {/if}
 

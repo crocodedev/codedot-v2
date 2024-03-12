@@ -80,7 +80,6 @@
         })
 
         if (response.ok) {
-          console.log(response)
           name = ''
           email = ''
           industry = ''
@@ -94,7 +93,6 @@
         }
       }
     } catch (error) {
-      console.log(error)
       return null
     }
   }
@@ -164,7 +162,6 @@
 
   const handleInput = (e) => {
     phone = prefix + e.target.value
-    console.log(phone)
     validateForm()
   }
 

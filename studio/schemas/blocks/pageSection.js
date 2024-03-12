@@ -10,6 +10,7 @@ export default {
     {type: 'CasesPage'},
     {type: 'TextHero'},
     {type: 'Dignity'},
+    {type: 'ContactText'},
     {type: 'Services'},
     {type: 'Technologies'},
     {type: 'Review'},

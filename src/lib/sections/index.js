@@ -30,6 +30,7 @@ import ProjectTextImage from '$lib/sections/ProjectPage/ProjectTextImage.svelte'
 import ProjectText from '$lib/sections/ProjectPage/ProjectText.svelte'
 import ProjectGallery from '$lib/sections/ProjectPage/ProjectGallery.svelte'
 import Modal from '$lib/sections/Modal.svelte'
+import ContactText from '$lib/sections/ContactsPage/ContactText.svelte'
 
 export {
   Header,
@@ -39,6 +40,7 @@ export {
   Counters,
   Cases,
   Text,
+  ContactText,
   Breadcrumps,
   Services,
   Technologies,

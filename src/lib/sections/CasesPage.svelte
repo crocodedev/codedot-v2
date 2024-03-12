@@ -65,8 +65,6 @@
           })
         }
       })
-
-      console.log(categoryCounts)
     }
   })
   $: clearActive = () => (activeTags = [])

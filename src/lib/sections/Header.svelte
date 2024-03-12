@@ -328,7 +328,7 @@
       cursor: pointer;
 
       @include media-breakpoint-up(xl) {
-        margin-right: 60px;
+        margin-right: 30px;
         padding: 20px;
       }
     }
@@ -358,7 +358,7 @@
 
       .header__nav-item:not(:last-child) {
         @include media-breakpoint-up(xl) {
-          margin-right: 40px;
+          margin-right: 20px;
         }
       }
 
@@ -550,7 +550,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        margin-left: 60px;
+        margin-left: 40px;
       }
     }
 

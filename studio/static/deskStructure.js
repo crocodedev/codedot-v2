@@ -27,6 +27,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   'textOne',
   'textTwo',
   'textThree',
+  'contactText',
   'ourClients',
   'breadcrumps',
   'reviews',
