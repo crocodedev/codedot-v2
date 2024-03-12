@@ -31,7 +31,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-      height: 80vh;
+      height: 520px;
     }
   }
 </style>
