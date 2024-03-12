@@ -4,5 +4,4 @@ Disallow: /cgi-bin
 Disallow: /static/images/
 Disallow: /static/
 
-Host: codedot-v2.netlify.app
 Sitemap: http://codedot-v2.netlify.app/sitemap.xml
