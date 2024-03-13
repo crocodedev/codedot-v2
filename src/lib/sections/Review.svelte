@@ -36,7 +36,7 @@
     <div class="container">
       <div class="reviews__wrapper">
         <div class="reviews__title-wrapper">
-          <h2 class="reviews__title">Our Clients</h2>
+          <h2 class="reviews__title">Наши клиенты</h2>
           <div class="reviews__btns">
             <button class="reviews__btn reviews__btn--prev">
               <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />

@@ -3,17 +3,17 @@
 
   export let closeModal, activeModal, data
 
-  let selectedCountry = 'PL'
+  let selectedCountry = 'BY'
   let value = ''
   let classInput = 'tel-input'
   let valid = true
   let detailedValue = null
 
   let active, statusError
-  $: curValue = 'Select your industry'
+  $: curValue = 'Выберите свою отрасль'
   let errorText,
-    flag = 'pl',
-    prefix = '+(48)',
+    flag = 'by',
+    prefix = '+375',
     textName = '',
     industry = curValue,
     name = '',
@@ -29,34 +29,34 @@
   const validateForm = () => {
     errors = {}
     if (!name) {
-      errors.name = 'Name is required'
+      errors.name = 'Имя обязательно'
     }
     if (!email) {
-      errors.email = 'Email is required'
+      errors.email = 'Электронная почта обязательна'
     }
     if (email) {
       let emailReg = /^\S+@\S+\.\S+$/
       if (emailReg.test(email) == false) {
-        errors.email = 'Email does not pass verification'
+        errors.email = 'Электронная почта не проходит проверку'
       }
     }
 
     if (!phone) {
-      errors.phone = 'Phone number is required'
+      errors.phone = 'Номер телефона обязателен'
     }
 
     if (phone) {
       if (phone.length <= 8) {
-        errors.phone = 'Phone length is min'
+        errors.phone = 'Длина телефона составляет мин.'
       }
     }
 
     if (!industry) {
-      errors.industry = 'Industry is required'
+      errors.industry = 'Требуется отрасль'
     }
 
     if (!file) {
-      errors.file = 'File is required'
+      errors.file = 'Файл необходим'
     }
   }
 
@@ -88,7 +88,7 @@
 
           file = null
           textName = ''
-          curValue = 'Select your industry'
+          curValue = 'Выберите свою отрасль'
           succes = true
         }
       }
@@ -187,15 +187,15 @@
           <div class="modal__succes-icon-wrapper">
             <img src="../icons/success.svg" alt="succes-icon" class="modal__succes-icon" />
           </div>
-          <p class="modal__succes-title">Thank you</p>
-          <p class="modal__succes-text">Your application has been successfully submitted</p>
+          <p class="modal__succes-title">Спасибо</p>
+          <p class="modal__succes-text">Ваша заявка успешно отправлена</p>
         </div>
       {/if}
       <span class="modal__cross" on:click={closeModal(activeModal)} />
-      <h2 class="modal__title">Let’s discuss your project</h2>
+      <h2 class="modal__title">Давайте обсудим ваш проект</h2>
       <div class="modal__items">
         <div class="modal__input-wrapper">
-          <label for="industry" class="modal__label">Industry</label>
+          <label for="industry" class="modal__label">Отрасль</label>
           <input type="hidden" name="industry" id="industry" bind:value={curValue} />
           <div
             class={errors.industry ? 'modal__input modal__input--error' : 'modal__input'}
@@ -213,11 +213,11 @@
                 {industry.serviceName}
               </span>
             {/each}
-            <span class="modal__input-list-item" on:click={(e) => useSelect(e)}> Other... </span>
+            <span class="modal__input-list-item" on:click={(e) => useSelect(e)}> Другое... </span>
           </div>
         </div>
         <div class="modal__input-wrapper">
-          <label for="name" class="modal__label">Name</label>
+          <label for="name" class="modal__label">Имя</label>
           <input
             type="text"
             name="name"
@@ -231,7 +231,7 @@
         </div>
 
         <div class="modal__input-wrapper">
-          <label for="phone" class="modal__label">Phone</label>
+          <label for="phone" class="modal__label">Номер телефона</label>
           <div class={errors.phone ? 'modal__input modal__input--error' : 'modal__input'}>
             <div class="modal__phone-list">
               <div class="modal__phone-item">
@@ -289,7 +289,7 @@
           {/if}
         </div>
         <div class="modal__input-wrapper">
-          <label for="email" class="modal__label">Corporate Email</label>
+          <label for="email" class="modal__label">Электронная почта</label>
           <input
             type="email"
             name="email"
@@ -302,7 +302,7 @@
           {/if}
         </div>
         <div class="modal__input-wrapper">
-          <label for="requirements" class="modal__label">Project requirements</label>
+          <label for="requirements" class="modal__label">Требования к проекту</label>
           <textarea
             name="requirements"
             id="requirements"
@@ -324,8 +324,8 @@
 
           <label for="file" class="modal__file-text-wrapper">
             {#if textName == ''}
-              <span>DROP YOUR TASK HERE, OR BROWSE</span>
-              <span>Supports: DOC, DOCX, PDF, max size 5 Mb</span>
+              <span>ОТПРАВЬТЕ СВОЕ ЗАДАНИЕ СЮДА</span>
+              <span>Поддерживает: DOC, DOCX, PDF, макс. размер 5 Мб</span>
             {/if}
             {#if textName}
               <span>{textName}</span>
@@ -342,15 +342,15 @@
             <label for="checkbox" class="modal__checkbox-box" />
           </div>
           <label for="checkbox" class="modal__checkbox-text">
-            I want to protect my data by signing an NDA.
+            Я хочу защитить свои данные, подписав NDA.
           </label>
         </div>
       </div>
       <button type="submit" class="btn btn--fullwidth">Send request</button>
 
       <span class="modal__text">
-        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service
-        apply.
+        Этот сайт защищен с помощью reCAPTCHA, и к нему применяются Политика конфиденциальности и
+        Условия предоставления услуг Google применять.
       </span>
     </form>
     <span class="modal__background" />

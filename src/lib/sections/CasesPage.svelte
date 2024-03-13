@@ -93,7 +93,7 @@
                   activeTags.length === 0 ? 'casespage__filtertag--active' : ''
                 }`}
               >
-                All cases ({data.secondData.length})
+                Все проекты ({data.secondData.length})
               </swiper-slide>
 
               {#each categoryCounts as categoryInfo}

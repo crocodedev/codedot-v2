@@ -28,7 +28,7 @@
           {/each}
           <div class="jobs__item">
             <div class="jobs__cannot-wrapper">
-              <p class="jobs__cannot">CANNOT FIND A SUITABLE VACANCY? DROP US A LINE</p>
+              <p class="jobs__cannot">НЕ МОЖЕТЕ НАЙТИ ПОДХОДЯЩУЮ ВАКАНСИЮ? НАПИШИТЕ НАМ</p>
               <a href="mailto:welcome@code.dot" class="jobs__cannot-link">welcome@code.dot</a>
             </div>
           </div>

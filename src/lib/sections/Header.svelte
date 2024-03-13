@@ -68,7 +68,7 @@
             </div>
             <div class="header__nav-dropdown-link">
               <a href="/services/" class="header__nav-link">
-                All {navItem.navItemName.toLowerCase()}
+                Все {navItem.navItemName.toLowerCase()}
               </a>
               <span class="arrow" />
             </div>

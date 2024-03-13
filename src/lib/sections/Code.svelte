@@ -40,13 +40,13 @@
 
       @include media-breakpoint-between(sm, md) {
         transform: translateX(-20px);
-        font-size: 13vw;
+        font-size: 12vw;
         white-space: nowrap;
       }
 
       @include media-breakpoint-up(md) {
-        transform: translateX(-50px);
-        font-size: 13vw;
+        transform: translateX(-26px);
+        font-size: 12vw;
         white-space: nowrap;
       }
     }

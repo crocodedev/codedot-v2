@@ -35,23 +35,23 @@
         </div>
         <div class="hero__discuss-wrapper">
           <div class="hero__tagline-wrapper">
-            <p class="hero__tagline">We will take</p>
+            <p class="hero__tagline">Мы поднимем</p>
             <p class="hero__tagline">
               <span class="hero__word">
-                Y
+                ТВ
                 <span class="hero__letter">
                   <img src="../images/big_o.svg" alt="" class="hero__letter-img" />
                 </span>
-                ur &nbsp;
+                Й &nbsp;
               </span>
-              business
+              БИЗНЕС
             </p>
-            <p class="hero__tagline">To the next level</p>
+            <p class="hero__tagline">на новый уровень</p>
           </div>
           <div class="hero__discuss-inner">
-            <p class="hero__discuss-text">Creative Design and <br />Development Agency.</p>
+            <p class="hero__discuss-text">Креативный дизайн и<br />Агентство по развитию.</p>
             <button class="btn" on:click={openModal}>
-              Discuss the project
+              Обсудить проект
               <span class="btn__icon">
                 <img src="../icons/arrow-btn.svg" alt="" />
               </span>

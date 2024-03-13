@@ -20,42 +20,42 @@
     comments = '',
     file,
     filter = '',
-    flag = '',
+    flag = 'by',
+    prefix = '+375',
     errors = {},
-    prefix = '',
     succes = false,
     openList = false
 
   const validateForm = () => {
     errors = {}
     if (!name) {
-      errors.name = 'Name is required'
+      errors.name = 'Имя обязательно'
     }
     if (!email) {
-      errors.email = 'Email is required'
+      errors.email = 'Эл. почта обязательна'
     }
     if (email) {
       let emailReg = /^\S+@\S+\.\S+$/
       if (emailReg.test(email) == false) {
-        errors.email = 'Email does not pass verification'
+        errors.email = 'Электронная почта не проходит проверку'
       }
     }
     if (!lastName) {
-      errors.lastName = 'Last name is required'
+      errors.lastName = 'Фамилия обязательна'
     }
 
     if (!phone) {
-      errors.phone = 'Phone number is required'
+      errors.phone = 'Моб. номер обязателен'
     }
 
     if (phone) {
       if (phone.length <= 8) {
-        errors.phone = 'Phone length is min'
+        errors.phone = 'Слишком короткий номер'
       }
     }
 
     if (!file) {
-      errors.file = 'File is required'
+      errors.file = 'Файл обязателен'
     }
   }
 
@@ -163,13 +163,13 @@
       <div class="contact-us__main-inner">
         <div class="contact-us__wrapper">
           <div class="contact-us__info">
-            <p class="contact-us__title">Contact Us</p>
+            <p class="contact-us__title">Связаться с нами</p>
             <div class="contact-us__text-wrapper">
               <p>
-                Our address: <span class="contact-us__address">{data.address}</span>
+                Наш адрес: <span class="contact-us__address">{data.address}</span>
               </p>
               <span>
-                Our cell number:
+                Наш контактный номер:
                 <a href="tel:+74950000007" class="contact-us__phone">{data.cellNumber}</a>
               </span>
             </div>
@@ -177,7 +177,7 @@
           <svelte:component this={ContactMap} />
         </div>
         <div class="job-text__wrapper">
-          <p class="job-text__title">Let’s discuss your project</p>
+          <p class="job-text__title">Давайте обсудим ваш проект</p>
           <form
             action="#"
             class="job-text__form"
@@ -189,13 +189,13 @@
                 <div class="job-text__succes-icon-wrapper">
                   <img src="../icons/success.svg" alt="succes-icon" class="job-text__succes-icon" />
                 </div>
-                <p class="job-text__succes-title">Thank you</p>
-                <p class="job-text__succes-text">Your CV has been successfully submitted</p>
+                <p class="job-text__succes-title">Спасибо</p>
+                <p class="job-text__succes-text">Ваш документ успешно отправлен</p>
               </div>
             {/if}
             <div class="job-text__inputs">
               <div class="job-text__input-wrapper">
-                <label for="name" class="job-text__input-name">Name</label>
+                <label for="name" class="job-text__input-name">Имя</label>
                 <input
                   type="job-text__input"
                   name="name"
@@ -208,7 +208,7 @@
                 {/if}
               </div>
               <div class="job-text__input-wrapper">
-                <label for="last-name" class="job-text__input-name">Last name</label>
+                <label for="last-name" class="job-text__input-name">Фамилия</label>
                 <input
                   type="job-text__input"
                   name="last-name"
@@ -223,7 +223,7 @@
                 {/if}
               </div>
               <div class="job-text__input-wrapper">
-                <label for="email" class="job-text__input-name">Email</label>
+                <label for="email" class="job-text__input-name">Электронная почта</label>
                 <input
                   type="text"
                   name="email"
@@ -238,7 +238,7 @@
                 {/if}
               </div>
               <div class="job-text__input-wrapper">
-                <label for="phone" class="job-text__label">Phone</label>
+                <label for="phone" class="job-text__label">Моб. номер</label>
                 <div
                   class={errors.phone
                     ? 'job-text__input job-text__input--error'
@@ -305,7 +305,7 @@
                 {/if}
               </div>
               <div class="job-text__input-wrapper job-text__input-wrapper--textarea">
-                <label for="comments" class="job-text__input-name">Comments</label>
+                <label for="comments" class="job-text__input-name">Комментарий</label>
                 <textarea
                   name="comments"
                   id="comments"
@@ -327,8 +327,8 @@
                 <img src="../icons/Paper.svg" alt="" lass="job-text__file-icon" />
                 <div class="job-text__file-text-wrapper">
                   {#if textName === ''}
-                    <span>DROP YOUR CV HERE, OR BROWSE</span>
-                    <span>Supports: DOC, DOCX, PDF, max size 5 Mb</span>
+                    <span>ОТПРАВЬТЕ ВАШ ДОКУМЕНТ </span>
+                    <span>Поддерживает: DOC, DOCX, PDF, макс. размер 5 мб</span>
                   {/if}
                   {#if textName !== ''}
                     <span>{textName}</span>
@@ -338,7 +338,7 @@
                   <span class="job-text__error-text">{errors.file}</span>
                 {/if}
               </div>
-              <button type="submit" class="btn btn--fullwidth">Apply</button>
+              <button type="submit" class="btn btn--fullwidth">Отправить</button>
             </div>
           </form>
         </div>

@@ -17,11 +17,13 @@
             {/each}
           </div>
           <div class="footer__text">{data.textFooter}</div>
-          <button class="footer__btn" on:click={openModal}>Contact us</button>
+          <button class="footer__btn" on:click={openModal}>Связаться с нами</button>
 
           <div class="footer__copyright">
-            <span>© 2023 Codedot Agency.</span>
-            <span>All Rights Reserved — <a href="/" class="link">Privacy policy</a></span>
+            <span>© 2023 Codedot</span>
+            <span
+              >Все права защищены — <a href="/" class="link">Политика конфиденциальности</a></span
+            >
           </div>
         </div>
         <div class="footer__right-side">

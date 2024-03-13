@@ -2,7 +2,7 @@
   export let data
   import { TelInput, normalizedCountries } from 'svelte-tel-input'
 
-  let selectedCountry = 'PL'
+  let selectedCountry = 'BY'
   let value = ''
   let classInput = 'tel-input'
   let valid = true
@@ -18,42 +18,42 @@
     comments = '',
     file,
     filter = '',
-    flag = '',
+    flag = 'by',
     errors = {},
-    prefix = '',
+    prefix = '+375',
     succes = false,
     openList = false
 
   const validateForm = () => {
     errors = {}
     if (!name) {
-      errors.name = 'Name is required'
+      errors.name = 'Имя обязательно'
     }
     if (!email) {
-      errors.email = 'Email is required'
+      errors.email = 'Электронная почта обязательна'
     }
     if (email) {
       let emailReg = /^\S+@\S+\.\S+$/
       if (emailReg.test(email) == false) {
-        errors.email = 'Email does not pass verification'
+        errors.email = 'Электронная почта не проходит проверку'
       }
     }
     if (!lastName) {
-      errors.lastName = 'Last name is required'
+      errors.lastName = 'Фамилия обязательна'
     }
 
     if (!phone) {
-      errors.phone = 'Phone number is required'
+      errors.phone = 'Моб. номер обязателен'
     }
 
     if (phone) {
       if (phone.length <= 8) {
-        errors.phone = 'Phone length is min'
+        errors.phone = 'Номер слишком короткий'
       }
     }
 
     if (!file) {
-      errors.file = 'File is required'
+      errors.file = 'Файл обязателен'
     }
   }
 
@@ -184,14 +184,16 @@
               <div class="job-text__succes-icon-wrapper">
                 <img src="../icons/success.svg" alt="succes-icon" class="job-text__succes-icon" />
               </div>
-              <p class="job-text__succes-title">Thank you</p>
-              <p class="job-text__succes-text">Your CV has been successfully submitted</p>
+              <p class="job-text__succes-title">Спасибо</p>
+              <p class="job-text__succes-text">Ваше резюме успешно отправлено</p>
             </div>
           {/if}
-          <span class="job-text__job-name">Senior Fullstack Developer</span>
+          <span class="job-text__job-name"
+            >{document.querySelector('.job-hero__title').textContent}</span
+          >
           <div class="job-text__inputs">
             <div class="job-text__input-wrapper">
-              <label for="name" class="job-text__input-name">Name</label>
+              <label for="name" class="job-text__input-name">Имя</label>
               <input
                 type="job-text__input"
                 name="name"
@@ -204,7 +206,7 @@
               {/if}
             </div>
             <div class="job-text__input-wrapper">
-              <label for="last-name" class="job-text__input-name">Last name</label>
+              <label for="last-name" class="job-text__input-name">Фамилия</label>
               <input
                 type="job-text__input"
                 name="last-name"
@@ -219,7 +221,7 @@
               {/if}
             </div>
             <div class="job-text__input-wrapper">
-              <label for="email" class="job-text__input-name">Email</label>
+              <label for="email" class="job-text__input-name">Эл. почта</label>
               <input
                 type="text"
                 name="email"
@@ -232,7 +234,7 @@
               {/if}
             </div>
             <div class="job-text__input-wrapper">
-              <label for="phone" class="job-text__label">Phone</label>
+              <label for="phone" class="job-text__label">Моб. номер</label>
               <div
                 class={errors.phone ? 'job-text__input job-text__input--error' : 'job-text__input'}
               >
@@ -292,7 +294,7 @@
               {/if}
             </div>
             <div class="job-text__input-wrapper job-text__input-wrapper--textarea">
-              <label for="comments" class="job-text__input-name">Comments</label>
+              <label for="comments" class="job-text__input-name">Комментарий</label>
               <textarea
                 name="comments"
                 id="comments"
@@ -314,8 +316,8 @@
               <img src="../icons/Paper.svg" alt="" lass="job-text__file-icon" />
               <div class="job-text__file-text-wrapper">
                 {#if textName === ''}
-                  <span>DROP YOUR CV HERE, OR BROWSE</span>
-                  <span>Supports: DOC, DOCX, PDF, max size 5 Mb</span>
+                  <span>Отправьте ваше резюме</span>
+                  <span>Поддерживает: DOC, DOCX, PDF, макс. размер 5 мб</span>
                 {/if}
                 {#if textName !== ''}
                   <span>{textName}</span>
@@ -325,7 +327,7 @@
                 <span class="job-text__error-text">{errors.file}</span>
               {/if}
             </div>
-            <button type="submit" class="btn btn--fullwidth">Apply</button>
+            <button type="submit" class="btn btn--fullwidth">Отправить</button>
           </div>
         </form>
       </div>

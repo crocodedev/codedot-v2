@@ -241,11 +241,11 @@
           transform: translateY(-32px);
         }
         @include media-breakpoint-between(xl, xxl) {
-          transform: translateY(-53px);
+          transform: translateY(-28px);
         }
 
         @include media-breakpoint-up(xxl) {
-          transform: translateY(-80px);
+          transform: translateY(-60px);
         }
       }
 
@@ -273,10 +273,10 @@
           transform: translateY(20px) translateX(5px);
         }
         @include media-breakpoint-between(xl, xxl) {
-          transform: translateY(35px);
+          transform: translateY(20px);
         }
         @include media-breakpoint-up(xxl) {
-          transform: translateY(50px) translateX(10px);
+          transform: translateY(7px) translateX(10px);
         }
       }
 

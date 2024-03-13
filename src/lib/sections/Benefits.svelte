@@ -143,7 +143,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        transform: translate(60px, -55px);
+        transform: translate(60px, -140px);
       }
     }
 

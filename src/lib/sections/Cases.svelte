@@ -84,7 +84,7 @@
           </div>
         </div>
         <a href="/cases/" class="btn btn--fullwidth btn--cases">
-          View all cases
+          Просмотреть все проекты
           <span class="btn__icon">
             <img
               src="../icons/arrow-btn.svg"

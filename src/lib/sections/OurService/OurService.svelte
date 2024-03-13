@@ -18,7 +18,7 @@
               </div>
 
               <a href={`${servicesItem.serviceLink}`} class="our-services__btn">
-                See more
+                Подробнее
                 <img src="../icons/arrow-btn.svg" alt="" class="our-services__icon" />
               </a>
             </div>
