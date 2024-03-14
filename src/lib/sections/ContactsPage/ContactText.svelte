@@ -154,6 +154,12 @@
     filter = e.target.value
     validateForm()
   }
+
+  if (data) {
+    const textItems = document.querySelectorAll('.contact-us__text-item')
+
+    console.log('ssad', textItems)
+  }
 </script>
 
 {#if data}
@@ -164,18 +170,26 @@
           <div class="contact-us__info">
             <p class="contact-us__title">Связаться с нами</p>
             <div class="contact-us__text-wrapper">
-              <p>
-                Наш адрес:
-                {#each data.coordinatesList as address}
-                  <span class="contact-us__address" data-coords={address.coordinates}
-                    >{address.placemarkText}</span
-                  >
-                {/each}
-              </p>
-              <span>
-                Наш контактный номер:
-                <a href={`tel:${data.cellNumber}`} class="contact-us__phone">{data.cellNumber}</a>
-              </span>
+              {#each data.coordinatesList as address}
+                <div class="contact-us__text-item">
+                  <span>
+                    Адрес: <span class="contact-us__address" data-coords={address.coordinates}>
+                      {address.placemarkText}
+                    </span>
+                  </span>
+                  <span>
+                    Наш контактный номер:
+                    <a href={`tel:${address.cellNumber}`} class="contact-us__phone"
+                      >{address.cellNumber}</a
+                    >
+                  </span>
+                  <span>
+                    Наша эл. почта:
+                    <a href={`mailto:${address.email}`} class="contact-us__phone">{address.email}</a
+                    >
+                  </span>
+                </div>
+              {/each}
             </div>
           </div>
           <svelte:component this={ContactMap} {data} />
@@ -358,11 +372,20 @@
     padding-bottom: 60px;
 
     &__address {
-      display: flex;
       cursor: pointer;
       gap: 10px;
       width: max-content;
     }
+
+    &__text-item {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      border: 1px solid #006185;
+      border-radius: 15px;
+      gap: 20px;
+    }
+
     &__main-inner {
       display: flex;
       flex-direction: column;
@@ -384,7 +407,6 @@
 
     &__wrapper {
       display: grid;
-      align-items: center;
 
       @include media-breakpoint-down(lg) {
         gap: 40px;
@@ -392,6 +414,7 @@
 
       @include media-breakpoint-up(lg) {
         grid-template-columns: 2fr 3fr;
+        gap: 40px;
       }
     }
 
@@ -423,6 +446,8 @@
     &__text-wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
+      // justify-content: space-between;
 
       @include media-breakpoint-down(lg) {
         font-size: 16px;
@@ -442,23 +467,6 @@
       @include media-breakpoint-up(xxl) {
         font-size: 25px;
         gap: 40px;
-      }
-
-      p {
-        font-weight: 700;
-
-        span {
-          font-weight: 400;
-        }
-      }
-
-      span {
-        font-weight: 700;
-
-        a {
-          font-weight: 400;
-          color: #006185;
-        }
       }
     }
   }

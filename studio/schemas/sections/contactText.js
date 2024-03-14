@@ -31,6 +31,8 @@ export default {
           fields: [
             {name: 'placemarkText', type: 'string', title: 'Placemark Text'},
             {name: 'coordinates', type: 'string', title: 'Coordinates'},
+            {name: 'cellNumber', type: 'string', title: 'Cell Number'},
+            {name: 'email', type: 'string', title: 'Email'},
           ],
         },
       ],
