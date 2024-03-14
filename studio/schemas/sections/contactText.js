@@ -18,5 +18,22 @@ export default {
       type: 'string',
       title: 'Cell Number',
     },
+
+    {
+      name: 'coordinatesList',
+      type: 'array',
+      title: 'Coordinates List',
+      of: [
+        {
+          name: 'coordinatesItem',
+          type: 'object',
+          title: 'Coordinates Item',
+          fields: [
+            {name: 'placemarkText', type: 'string', title: 'Placemark Text'},
+            {name: 'coordinates', type: 'string', title: 'Coordinates'},
+          ],
+        },
+      ],
+    },
   ],
 }

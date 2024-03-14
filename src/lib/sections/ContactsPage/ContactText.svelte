@@ -3,7 +3,6 @@
 
   export let data
   import { TelInput, normalizedCountries } from 'svelte-tel-input'
-
   let selectedCountry = 'BY'
   let value = ''
   let classInput = 'tel-input'
@@ -166,15 +165,20 @@
             <p class="contact-us__title">Связаться с нами</p>
             <div class="contact-us__text-wrapper">
               <p>
-                Наш адрес: <span class="contact-us__address">{data.address}</span>
+                Наш адрес:
+                {#each data.coordinatesList as address}
+                  <span class="contact-us__address" data-coords={address.coordinates}
+                    >{address.placemarkText}</span
+                  >
+                {/each}
               </p>
               <span>
                 Наш контактный номер:
-                <a href="tel:+74950000007" class="contact-us__phone">{data.cellNumber}</a>
+                <a href={`tel:${data.cellNumber}`} class="contact-us__phone">{data.cellNumber}</a>
               </span>
             </div>
           </div>
-          <svelte:component this={ContactMap} />
+          <svelte:component this={ContactMap} {data} />
         </div>
         <div class="job-text__wrapper">
           <p class="job-text__title">Давайте обсудим ваш проект</p>
@@ -352,6 +356,13 @@
 
   .contact-us {
     padding-bottom: 60px;
+
+    &__address {
+      display: flex;
+      cursor: pointer;
+      gap: 10px;
+      width: max-content;
+    }
     &__main-inner {
       display: flex;
       flex-direction: column;

@@ -2,19 +2,59 @@
   ymaps.ready(init)
 
   function init() {
-    var myMap = new ymaps.Map('YMapsID', {
-      center: [55.158066, 30.214017],
-      zoom: 15,
-      controls: [],
+    const mainCoords = data.coordinatesList[0].coordinates.split(',')
+    const mainCordsArr = []
+    const placemarksArr = []
+
+    mainCoords.forEach((el) => {
+      mainCordsArr.push(+el)
     })
 
-    var placemark = new ymaps.Placemark([55.158066, 30.214017], {
-      balloonContent: 'Vitebsk, Chkalova 56A',
-      preset: 'islands#circleDotIcon',
-    })
+    if (data) {
+      var myMap = new ymaps.Map('YMapsID', {
+        center: mainCordsArr,
+        zoom: 15,
+        controls: [],
+      })
 
-    myMap.geoObjects.add(placemark)
+      data.coordinatesList.forEach((el, idx) => {
+        const newArr = []
+
+        el.coordinates.split(',').forEach((coord) => {
+          newArr.push(+coord)
+        })
+
+        window['placemark' + idx] = new ymaps.Placemark(newArr, {
+          balloonContent: el.placemarkText,
+          preset: 'islands#dotIcon',
+        })
+
+        placemarksArr.push(window['placemark' + idx])
+      })
+
+      placemarksArr.map((el) => {
+        myMap.geoObjects.add(el)
+      })
+
+      const goToItems = document.querySelectorAll('.contact-us__address')
+
+      goToItems.forEach((el) => {
+        el.addEventListener('click', () => {
+          const goToArr = []
+          el.dataset.coords.split(',').map((coord) => {
+            goToArr.push(+coord)
+          })
+
+          myMap.panTo(goToArr, {
+            flying: true,
+            checkZoomRange: true,
+          })
+        })
+      })
+    }
   }
+
+  export let data
 </script>
 
 <div id="YMapsID" class="yMap"></div>
