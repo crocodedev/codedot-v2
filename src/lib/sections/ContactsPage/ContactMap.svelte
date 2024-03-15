@@ -13,7 +13,7 @@
     if (data) {
       var myMap = new ymaps.Map('YMapsID', {
         center: mainCordsArr,
-        zoom: 15,
+        zoom: 6,
         controls: [],
       })
 
@@ -24,10 +24,20 @@
           newArr.push(+coord)
         })
 
-        window['placemark' + idx] = new ymaps.Placemark(newArr, {
-          balloonContent: el.placemarkText,
-          preset: 'islands#dotIcon',
-        })
+        window['placemark' + idx] = new ymaps.Placemark(
+          newArr,
+          {
+            balloonContent: el.placemarkText,
+          },
+          {
+            zoom: 16,
+
+            iconLayout: 'default#image',
+            iconImageHref: '/placemark.svg',
+            iconImageSize: [52, 56],
+            iconImageOffset: [-3, -42],
+          }
+        )
 
         placemarksArr.push(window['placemark' + idx])
       })
@@ -36,7 +46,7 @@
         myMap.geoObjects.add(el)
       })
 
-      const goToItems = document.querySelectorAll('.contact-us__address')
+      const goToItems = document.querySelectorAll('.contact-us__text-item')
 
       goToItems.forEach((el) => {
         el.addEventListener('click', () => {
@@ -45,10 +55,14 @@
             goToArr.push(+coord)
           })
 
-          myMap.panTo(goToArr, {
-            flying: true,
-            checkZoomRange: true,
-          })
+          myMap
+            .panTo(goToArr, {
+              checkZoomRange: true,
+              flying: true,
+            })
+            .then(() => myMap.setZoom(14, { duration: 1000 }))
+
+          myMap.options.set('maxAnimationZoomDifference', 4)
         })
       })
     }
