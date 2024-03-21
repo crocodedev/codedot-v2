@@ -153,6 +153,8 @@
     filter = e.target.value
     validateForm()
   }
+
+  console.log(data)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -188,9 +190,7 @@
               <p class="job-text__succes-text">Ваше резюме успешно отправлено</p>
             </div>
           {/if}
-          <span class="job-text__job-name"
-            >{document.querySelector('.job-hero__title').textContent}</span
-          >
+          <span class="job-text__job-name">Senior Node.js</span>
           <div class="job-text__inputs">
             <div class="job-text__input-wrapper">
               <label for="name" class="job-text__input-name">Имя</label>

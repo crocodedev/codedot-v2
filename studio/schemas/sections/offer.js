@@ -21,9 +21,16 @@ export default {
           fields: [
             {name: 'offerName', type: 'string', title: 'Offer Name'},
             {name: 'offerText', type: 'text', title: 'Offer Text'},
+            {name: 'offerPrice', type: 'string', title: 'Offer Price'},
           ],
         },
       ],
+    },
+    {
+      title: 'RichTextBlock',
+      name: 'richTextBlock',
+      type: 'array',
+      of: [{type: 'block'}],
     },
   ],
 }

@@ -26,6 +26,7 @@ import jobText from './sections/jobText'
 import jobs from './sections/jobs'
 import offer from './sections/offer'
 import ourMission from './sections/ourMission'
+import offerWorks from './sections/offerWorks'
 import ourServices from './sections/ourServices'
 import projectGallery from './sections/projectGallery'
 import projectHero from './sections/projectHero'
@@ -56,6 +57,7 @@ export const schemaTypes = [
   text,
   services,
   techologies,
+  offerWorks,
   review,
   contactText,
   footer,

@@ -13,6 +13,7 @@ export default {
     {type: 'ContactText'},
     {type: 'Services'},
     {type: 'Technologies'},
+    {type: 'OfferWorks'},
     {type: 'Review'},
     {type: 'Code'},
     {type: 'Footer'},
