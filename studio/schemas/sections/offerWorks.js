@@ -20,7 +20,8 @@ export default {
           title: 'Offer Item',
           fields: [
             {name: 'projectName', type: 'string', title: 'Project Name'},
-            {name: 'projectCategory', type: 'string', title: 'Project Text Category'},
+            {name: 'projectCategory', type: 'string', title: 'Project Category'},
+            {name: 'projectCategoryText', type: 'string', title: 'Project Text Category'},
             {name: 'projectDescription', type: 'text', title: 'Project Description'},
             {
               name: 'projectImage',
@@ -36,6 +37,18 @@ export default {
           ],
         },
       ],
+    },
+    {
+      name: 'offerWorksTextTitle',
+      type: 'string',
+      title: 'Offer Works Text Title',
+    },
+
+    {
+      title: 'offerWorksText',
+      name: 'richTextBlock',
+      type: 'array',
+      of: [{type: 'block'}],
     },
   ],
 }

@@ -153,8 +153,6 @@
     filter = e.target.value
     validateForm()
   }
-
-  console.log(data)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

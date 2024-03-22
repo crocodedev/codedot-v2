@@ -16,6 +16,12 @@ html {
   background: #fff;
 }
 
+b {
+  @include media-breakpoint-up(lg) {
+    font-size: 36px;
+  }
+}
+
 img {
   display: block;
   pointer-events: none;

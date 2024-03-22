@@ -1,23 +1,20 @@
 <script>
   export let data
   let listItems
-  console.log(data)
 
   const makeBoldBeforeColon = (text) => {
-    const regex = /(.*?):/g
-    return text.replace(regex, (match, p1) => `<b>${p1}</b>: `)
+    const regex = /(.*?): */g
+    return text.replace(regex, (match, p1) => `<b>${p1}:</b> `)
   }
 
   data.richTextBlock.forEach((text) => {
     listItems = data.richTextBlock
       .map((text) => {
         const boldedText = makeBoldBeforeColon(text.children[0].text)
-        return `${boldedText}</li>`
+        return `${boldedText}</br>`
       })
       .join('')
   })
-
-  console.log()
 </script>
 
 {#if data}
@@ -25,7 +22,6 @@
     <div class="container">
       <div class="offer__wrapper">
         <h2 class="offer__title">{data.offerTitle}</h2>
-
         <div class="offer__items">
           {#each data.offerItems as offerItem}
             <div class="offer__item">
@@ -39,12 +35,10 @@
         </div>
         <div class="offer__text-wrapper">
           <ul class="offer__text-list">
-            {#each listItems.split('</li>') as text, idx}
-              {#if idx < listItems.split('</li>').length - 1}
-                <li>
-                  {@html `
-                    ${text}
-                `}
+            {#each listItems.split('</br>') as text, idx}
+              {#if idx < listItems.split('</br>').length - 1}
+                <li class="offer__text-list-item">
+                  {@html `${text}`}
                 </li>
               {/if}
             {/each}
@@ -77,9 +71,25 @@
     &__text-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      list-style-type: decimal;
+      gap: 80px;
+      list-style-type: none;
+      padding-inline-start: 0;
     }
+
+    &__text-list-item {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      &:nth-of-type(even) {
+        align-self: flex-end;
+        text-align: end;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+      }
+    }
+
     &__title {
       font-weight: 600;
 
@@ -123,7 +133,7 @@
 
       @include media-breakpoint-up(xl) {
         gap: 40px;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
