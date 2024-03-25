@@ -69,13 +69,13 @@
 
   .expect {
     @include media-breakpoint-down(lg) {
-      padding-top: 87px;
+      padding-top: 30px;
       padding-bottom: 0px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 215px;
-      padding-bottom: 215px;
+      padding-top: 65px;
+      padding-bottom: 65px;
     }
     position: relative;
 

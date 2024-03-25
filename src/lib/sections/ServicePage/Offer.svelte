@@ -54,13 +54,13 @@
 
   .offer {
     @include media-breakpoint-down(xl) {
-      padding-top: 90px;
-      padding-bottom: 100px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     @include media-breakpoint-up(xl) {
-      padding-bottom: 216px;
-      padding-top: 216px;
+      padding-bottom: 65px;
+      padding-top: 65px;
     }
 
     &__text-wrapper {
@@ -74,6 +74,7 @@
       gap: 80px;
       list-style-type: none;
       padding-inline-start: 0;
+      padding-top: 65px;
     }
 
     &__text-list-item {
@@ -85,8 +86,13 @@
         text-align: end;
       }
 
+      @include media-breakpoint-down(lg) {
+        font-size: 16px;
+      }
+
       @include media-breakpoint-up(lg) {
         width: 50%;
+        font-size: 32px;
       }
     }
 

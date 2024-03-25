@@ -33,15 +33,15 @@
       justify-content: center;
 
       @include media-breakpoint-down(sm) {
-        padding: 100px 0;
+        padding: 30px 0;
       }
 
       @include media-breakpoint-between(sm, lg) {
-        padding: 152px 0;
+        padding: 30px 0;
       }
 
       @include media-breakpoint-up(lg) {
-        padding-bottom: 252px;
+        padding-bottom: 65px;
       }
     }
     &__text {

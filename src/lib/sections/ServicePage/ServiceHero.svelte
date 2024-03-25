@@ -1,6 +1,6 @@
 <script>
   import imageUrl from '../../js/imageUrlBuilder'
-  export let data
+  export let data, openModal
 </script>
 
 {#if data}
@@ -11,12 +11,12 @@
           <h1 class="service-hero__title">{data.serviceTitle}</h1>
           <div class="service-hero__subtext-wrapper">
             <p class="service-hero__subtext">{data.serviceHeroText}</p>
-            <a href="#" class="btn service-hero__btn">
+            <button class="btn service-hero__btn" on:click={openModal}>
               {data.serviceBtn}
               <span class="btn__icon">
                 <img src="../icons/arrow-btn.svg" alt="" />
               </span>
-            </a>
+            </button>
           </div>
         </div>
         <div class="service-hero__inner">

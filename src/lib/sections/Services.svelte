@@ -88,12 +88,12 @@
 
   .services {
     @include media-breakpoint-down(lg) {
-      padding-top: 190px;
-      padding-bottom: 97px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding: 250px 0;
+      padding: 65px 0;
     }
 
     position: relative;

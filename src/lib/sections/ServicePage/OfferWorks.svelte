@@ -71,8 +71,8 @@
     )
   }
   const makeBoldBeforeColon = (text) => {
-    const regex = /(.*?):/g
-    return text.replace(regex, (match, p1) => `<b>${p1}</b>: `)
+    const regex = /(.*?): */g
+    return text.replace(regex, (match, p1) => `<b>${p1}:</b> `)
   }
 
   data.richTextBlock.forEach((text) => {
@@ -165,7 +165,11 @@
             {#each listItems.split('</br>') as text}
               {#if text != '' && text !== '\n'}
                 {#if text.match('<b>')}
-                  <li class="offer-works__text-list">{@html `${text}`}</li>
+                  <li class="offer-works__text-list">
+                    <p>
+                      {@html `${text}`}
+                    </p>
+                  </li>
                 {:else}
                   <p class="offer-works__text">{@html `${text}`}</p>
                 {/if}
@@ -183,10 +187,10 @@
 
   .offer-works {
     @include media-breakpoint-down(xl) {
-      padding-top: 90px;
+      padding-top: 30px;
     }
     @include media-breakpoint-up(xl) {
-      padding-top: 216px;
+      padding-top: 65px;
     }
     &__item {
       display: grid;
@@ -227,12 +231,12 @@
 
     &__contains {
       @include media-breakpoint-down(xl) {
-        padding-bottom: 100px;
-        padding-top: 90px;
+        padding-bottom: 30px;
+        padding-top: 30px;
       }
       @include media-breakpoint-up(xl) {
-        padding-top: 216px;
-        padding-bottom: 216px;
+        padding-top: 65px;
+        padding-bottom: 65px;
       }
     }
 
@@ -256,19 +260,47 @@
       flex-direction: column;
       gap: 20px;
       padding-inline-start: 0px;
-      font-size: 24px;
+      list-style-type: none;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 16px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 32px;
+      }
+    }
+
+    &__text {
+      width: 100%;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 20px;
+      }
+      @include media-breakpoint-up(lg) {
+        text-align: center;
+        padding-bottom: 80px;
+      }
     }
 
     &__categories {
       display: flex;
       align-items: center;
       gap: 30px;
+      flex-wrap: wrap;
+      row-gap: 10px;
     }
 
     &__categories-wrapper {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
+      row-gap: 20px;
+
+      @include media-breakpoint-down(lg) {
+        padding: 20px 0 10px 0;
+        border-bottom: 1px solid gray;
+      }
 
       @include media-breakpoint-up(lg) {
         padding: 40px 0 20px 0;
@@ -278,22 +310,37 @@
 
     &__text-wrapper {
       @include media-breakpoint-down(xl) {
-        padding-bottom: 100px;
-        padding-top: 90px;
+        padding-bottom: 30px;
+        padding-top: 30px;
       }
       @include media-breakpoint-up(xl) {
-        padding-top: 216px;
-        padding-bottom: 216px;
+        padding-top: 65px;
+        padding-bottom: 65px;
       }
     }
 
     &__text-list {
-      @include media-breakpoint-down(md) {
-        margin-left: 20px;
+      display: flex;
+      justify-content: center;
+
+      @include media-breakpoint-up(lg) {
+        margin-left: 40px;
+        width: 70%;
+        text-align: center;
+        padding-bottom: 60px;
+
+        &:nth-of-type(even) {
+          align-self: flex-end;
+        }
       }
 
-      @include media-breakpoint-up(md) {
-        margin-left: 40px;
+      p {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(lg) {
+          width: 50%;
+        }
       }
     }
 
@@ -330,7 +377,6 @@
       }
 
       @include media-breakpoint-between(lg, xl) {
-        max-width: 320px;
         font-size: 60px;
       }
 

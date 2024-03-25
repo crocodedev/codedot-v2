@@ -391,7 +391,7 @@
 
       &:nth-of-type(1) {
         @include media-breakpoint-between(lg, xl) {
-          height: 550px;
+          height: 640px;
           transform: translate(-43px, 100px);
         }
 

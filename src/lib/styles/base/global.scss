@@ -17,6 +17,9 @@ html {
 }
 
 b {
+  @include media-breakpoint-down(lg) {
+    font-size: 18px;
+  }
   @include media-breakpoint-up(lg) {
     font-size: 36px;
   }

@@ -166,12 +166,12 @@
     }
 
     @include media-breakpoint-down(lg) {
-      margin-top: 75px;
-      margin-bottom: 165px;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
     @include media-breakpoint-up(lg) {
       margin-top: 80px;
-      margin-bottom: 385px;
+      margin-bottom: 65px;
     }
     position: relative;
 

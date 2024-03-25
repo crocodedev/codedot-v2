@@ -21,7 +21,7 @@
     @include media-breakpoint-up(lg) {
       padding-top: 23px;
       padding-bottom: 40px;
-      margin-top: 134px;
+      margin-top: 65px;
     }
 
     overflow: hidden;

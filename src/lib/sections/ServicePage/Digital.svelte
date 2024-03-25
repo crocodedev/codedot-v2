@@ -26,11 +26,11 @@
 
   .digital {
     @include media-breakpoint-down(xl) {
-      margin: 100px 0;
+      margin: 30px 0;
     }
 
     @include media-breakpoint-up(xl) {
-      margin: 250px 0;
+      margin: 65px 0;
     }
     position: relative;
 

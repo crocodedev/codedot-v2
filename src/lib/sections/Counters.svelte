@@ -26,8 +26,8 @@
     border-radius: 40px;
 
     @include media-breakpoint-up(lg) {
-      margin-top: 250px;
-      margin-bottom: 250px;
+      margin-top: 65px;
+      margin-bottom: 65px;
     }
 
     &__wrapper {

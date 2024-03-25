@@ -48,11 +48,11 @@
 
   .footer {
     @include media-breakpoint-down(lg) {
-      padding-top: 100px;
+      padding-top: 30px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 112px;
+      padding-top: 65px;
     }
 
     &__contacts-wrapper {
