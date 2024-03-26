@@ -43,7 +43,7 @@
 
 {#if data}
   <section class="text">
-    <svg
+    <!-- <svg
       width="100%"
       height="100%"
       viewBox="0 0 1920 1020"
@@ -57,7 +57,7 @@
         d="M-57.5 172.5C48.6667 90.1667 361.3 -66.2998 530.5 32.5002C742 156 736.5 255 898.5 172.5C1060.5 90 1096.5 -69.4996 1261 134C1425.5 337.5 1354 469 1565.5 299C1777 129 2420 109.693 1986 299C1508 507.5 1387 -85.4996 1675.5 219.5C1911.58 469.08 1593 441.5 1326.5 428C1060 414.5 892.5 788 415 604C45.0184 461.431 676 1029.5 596.5 793.5C422.881 278.104 244.911 571.682 124 738.5C30.5 867.5 115.543 1050.71 371 969C791.5 834.5 783 1062.5 1063 947C1343 831.5 1202.55 721.841 1480.5 947C1609.5 1051.5 1856.5 1051 1953 892"
         stroke="#212121"
       />
-    </svg>
+    </svg> -->
     <div class="text__wrapper">
       <div class="container container--text">
         <div class="text__inner">
@@ -102,7 +102,7 @@
     position: relative;
 
     &__wrapper {
-      position: absolute;
+      // position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
@@ -118,7 +118,6 @@
       }
 
       @include media-breakpoint-up(md) {
-        justify-content: space-evenly;
         padding-top: 65px;
         padding-bottom: 65px;
       }

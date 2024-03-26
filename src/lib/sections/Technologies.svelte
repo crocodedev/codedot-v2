@@ -37,18 +37,18 @@
 
     &__wrapper {
       @include media-breakpoint-down(md) {
-        padding-top: 90px;
-        padding-bottom: 100px;
+        padding-top: 30px;
+        padding-bottom: 60px;
       }
 
       @include media-breakpoint-between(md, xl) {
-        padding-top: 120px;
-        padding-bottom: 170px;
+        padding-top: 45px;
+        padding-bottom: 65px;
       }
 
       @include media-breakpoint-up(xl) {
-        padding-top: 219px;
-        padding-bottom: 267px;
+        padding-top: 65px;
+        padding-bottom: 85px;
       }
     }
 

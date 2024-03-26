@@ -179,7 +179,7 @@
       .cases__item:nth-of-type(1) {
         @include media-breakpoint-up(lg) {
           margin-bottom: 40px;
-          height: 800px;
+          height: 600px;
         }
 
         @include media-breakpoint-between(lg, xl) {
@@ -190,12 +190,12 @@
 
       .cases__item:nth-of-type(2) {
         @include media-breakpoint-up(lg) {
-          height: 930px;
+          height: 630px;
           margin-bottom: 40px;
         }
 
         @include media-breakpoint-between(lg, xl) {
-          height: 730px;
+          height: 630px;
           margin-bottom: 40px;
         }
       }
@@ -229,19 +229,19 @@
 
       .cases__item:nth-of-type(2) {
         @include media-breakpoint-up(lg) {
-          height: 1030px;
+          height: 630px;
           margin-bottom: 40px;
         }
 
         @include media-breakpoint-between(lg, xl) {
-          height: 830px;
+          height: 630px;
           margin-bottom: 40px;
         }
       }
 
       .cases__item:nth-of-type(3) {
         @include media-breakpoint-up(lg) {
-          height: 700px;
+          height: 600px;
         }
 
         @include media-breakpoint-between(lg, xl) {

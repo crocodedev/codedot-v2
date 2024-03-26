@@ -235,7 +235,11 @@
         padding: 20px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-between(xl, xxl) {
+        padding: 8px 40px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         padding: 6px 80px;
       }
     }
@@ -328,7 +332,7 @@
       cursor: pointer;
 
       @include media-breakpoint-up(xl) {
-        margin-right: 30px;
+        margin-right: 10px;
         padding: 20px;
       }
     }
@@ -347,7 +351,7 @@
     &__shopify-text {
       margin-left: 7px;
       color: #212121;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 150%;
     }
@@ -358,7 +362,7 @@
 
       .header__nav-item:not(:last-child) {
         @include media-breakpoint-up(xl) {
-          margin-right: 20px;
+          margin-right: 10px;
         }
       }
 
@@ -375,7 +379,7 @@
     &__nav-item {
       position: relative;
       color: #212121;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 150%;
       cursor: pointer;

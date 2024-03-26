@@ -34,12 +34,17 @@
     }
     position: relative;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       height: 254px;
     }
 
-    @include media-breakpoint-up(md) {
-      height: 540px;
+    @include media-breakpoint-between(lg, xl) {
+      width: 100%;
+      height: 320px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 460px;
     }
     &__img-wrapper {
       position: absolute;
@@ -47,15 +52,20 @@
       border-radius: 40px;
       overflow: hidden;
 
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         width: calc(100% - 40px);
         margin-left: 20px;
         height: 254px;
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-between(lg, xl) {
         width: 100%;
-        height: 540px;
+        height: 320px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        height: 460px;
       }
     }
 
@@ -110,11 +120,11 @@
       }
 
       @include media-breakpoint-between(xl, xxl) {
-        font-size: 75px;
+        font-size: 65px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 100px;
+        font-size: 80px;
       }
     }
 

@@ -32,13 +32,13 @@
 
     &__wrapper {
       @include media-breakpoint-down(lg) {
-        padding-top: 77px;
-        padding-bottom: 100px;
+        padding-top: 47px;
+        padding-bottom: 70px;
       }
 
       @include media-breakpoint-up(lg) {
-        padding-top: 80px;
-        padding-bottom: 104px;
+        padding-top: 40px;
+        padding-bottom: 84px;
       }
     }
 

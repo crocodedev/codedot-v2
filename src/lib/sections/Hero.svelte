@@ -155,7 +155,17 @@
         border-radius: 40px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-between(xl, xxl) {
+        padding-top: 40px;
+        padding-bottom: 23px;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 40px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         padding-top: 80px;
         padding-bottom: 63px;
         padding-left: 80px;
@@ -236,7 +246,11 @@
         margin-right: 13px;
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-between(md, xxl) {
+        margin-right: 10px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         margin-right: 20px;
       }
     }
@@ -254,7 +268,11 @@
         line-height: 20px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-between(lg, xxl) {
+        font-size: 14px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         font-size: 16px;
         line-height: 24px;
       }
@@ -295,7 +313,8 @@
       }
 
       @include media-breakpoint-between(xl, xxl) {
-        max-width: 600px;
+        max-width: 500px;
+        height: 290px;
       }
 
       @include media-breakpoint-up(xxl) {
@@ -315,7 +334,12 @@
         line-height: 24px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-between(lg, xxl) {
+        font-size: 16px;
+        width: 400px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         font-size: 18px;
         line-height: 27px;
         width: 400px;
@@ -337,7 +361,7 @@
         margin-top: 25px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xxl) {
         margin-top: 55px;
       }
     }
@@ -366,7 +390,11 @@
         line-height: 80px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-between(xl, xxl) {
+        font-size: 50px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         font-size: 85px;
         line-height: 110px;
       }
@@ -413,12 +441,12 @@
         height: 75px;
       }
 
-      @include media-breakpoint-between(lg, xl) {
-        width: 200px;
-        height: 101px;
+      @include media-breakpoint-between(lg, xxl) {
+        width: 181px;
+        height: 51px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(xxl) {
         width: 257px;
         height: 132px;
       }

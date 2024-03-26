@@ -232,10 +232,8 @@
     &__contains {
       @include media-breakpoint-down(xl) {
         padding-bottom: 30px;
-        padding-top: 30px;
       }
       @include media-breakpoint-up(xl) {
-        padding-top: 65px;
         padding-bottom: 65px;
       }
     }

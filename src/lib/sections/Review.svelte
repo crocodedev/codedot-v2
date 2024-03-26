@@ -84,13 +84,8 @@
   @import '../styles/base/mixins.scss';
 
   .reviews {
-    @include media-breakpoint-down(lg) {
-      padding-bottom: 85px;
-    }
-
     @include media-breakpoint-up(lg) {
       padding-top: 65px;
-      padding-bottom: 65px;
     }
     &__title {
       font-weight: 600;
@@ -162,7 +157,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        padding: 88px 142px;
+        padding: 48px 142px;
       }
     }
 
@@ -237,8 +232,7 @@
       }
 
       @include media-breakpoint-up(lg) {
-        font-size: 48px;
-        line-height: 70px;
+        font-size: 32px;
         text-indent: 100px;
       }
     }

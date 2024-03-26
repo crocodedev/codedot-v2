@@ -129,12 +129,11 @@
       }
 
       @include media-breakpoint-up(lg) {
-        width: 380px;
+        width: 40%;
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 32px;
       }
     }
 
