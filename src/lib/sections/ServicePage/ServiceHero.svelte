@@ -25,7 +25,7 @@
           </div>
           <div class="service-hero__text-wrapper">
             <p class="service-hero__text">
-              {data.serviceText}
+              {@html `${data.serviceText}`}
             </p>
           </div>
         </div>
@@ -71,11 +71,11 @@
       }
 
       @include media-breakpoint-between(xl, xxl) {
-        font-size: 105px;
+        font-size: 85px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 210px;
+        font-size: 170px;
         line-height: 230px;
       }
 
@@ -119,11 +119,11 @@
       }
 
       @include media-breakpoint-between(sm, lg) {
-        height: 722px;
+        height: 360px;
       }
 
       @include media-breakpoint-up(lg) {
-        height: 944px;
+        height: 463px;
       }
     }
 
@@ -179,7 +179,10 @@
     }
 
     &__text {
-      font-size: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 32px;
       font-weight: 400;
 
       @include media-breakpoint-down(lg) {

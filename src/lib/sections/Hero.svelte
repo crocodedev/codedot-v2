@@ -367,7 +367,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 105px;
+        font-size: 85px;
         line-height: 110px;
       }
     }
