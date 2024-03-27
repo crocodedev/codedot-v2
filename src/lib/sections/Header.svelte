@@ -189,7 +189,7 @@
       margin-right: 20px;
     }
 
-    @include media-breakpoint-between(lg, xl) {
+    @include media-breakpoint-between(lg, xxl) {
       margin-left: 40px;
       margin-right: 40px;
     }
@@ -198,7 +198,7 @@
       overflow: hidden;
     }
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxl) {
       margin-left: 60px;
       margin-right: 60px;
     }
@@ -332,7 +332,7 @@
       cursor: pointer;
 
       @include media-breakpoint-up(xl) {
-        margin-right: 10px;
+        margin-right: 30px;
         padding: 20px;
       }
     }
@@ -362,7 +362,7 @@
 
       .header__nav-item:not(:last-child) {
         @include media-breakpoint-up(xl) {
-          margin-right: 10px;
+          margin-right: 30px;
         }
       }
 

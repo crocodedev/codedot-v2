@@ -113,17 +113,23 @@
                 </span>
               {/each}
             </div>
-            <a href="/cases" class="offer-works__btn-link">Все работы</a>
+            <div class="offer-works__categories-inner">
+              <div
+                class={sortedArray.length > 1
+                  ? 'offer-works__controls'
+                  : 'offer-works__controls offer-works__controls--disabled'}
+              >
+                <button class="offer-works__btn offer-works__btn--prev">
+                  <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
+                </button>
+                <button class="offer-works__btn offer-works__btn--next">
+                  <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
+                </button>
+              </div>
+              <a href="/cases" class="offer-works__btn-link">Все работы</a>
+            </div>
           </div>
           <div class="offer-works__items">
-            <div class="offer-works__controls">
-              <button class="offer-works__btn offer-works__btn--prev">
-                <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
-              </button>
-              <button class="offer-works__btn offer-works__btn--next">
-                <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
-              </button>
-            </div>
             <swiper-container
               slides-per-view="1"
               class="reviews__swiper-wrapper"
@@ -201,10 +207,17 @@
       }
     }
 
+    &__categories-inner {
+      align-items: center;
+      display: flex;
+      gap: 30px;
+    }
+
     &__btn-link {
       display: flex;
       align-items: center;
       justify-content: center;
+      height: fit-content;
       background-color: #006185;
       width: max-content;
       padding: 8px 30px;
@@ -221,12 +234,15 @@
 
     &__controls {
       z-index: 2;
-      width: 100%;
-      height: 100%;
+      height: 50px;
       align-items: center;
-      position: absolute;
       display: flex;
       justify-content: space-between;
+
+      &--disabled {
+        position: absolute;
+        opacity: 0;
+      }
     }
 
     &__contains {
@@ -303,6 +319,7 @@
       @include media-breakpoint-up(lg) {
         padding: 40px 0 20px 0;
         border-bottom: 1px solid gray;
+        height: 110px;
       }
     }
 
@@ -359,9 +376,6 @@
       width: 50px;
       height: 50px;
 
-      border-radius: 100%;
-      border: 1px solid #006185;
-
       img {
         width: 100%;
         filter: invert(1);
@@ -369,11 +383,6 @@
 
       &--prev {
         transform: rotate(180deg);
-      }
-
-      &:disabled {
-        opacity: 0;
-        background-color: red !important;
       }
     }
 
@@ -466,9 +475,10 @@
     }
 
     &__tag {
-      padding: 5px;
-      border: 2px solid #006185;
-      border-radius: 5px;
+      padding: 5px 10px;
+      background-color: #00628585;
+      color: black;
+      border-radius: 25px;
     }
   }
 </style>
