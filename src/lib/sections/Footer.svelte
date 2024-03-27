@@ -133,11 +133,11 @@
       align-items: center;
 
       @include media-breakpoint-down(lg) {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
       }
 
       @include media-breakpoint-up(lg) {
-        margin-bottom: 100px;
+        margin-bottom: 40px;
       }
     }
 
@@ -216,7 +216,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        margin-top: 100px;
+        margin-top: 60px;
       }
 
       .link {

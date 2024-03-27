@@ -20,8 +20,12 @@ b {
   @include media-breakpoint-down(lg) {
     font-size: 18px;
   }
-  @include media-breakpoint-up(lg) {
-    font-size: 36px;
+
+  @include media-breakpoint-between(lg, xxl) {
+    font-size: 26px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 32px;
   }
 }
 

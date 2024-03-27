@@ -74,13 +74,13 @@
 
   .benefits {
     @include media-breakpoint-down(lg) {
-      padding-top: 90px;
-      padding-bottom: 68px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 220px;
-      padding-bottom: 106px;
+      padding-top: 65px;
+      padding-bottom: 65px;
     }
     &__title {
       font-weight: 600;

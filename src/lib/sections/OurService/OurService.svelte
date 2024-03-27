@@ -156,10 +156,21 @@
 
       @include media-breakpoint-down(lg) {
         margin-top: 20px;
+        margin-top: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
 
       @include media-breakpoint-up(lg) {
         margin-top: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        line-clamp: 7;
+        -webkit-box-orient: vertical;
       }
     }
 

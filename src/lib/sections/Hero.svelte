@@ -335,12 +335,12 @@
       }
 
       @include media-breakpoint-between(lg, xxl) {
-        font-size: 16px;
+        font-size: 20px;
         width: 400px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 27px;
         width: 400px;
       }
@@ -386,8 +386,8 @@
       }
 
       @include media-breakpoint-between(lg, xl) {
-        font-size: 80px;
-        line-height: 80px;
+        font-size: 50px;
+        // line-height: 80px;
       }
 
       @include media-breakpoint-between(xl, xxl) {

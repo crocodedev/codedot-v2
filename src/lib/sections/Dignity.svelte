@@ -23,7 +23,7 @@
       }
 
       window.addEventListener('scroll', () => {
-        scrollPositionDignity = window.scrollY - 1093
+        scrollPositionDignity = window.scrollY - 893
         if (section.getBoundingClientRect().top <= window.scrollY && window.scrollY <= 2600) {
           if (!svgPath) {
             svgPath = document.getElementById(svgPathId)

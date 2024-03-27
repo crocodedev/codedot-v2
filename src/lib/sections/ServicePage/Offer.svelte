@@ -90,7 +90,12 @@
         font-size: 16px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-between(lg, xxl) {
+        width: 50%;
+        font-size: 24px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         width: 50%;
         font-size: 32px;
       }

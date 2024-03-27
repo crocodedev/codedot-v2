@@ -43,13 +43,13 @@
 
   .jobs {
     @include media-breakpoint-down(xl) {
-      padding-top: 128px;
-      padding-bottom: 133px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     @include media-breakpoint-up(xl) {
-      padding-top: 266px;
-      padding-bottom: 253px;
+      padding-top: 65px;
+      padding-bottom: 65px;
     }
     &__title {
       font-weight: 600;

@@ -44,7 +44,7 @@
         <div class="expect__title-wrapper">
           <h2 class="expect__title">{data.expectTitle}</h2>
           <p class="expect__subtitle">
-            {data.expectSubText}
+            {@html `${data.expectSubText}`}
           </p>
         </div>
         <div class="expect__items">
@@ -132,7 +132,11 @@
         width: 40%;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-between(lg, xxl) {
+        font-size: 22px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         font-size: 32px;
       }
     }
