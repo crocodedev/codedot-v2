@@ -83,7 +83,7 @@
       }
 
       @include media-breakpoint-up(md) {
-        padding-top: 80px;
+        padding-top: 20px;
       }
     }
     &__img {
@@ -138,7 +138,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        padding-bottom: 45px;
+        padding-bottom: 145px;
       }
     }
   }

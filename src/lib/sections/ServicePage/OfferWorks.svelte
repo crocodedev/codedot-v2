@@ -289,10 +289,18 @@
       width: 100%;
       @include media-breakpoint-down(lg) {
         padding-bottom: 20px;
+        font-size: 16px;
       }
       @include media-breakpoint-up(lg) {
         text-align: center;
         padding-bottom: 80px;
+      }
+      @include media-breakpoint-between(lg, xxl) {
+        font-size: 24px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        font-size: 32px;
       }
     }
 
@@ -476,7 +484,7 @@
 
     &__tag {
       padding: 5px 10px;
-      background-color: #00628585;
+      background-color: rgb(232 245 250);
       color: black;
       border-radius: 25px;
     }

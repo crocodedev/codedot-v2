@@ -8,25 +8,12 @@
   }
 
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  // scrollbar-width: none;
 }
 
 html {
   height: 100%;
   background: #fff;
-}
-
-b {
-  @include media-breakpoint-down(lg) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-between(lg, xxl) {
-    font-size: 26px;
-  }
-  @include media-breakpoint-up(xxl) {
-    font-size: 32px;
-  }
 }
 
 img {
@@ -40,9 +27,6 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 a {

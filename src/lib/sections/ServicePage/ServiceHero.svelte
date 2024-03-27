@@ -24,9 +24,7 @@
             <img src={imageUrl(data.serviceImage)} alt="" class="service-hero__img" />
           </div>
           <div class="service-hero__text-wrapper">
-            <p class="service-hero__text">
-              {@html `${data.serviceText}`}
-            </p>
+            {@html `${data.serviceText}`}
           </div>
         </div>
       </div>
@@ -167,31 +165,66 @@
     &__text-wrapper {
       display: flex;
       align-self: flex-end;
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 32px;
+      gap: 10px;
 
       @include media-breakpoint-down(md) {
         padding-top: 36px;
-      }
-
-      @include media-breakpoint-up(md) {
-        width: 50%;
-        padding-top: 100px;
-      }
-    }
-
-    &__text {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 32px;
-      font-weight: 400;
-
-      @include media-breakpoint-down(lg) {
         font-family: Wix Madefor Display;
         font-size: 24px;
         font-weight: 400;
         line-height: 36px;
         letter-spacing: 0em;
         text-align: left;
+
+        & :global(h2) {
+          font-size: 24px;
+        }
+
+        & :global(br) {
+          display: none;
+        }
+
+        & :global(p) {
+          font-size: 18px;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+        padding-top: 100px;
+      }
+
+      @include media-breakpoint-between(md, xl) {
+        & :global(h2) {
+          font-size: 28px;
+        }
+
+        & :global(p) {
+          font-size: 22px;
+        }
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        & :global(h2) {
+          font-size: 32px;
+        }
+
+        & :global(p) {
+          font-size: 24px;
+        }
+      }
+
+      @include media-breakpoint-up(xxl) {
+        & :global(h2) {
+          font-size: 42px;
+        }
+
+        & :global(p) {
+          font-size: 32px;
+        }
       }
     }
   }

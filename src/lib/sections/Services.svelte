@@ -87,6 +87,7 @@
   @import '../styles/base/mixins.scss';
 
   .services {
+    overflow-x: hidden;
     @include media-breakpoint-down(lg) {
       padding-top: 30px;
       padding-bottom: 30px;

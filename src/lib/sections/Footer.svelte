@@ -9,13 +9,13 @@
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__content">
-          <div class="footer__socials-nav">
+          <!-- <div class="footer__socials-nav">
             {#each data.socailItems as socialItem}
               <a href={socialItem.link} class="footer__socials-nav-item">
                 <img src={imageUrl(socialItem.socialIcon)} alt="social image" />
               </a>
             {/each}
-          </div>
+          </div> -->
           <div class="footer__text">{data.textFooter}</div>
           <button class="footer__btn" on:click={openModal}>Связаться с нами</button>
 
@@ -105,6 +105,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
     &__btn {
@@ -173,17 +174,18 @@
         max-width: 330px;
       }
 
-      @include media-breakpoint-between(lg, xl) {
+      @include media-breakpoint-between(lg, xxl) {
         font-size: 65px;
         line-height: 78px;
         max-width: 430px;
+        margin-bottom: 40px;
       }
 
       @include media-breakpoint-down(xl) {
         margin-bottom: 20px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(xxl) {
         font-size: 90px;
         line-height: 108px;
         margin-bottom: 40px;
@@ -194,7 +196,6 @@
     &__copyright {
       color: #838383;
       text-align: center;
-
       font-style: normal;
       font-weight: 400;
 
@@ -237,7 +238,11 @@
         min-height: 300px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-between(xl, xxl) {
+        min-height: 450px;
+      }
+
+      @include media-breakpoint-up(xxl) {
         min-height: 600px;
         transform: translateY(-12px);
       }
