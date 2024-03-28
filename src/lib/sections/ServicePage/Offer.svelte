@@ -3,8 +3,8 @@
   let listItems
 
   const makeBoldBeforeColon = (text) => {
-    const regex = /(.*?): */g
-    return text.replace(regex, (match, p1) => `<b>${p1}:</b> `)
+    const regex = /(.*?)\? */g
+    return text.replace(regex, (match, p1) => `<b>${p1}?</b> `)
   }
 
   data.richTextBlock.forEach((text) => {
@@ -91,12 +91,12 @@
       }
 
       @include media-breakpoint-between(lg, xxl) {
-        width: 50%;
+        width: 52%;
         font-size: 24px;
       }
 
       @include media-breakpoint-up(xxl) {
-        width: 50%;
+        width: 52%;
         font-size: 32px;
       }
     }

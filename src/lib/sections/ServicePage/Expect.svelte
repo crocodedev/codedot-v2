@@ -49,12 +49,14 @@
         </div>
         <div class="expect__items">
           {#each data.expectItems as expectItem, index}
-            <div class="expect__item-img-wrapper">
-              <img src="../images/expect-{index + 1}.svg" alt="" class="expect__item-img" />
-            </div>
+            {#if index != data.expectItems.length - 1}
+              <div class="expect__item-img-wrapper">
+                <img src="../images/expect-{index + 1}.svg" alt="" class="expect__item-img" />
+              </div>
+            {/if}
             <div class="expect__item">
               <p class="expect__text">
-                {expectItem.expectText}
+                {@html `${expectItem.expectText}`}
               </p>
             </div>
           {/each}
@@ -81,7 +83,7 @@
 
     &__img-wrapper {
       position: absolute;
-      transform: translateY(299px);
+      transform: translateY(410px);
       width: 98%;
 
       @include media-breakpoint-down(lg) {
@@ -168,6 +170,10 @@
       }
 
       &:nth-child(4) {
+        align-self: flex-end;
+      }
+
+      &:last-of-type {
         align-self: flex-end;
       }
 
