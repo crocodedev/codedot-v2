@@ -30,6 +30,7 @@ export default {
     {type: 'Expect'},
     {type: 'JobHero'},
     {type: 'JobText'},
+    {type: 'SectionText'},
     {type: 'OurServices'},
     {type: 'ProjectHero'},
     {type: 'ProjectTextImage'},

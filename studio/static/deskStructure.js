@@ -29,6 +29,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   'textThree',
   'contactText',
   'offerWorks',
+  'sectionText',
   'ourClients',
   'breadcrumps',
   'reviews',

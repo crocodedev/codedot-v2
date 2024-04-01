@@ -32,6 +32,7 @@ import ProjectText from '$lib/sections/ProjectPage/ProjectText.svelte'
 import ProjectGallery from '$lib/sections/ProjectPage/ProjectGallery.svelte'
 import Modal from '$lib/sections/Modal.svelte'
 import ContactText from '$lib/sections/ContactsPage/ContactText.svelte'
+import SectionText from '$lib/sections/SectionText.svelte'
 
 export {
   Header,
@@ -52,6 +53,7 @@ export {
   Roadmap,
   OurMission,
   CasesPage,
+  SectionText,
   Careers,
   Jobs,
   Benefits,

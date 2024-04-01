@@ -35,6 +35,8 @@ import projectText from './sections/projectText'
 import projectTextImage from './sections/projectTextImage'
 import review from './sections/review'
 import roadmap from './sections/roadmap'
+import sectionText from './sections/sectionText'
+
 import serviceHero from './sections/serviceHero'
 import services from './sections/services'
 import techologies from './sections/techologies'
@@ -76,6 +78,7 @@ export const schemaTypes = [
   expect,
   jobHero,
   jobText,
+  sectionText,
   ourServices,
   projectHero,
   projectTextImage,
