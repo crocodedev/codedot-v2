@@ -75,7 +75,7 @@
     return text.replace(regex, (match, p1) => `<b>${p1}:</b> `)
   }
 
-  data.richTextBlock.forEach((text) => {
+  data?.richTextBlock?.forEach((text) => {
     listItems = data.richTextBlock
       .map((text) => {
         const boldedText = makeBoldBeforeColon(text.children[0].text)
@@ -165,24 +165,26 @@
           </div>
         </div>
 
-        <div class="offer-works__text-wrapper">
-          <h2 class="offer-works__text-title">{data.offerWorksTextTitle}</h2>
-          <ul class="offer-works__text-rich">
-            {#each listItems.split('</br>') as text}
-              {#if text != '' && text !== '\n'}
-                {#if text.match('<b>')}
-                  <li class="offer-works__text-list">
-                    <p>
-                      {@html `${text}`}
-                    </p>
-                  </li>
-                {:else}
-                  <p class="offer-works__text">{@html `${text}`}</p>
+        {#if data.offerWorksTextTitle}
+          <div class="offer-works__text-wrapper">
+            <h2 class="offer-works__text-title">{data.offerWorksTextTitle}</h2>
+            <ul class="offer-works__text-rich">
+              {#each listItems?.split('</br>') as text}
+                {#if text != '' && text !== '\n'}
+                  {#if text.match('<b>')}
+                    <li class="offer-works__text-list">
+                      <p>
+                        {@html `${text}`}
+                      </p>
+                    </li>
+                  {:else}
+                    <p class="offer-works__text">{@html `${text}`}</p>
+                  {/if}
                 {/if}
-              {/if}
-            {/each}
-          </ul>
-        </div>
+              {/each}
+            </ul>
+          </div>
+        {/if}
       </div>
     </div>
   </section>
