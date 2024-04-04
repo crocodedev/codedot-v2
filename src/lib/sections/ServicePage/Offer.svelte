@@ -29,7 +29,9 @@
               <p class="offer__text">
                 {offerItem.offerText}
               </p>
-              <span class="offer__price">{offerItem.offerPrice}</span>
+              {#if offerItem.offerPrice}
+                <span class="offer__price">{offerItem.offerPrice}</span>
+              {/if}
             </div>
           {/each}
         </div>
