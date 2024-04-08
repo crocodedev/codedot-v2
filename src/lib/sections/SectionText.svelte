@@ -9,7 +9,7 @@
     <div class="container">
       <div class="section-text__wrapper">
         <h2 class="section-text__title">{data.Title}</h2>
-        <p class="section-text__text">{data.Text}</p>
+        <p class="section-text__text">{@html `${data.Text}`}</p>
       </div>
     </div>
   </section>
