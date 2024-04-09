@@ -22,6 +22,8 @@
       padding-top: 23px;
       padding-bottom: 40px;
       margin-top: 65px;
+      display: flex;
+      justify-content: center;
     }
 
     overflow: hidden;
@@ -39,14 +41,12 @@
       }
 
       @include media-breakpoint-between(sm, md) {
-        transform: translateX(-20px);
-        font-size: 12vw;
+        font-size: 11vw;
         white-space: nowrap;
       }
 
       @include media-breakpoint-up(md) {
-        transform: translateX(-26px);
-        font-size: 12vw;
+        font-size: 11vw;
         white-space: nowrap;
       }
     }
