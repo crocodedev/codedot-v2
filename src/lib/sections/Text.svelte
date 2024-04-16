@@ -134,7 +134,7 @@
     }
 
     &__item {
-      &:not(&:last-of-type) {
+      &:not(&:nth-child(even)) {
         @include media-breakpoint-up(md) {
           text-align: start;
           align-self: flex-start;
