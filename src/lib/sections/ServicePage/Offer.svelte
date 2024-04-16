@@ -2,6 +2,8 @@
   export let data
   let listItems
 
+  console.log(data)
+
   const makeBoldBeforeColon = (text) => {
     const regex = /(.*?)\? */g
     return text.replace(regex, (match, p1) => `<b>${p1}?</b> `)
@@ -22,19 +24,27 @@
     <div class="container">
       <div class="offer__wrapper">
         <h2 class="offer__title">{data.offerTitle}</h2>
-        <div class="offer__items">
-          {#each data.offerItems as offerItem}
-            <div class="offer__item">
-              <p class="offer__name">{offerItem.offerName}</p>
-              <p class="offer__text">
-                {offerItem.offerText}
-              </p>
-              {#if offerItem.offerPrice}
-                <span class="offer__price">{offerItem.offerPrice}</span>
-              {/if}
-            </div>
-          {/each}
-        </div>
+        {#if data.offerItems?.length > 0}
+          <div class="offer__items">
+            {#each data.offerItems as offerItem}
+              <div class="offer__item">
+                <p class="offer__name">{offerItem.offerName}</p>
+                <p class="offer__text">
+                  {offerItem.offerText}
+                </p>
+                {#if offerItem.offerPrice}
+                  <span class="offer__price">{offerItem.offerPrice}</span>
+                {/if}
+                {#if offerItem.offerLink}
+                  <a href={`${offerItem.offerLink}`} class="offer__btn">
+                    Подробнее
+                    <img src="../icons/arrow-btn.svg" alt="" class="offer__icon" />
+                  </a>
+                {/if}
+              </div>
+            {/each}
+          </div>
+        {/if}
         <div class="offer__text-wrapper">
           <ul class="offer__text-list">
             {#each listItems.split('</br>') as text, idx}
@@ -68,6 +78,22 @@
     &__text-wrapper {
       padding: 60px 0 0 0;
       font-size: 24px;
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      padding: 8px 30px;
+      align-items: center;
+      border: 1px solid black;
+      width: max-content;
+      border-radius: 40px;
+    }
+
+    &__icon {
+      filter: brightness(0);
+      padding-left: 8px;
     }
 
     &__text-list {
@@ -158,7 +184,7 @@
       @include media-breakpoint-down(md) {
         padding-bottom: 40px;
         padding: 20px;
-        height: 300px;
+        padding-bottom: 60px;
       }
 
       @include media-breakpoint-up(md) {
@@ -212,6 +238,8 @@
         font-size: 18px;
         line-height: 27px;
       }
+
+      padding-bottom: 20px;
     }
   }
 </style>

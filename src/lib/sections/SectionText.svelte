@@ -8,7 +8,9 @@
   <section class="section-text">
     <div class="container">
       <div class="section-text__wrapper">
-        <h2 class="section-text__title">{data.Title}</h2>
+        {#if data.Title}
+          <h2 class="section-text__title">{data.Title}</h2>
+        {/if}
         <p class="section-text__text">{@html `${data.Text}`}</p>
       </div>
     </div>

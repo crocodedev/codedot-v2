@@ -89,47 +89,36 @@
       }
 
       @include media-breakpoint-between(xl, xxl) {
-        grid-template-columns: repeat(4, 275px);
+        grid-template-columns: repeat(3, 1fr);
         justify-content: space-between;
       }
 
       @include media-breakpoint-up(xxl) {
-        grid-template-columns: repeat(4, 380px);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     &__item {
       display: flex;
-
+      position: relative;
       flex-direction: column;
       justify-content: space-between;
       background-color: #fafafa;
       border-radius: 40px;
 
-      @include media-breakpoint-down(md) {
-        height: 300px;
-      }
-
-      @include media-breakpoint-between(md, lg) {
-        height: 320px;
-      }
-
-      @include media-breakpoint-between(lg, xl) {
-        height: 360px;
-      }
-
       @include media-breakpoint-down(xl) {
         padding: 20px;
+        padding-bottom: 80px;
       }
 
       @include media-breakpoint-between(xl, xxl) {
         padding: 30px;
-        height: 400px;
+        padding-bottom: 80px;
       }
 
       @include media-breakpoint-up(xxl) {
         padding: 40px;
-        height: 440px;
+        padding-bottom: 80px;
       }
     }
 
@@ -158,23 +147,16 @@
         margin-top: 20px;
         margin-top: 40px;
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        line-clamp: 5;
-        -webkit-box-orient: vertical;
       }
 
       @include media-breakpoint-up(lg) {
         margin-top: 40px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        line-clamp: 7;
-        -webkit-box-orient: vertical;
       }
     }
 
     &__btn {
+      position: absolute;
+      bottom: 20px;
       display: flex;
       padding: 8px 30px;
       align-items: center;

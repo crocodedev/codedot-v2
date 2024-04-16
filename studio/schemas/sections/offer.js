@@ -22,6 +22,7 @@ export default {
             {name: 'offerName', type: 'string', title: 'Offer Name'},
             {name: 'offerText', type: 'text', title: 'Offer Text'},
             {name: 'offerPrice', type: 'string', title: 'Offer Price'},
+            {name: 'offerLink', type: 'string', title: 'Offer Link'},
           ],
         },
       ],

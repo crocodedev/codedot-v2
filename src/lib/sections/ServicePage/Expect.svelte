@@ -43,9 +43,11 @@
       <div class="expect__wrapper">
         <div class="expect__title-wrapper">
           <h2 class="expect__title">{data.expectTitle}</h2>
-          <p class="expect__subtitle">
-            {@html `${data.expectSubText}`}
-          </p>
+          {#if data.expectSubText}
+            <p class="expect__subtitle">
+              {@html `${data.expectSubText}`}
+            </p>
+          {/if}
         </div>
         <div class="expect__items">
           {#each data.expectItems as expectItem, index}
@@ -232,6 +234,8 @@
         font-size: 40px;
         line-height: 60px;
       }
+      display: flex;
+      flex-direction: column;
     }
   }
 
