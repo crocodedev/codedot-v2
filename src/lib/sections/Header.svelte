@@ -85,12 +85,12 @@
       </a>
       {#if curWidth >= 1280}
         <div class="header__content">
-          <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
+          <!-- <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
             <div class="header__shopify-logo">
               <img src={imageUrl(data.shopifyItem.shopifyIcon)} alt="shopify img" />
             </div>
             <div class="header__shopify-text">{data.shopifyItem.shopifyText}</div>
-          </a>
+          </a> -->
           <div class="header__nav">
             {#each data.navItems as navItem}
               {#if !navItem.navSubItems}
@@ -123,12 +123,12 @@
         <span class="header__cross" on:click={openMenu}>
           <span class="header__cross-btn" />
         </span>
-        <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
+        <!-- <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
           <div class="header__shopify-logo">
             <img src={imageUrl(data.shopifyItem.shopifyIcon)} alt="shopify img" />
           </div>
           <div class="header__shopify-text">{data.shopifyItem.shopifyText}</div>
-        </a>
+        </a> -->
         <div class="header__nav">
           {#each data.navItems as navItem}
             {#if !navItem.navSubItems}
