@@ -33,6 +33,11 @@ export default {
               type: 'string',
               title: 'Service text',
             },
+            {
+              name: 'link',
+              type: 'string',
+              title: 'Service Link',
+            },
           ],
         },
       ],

@@ -72,6 +72,7 @@
           >
             {#each data.services as service}
               <swiper-slide class="services__item">
+                <a href={service.link} class="services__item-link"></a>
                 <p class="services__name">{service.name}</p>
                 <p class="services__text">{service.text}</p>
               </swiper-slide>
@@ -171,6 +172,7 @@
       justify-content: space-between;
       background-color: #fafafa;
       border-radius: 40px;
+      position: relative;
 
       @include media-breakpoint-down(md) {
         height: 320px;
@@ -186,6 +188,13 @@
         height: 440px;
         padding: 40px;
       }
+    }
+    * &__item-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
     }
 
     &__name {
