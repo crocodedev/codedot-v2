@@ -41,8 +41,9 @@
     curWidth = window.innerWidth
 
     if (
-      curWidth !== '/services' &&
+      curPage !== '/services' &&
       curPage !== '/about-us' &&
+      curPage !== '/' &&
       curPage !== '/contact-us' &&
       curPage !== '/careers' &&
       curPage !== '/cases'

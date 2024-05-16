@@ -155,6 +155,7 @@
     }
 
     &__btn {
+      color: black;
       position: absolute;
       bottom: 20px;
       display: flex;
