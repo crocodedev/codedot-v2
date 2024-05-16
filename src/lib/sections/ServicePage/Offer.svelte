@@ -2,8 +2,6 @@
   export let data
   let listItems
 
-  console.log(data)
-
   const makeBoldBeforeColon = (text) => {
     const regex = /(.*?)\? */g
     return text.replace(regex, (match, p1) => `<b>${p1}?</b> `)
