@@ -152,7 +152,9 @@
     }
 
     &__items {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
       justify-content: space-between;
 
       @include media-breakpoint-down(lg) {
@@ -166,10 +168,6 @@
 
       @include media-breakpoint-down(lg) {
         margin-bottom: 30px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: 380px;
       }
 
       &:nth-child(even) {

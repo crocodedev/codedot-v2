@@ -188,7 +188,7 @@
               <p class="job-text__succes-text">Ваше резюме успешно отправлено</p>
             </div>
           {/if}
-          <span class="job-text__job-name">Senior Node.js</span>
+          <span class="job-text__job-name">Оставьте вашу заявку</span>
           <div class="job-text__inputs">
             <div class="job-text__input-wrapper">
               <label for="name" class="job-text__input-name">Имя</label>

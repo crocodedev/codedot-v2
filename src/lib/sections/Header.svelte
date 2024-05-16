@@ -4,7 +4,7 @@
 <script>
   import imageUrl from '../js/imageUrlBuilder'
   import { onMount, afterUpdate } from 'svelte'
-  let active, curWidth, body, dropdown
+  let active, curWidth, body, dropdown, curPage
 
   const openMenu = () => {
     active = !active
@@ -36,7 +36,19 @@
   })
 
   onMount(() => {
+    curPage = window.location.pathname
+
     curWidth = window.innerWidth
+
+    if (
+      curWidth !== '/services' &&
+      curPage !== '/about-us' &&
+      curPage !== '/contact-us' &&
+      curPage !== '/careers' &&
+      curPage !== '/cases'
+    ) {
+      curPage = '/services'
+    }
 
     if (curWidth >= 1280 && active) {
       active = !active
@@ -53,7 +65,7 @@
   export let data, openModal, activeModal
 </script>
 
-{#if data}
+{#if data && curPage}
   <header class="header">
     {#each data.navItems as navItem}
       {#if navItem.navSubItems}
@@ -85,22 +97,22 @@
       </a>
       {#if curWidth >= 1280}
         <div class="header__content">
-          <!-- <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
-            <div class="header__shopify-logo">
-              <img src={imageUrl(data.shopifyItem.shopifyIcon)} alt="shopify img" />
-            </div>
-            <div class="header__shopify-text">{data.shopifyItem.shopifyText}</div>
-          </a> -->
           <div class="header__nav">
             {#each data.navItems as navItem}
               {#if !navItem.navSubItems}
-                <a href={`${navItem.navItemLink}`} class="header__nav-item">{navItem.navItemName}</a
+                <a
+                  href={`${navItem.navItemLink}`}
+                  class={curPage === `${navItem.navItemLink}`
+                    ? 'header__nav-item header__nav-item--active'
+                    : 'header__nav-item'}>{navItem.navItemName}</a
                 >
               {/if}
               {#if navItem.navSubItems}
                 <a
                   href="/services"
-                  class="header__nav-item dropdown"
+                  class={curPage === '/services'
+                    ? 'header__nav-item dropdown header__nav-item--active'
+                    : 'header__nav-item dropdown '}
                   on:mouseenter={showDropdown(dropdown)}
                 >
                   <p>{navItem.navItemName}</p>
@@ -123,12 +135,6 @@
         <span class="header__cross" on:click={openMenu}>
           <span class="header__cross-btn" />
         </span>
-        <!-- <a target="_blank" href={data.shopifyItem.shopifyLink} class="header__shopify">
-          <div class="header__shopify-logo">
-            <img src={imageUrl(data.shopifyItem.shopifyIcon)} alt="shopify img" />
-          </div>
-          <div class="header__shopify-text">{data.shopifyItem.shopifyText}</div>
-        </a> -->
         <div class="header__nav">
           {#each data.navItems as navItem}
             {#if !navItem.navSubItems}
@@ -424,6 +430,11 @@
         @include media-breakpoint-down(xl) {
           justify-content: space-between;
         }
+      }
+
+      &--active {
+        font-weight: 900;
+        color: #006185;
       }
     }
 

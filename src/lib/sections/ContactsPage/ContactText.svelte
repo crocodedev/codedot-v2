@@ -32,13 +32,13 @@
                     </span>
                   </span>
                   <span>
-                    Наш контактный номер:
+                    Контактный номер:
                     <a href={`tel:${address.cellNumber}`} class="contact-us__phone"
                       >{address.cellNumber}</a
                     >
                   </span>
                   <span>
-                    Наша эл. почта:
+                    Email:
                     <a href={`mailto:${address.email}`} class="contact-us__phone">{address.email}</a
                     >
                   </span>

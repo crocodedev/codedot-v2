@@ -121,7 +121,7 @@
 
       &::after {
         position: absolute;
-        background-image: url('../icons/arrow-btn.svg');
+        background-image: url('/icons/arrow-btn.svg');
         content: '';
         width: 21px;
         height: 21px;

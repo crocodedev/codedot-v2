@@ -89,7 +89,7 @@
 
     &__wrapper {
       display: grid;
-      padding-bottom: 30px;
+      padding-bottom: 50px;
 
       @include media-breakpoint-down(xl) {
         grid-template-columns: 1fr;

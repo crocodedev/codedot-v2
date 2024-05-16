@@ -160,7 +160,6 @@
       }
 
       @include media-breakpoint-up(lg) {
-        padding-left: 45px;
         width: calc(100% + (100vw - var(--container-width)) / 2 + var(--spacing-container));
       }
     }

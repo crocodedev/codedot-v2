@@ -44,7 +44,7 @@
 
     &__items {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
 
       @include media-breakpoint-down(md) {
         flex-direction: column;

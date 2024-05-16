@@ -196,12 +196,12 @@
       }
 
       &::before {
-        @include media-breakpoint-down(md) {
-          left: -20px;
+        @include media-breakpoint-down(xl) {
+          left: -40px;
           top: -20px;
         }
-        @include media-breakpoint-up(md) {
-          left: -40px;
+        @include media-breakpoint-up(xl) {
+          left: -80px;
           top: -40px;
         }
       }
@@ -222,18 +222,15 @@
       @include media-breakpoint-down(sm) {
         font-size: 28px;
         line-height: 42px;
-        text-indent: 20px;
       }
 
       @include media-breakpoint-between(sm, lg) {
         font-size: 30px;
         line-height: 45px;
-        text-indent: 60px;
       }
 
       @include media-breakpoint-up(lg) {
         font-size: 32px;
-        text-indent: 100px;
       }
     }
 

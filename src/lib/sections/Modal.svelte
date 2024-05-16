@@ -621,7 +621,7 @@
       border-radius: 40px;
       background-color: #e9f6fb;
       z-index: 10;
-      height: 100%;
+      height: 85%;
 
       @include media-breakpoint-down(md) {
         margin-left: 20px;
@@ -660,8 +660,8 @@
       }
 
       @include media-breakpoint-up(xl) {
-        padding-left: 125px;
-        padding-right: 125px;
+        padding-left: 60px;
+        padding-right: 60px;
       }
     }
 

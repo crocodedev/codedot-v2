@@ -115,11 +115,13 @@
 
       @include media-breakpoint-down(md) {
         justify-content: space-between;
+        gap: 40px;
       }
 
       @include media-breakpoint-up(md) {
         padding-top: 65px;
         padding-bottom: 65px;
+        gap: 80px;
       }
     }
 
