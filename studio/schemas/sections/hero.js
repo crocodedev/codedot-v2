@@ -26,11 +26,6 @@ export default {
       of: [{type: 'string', name: 'tagname'}],
     },
     {
-      title: 'Image',
-      name: 'Image',
-      type: 'image',
-    },
-    {
       title: 'BackgroundImage',
       name: 'backgroundImage',
       type: 'image',

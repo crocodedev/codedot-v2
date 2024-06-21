@@ -36,7 +36,7 @@ import projectTextImage from './sections/projectTextImage'
 import review from './sections/review'
 import roadmap from './sections/roadmap'
 import sectionText from './sections/sectionText'
-
+import faq from './sections/faq'
 import serviceHero from './sections/serviceHero'
 import services from './sections/services'
 import techologies from './sections/techologies'
@@ -61,6 +61,7 @@ export const schemaTypes = [
   techologies,
   offerWorks,
   review,
+  faq,
   contactText,
   footer,
   header,

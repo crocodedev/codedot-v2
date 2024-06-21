@@ -12,6 +12,7 @@
   @import '../styles/base/mixins.scss';
 
   .code {
+    color: #0082b1;
     @include media-breakpoint-down(lg) {
       padding-top: 37px;
       padding-bottom: 19px;

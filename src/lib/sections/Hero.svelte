@@ -18,8 +18,16 @@
       <div class="hero__mobile-wrapper">
         <div class="hero__description-wrapper">
           <div class="hero__description">
+            <div class="hero__title-wrapper">
+              <p class="hero__title">CODEDOT</p>
+              <picture class="hero__title-icon">
+                <source media="(max-width: 767px)" srcset="/icons/Arrow_mobile.svg" />
+                <source media="(min-width: 768px)" srcset="/icons/Arrow.svg" />
+                <img src="/icons/Arrow.svg" alt="arrow" />
+              </picture>
+            </div>
             <p class="hero__text">
-              {data.Text}
+              {@html data.Text}
             </p>
             <div class="hero__tag-wrapper">
               {#each data.taglist as tag}
@@ -28,29 +36,7 @@
                 </div>
               {/each}
             </div>
-          </div>
-          <div class="hero__img-wrapper">
-            <img src={imageUrl(data.Image)} alt="" class="hero__img" />
-          </div>
-        </div>
-        <div class="hero__discuss-wrapper">
-          <div class="hero__tagline-wrapper">
-            <p class="hero__tagline">Мы поднимем</p>
-            <p class="hero__tagline">
-              <span class="hero__word">
-                ТВ
-                <span class="hero__letter">
-                  <img src="../images/big_o.svg" alt="" class="hero__letter-img" />
-                </span>
-                Й &nbsp;
-              </span>
-              БИЗНЕС
-            </p>
-            <p class="hero__tagline">на новый уровень</p>
-          </div>
-          <div class="hero__discuss-inner">
-            <p class="hero__discuss-text">Креативный дизайн и<br />Агентство по развитию.</p>
-            <button class="btn" on:click={openModal}>
+            <button class="btn btn--hero" on:click={openModal}>
               Обсудить проект
               <span class="btn__icon">
                 <img src="../icons/arrow-btn.svg" alt="" />
@@ -79,7 +65,6 @@
 
     @include media-breakpoint-up(xl) {
       padding-bottom: 60px;
-      padding-top: 20px;
     }
     &__mobile-wrapper {
       @include media-breakpoint-up(lg) {
@@ -95,9 +80,11 @@
     &__background {
       position: absolute;
       width: 100%;
-      height: calc(100% + 125px);
-      top: -125px;
+      height: calc(100% + 141px);
+      top: -141px;
       left: 0;
+      border-radius: 0 0 40px 40px;
+      overflow: hidden;
     }
 
     &__background-img-wrapper {
@@ -166,25 +153,13 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        padding-top: 80px;
-        padding-bottom: 63px;
+        padding-top: 200px;
+        padding-bottom: 163px;
         padding-left: 80px;
         padding-right: 80px;
         margin-left: 60px;
         margin-right: 60px;
         border-radius: 40px;
-      }
-    }
-
-    &__description-wrapper {
-      @include media-breakpoint-down(lg) {
-        display: contents;
-      }
-
-      @include media-breakpoint-up(lg) {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
       }
     }
 
@@ -214,7 +189,7 @@
       }
 
       @include media-breakpoint-up(lg) {
-        margin-top: 40px;
+        margin-top: 35px;
       }
     }
 
@@ -237,7 +212,7 @@
       }
 
       @include media-breakpoint-up(md) {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
     }
 
@@ -251,7 +226,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        margin-right: 20px;
+        margin-right: 30px;
       }
     }
 
@@ -322,27 +297,104 @@
       }
     }
 
-    &__text {
-      @include media-breakpoint-down(sm) {
-        font-size: 14px;
+    &__title {
+      color: #0082b1;
+      font-weight: 800;
 
-        line-height: 21px;
+      @include media-breakpoint-down(sm) {
+        font-size: 46px;
+        line-height: 50px;
       }
 
       @include media-breakpoint-between(sm, lg) {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 65px;
+        line-height: 70px;
       }
 
-      @include media-breakpoint-between(lg, xxl) {
-        font-size: 20px;
-        width: 400px;
+      @include media-breakpoint-up(lg) {
+        font-size: 84px;
+        line-height: 96px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        font-size: 100px;
+        line-height: 112px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 20px;
-        line-height: 27px;
-        width: 400px;
+        font-size: 128px;
+        line-height: 140px;
+      }
+    }
+
+    &__title-wrapper {
+      display: flex;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+
+      @include media-breakpoint-up(md) {
+        align-items: center;
+        gap: 15px;
+      }
+    }
+
+    &__title-icon {
+      position: relative;
+
+      @include media-breakpoint-down(md) {
+        height: 70px;
+        width: 100%;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        height: 70px;
+        width: 92px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 96px;
+        width: 112px;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        height: 112px;
+        width: 132px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        height: 140px;
+        width: 172px;
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__text {
+      font-weight: 500;
+      @include media-breakpoint-down(md) {
+        font-size: 32px;
+        line-height: 35.2px;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 48px;
+        line-height: 52px;
+      }
+
+      @include media-breakpoint-between(lg, xxl) {
+        font-size: 78px;
+        line-height: 85px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        font-size: 100px;
+        line-height: 110px;
       }
     }
 

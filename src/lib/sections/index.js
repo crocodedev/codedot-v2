@@ -33,6 +33,7 @@ import ProjectGallery from '$lib/sections/ProjectPage/ProjectGallery.svelte'
 import Modal from '$lib/sections/Modal.svelte'
 import ContactText from '$lib/sections/ContactsPage/ContactText.svelte'
 import SectionText from '$lib/sections/SectionText.svelte'
+import Faq from '$lib/sections/Faq.svelte'
 
 export {
   Header,
@@ -70,4 +71,5 @@ export {
   ProjectText,
   ProjectGallery,
   Modal,
+  Faq,
 }

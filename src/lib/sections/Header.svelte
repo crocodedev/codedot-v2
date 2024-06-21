@@ -174,7 +174,7 @@
     top: 0;
     margin: 0 auto;
     z-index: 12;
-    padding-top: 20px;
+    padding-top: 40px;
 
     @include media-breakpoint-down(md) {
       margin-left: 20px;
