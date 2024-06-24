@@ -14,6 +14,7 @@ export default {
     {type: 'Services'},
     {type: 'Technologies'},
     {type: 'Faq'},
+    {type: 'WantToWork'},
     {type: 'OfferWorks'},
     {type: 'Review'},
     {type: 'Code'},

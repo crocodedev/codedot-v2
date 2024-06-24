@@ -34,6 +34,7 @@ import Modal from '$lib/sections/Modal.svelte'
 import ContactText from '$lib/sections/ContactsPage/ContactText.svelte'
 import SectionText from '$lib/sections/SectionText.svelte'
 import Faq from '$lib/sections/Faq.svelte'
+import WantToWork from '$lib/sections/WantToWork.svelte'
 
 export {
   Header,
@@ -63,6 +64,7 @@ export {
   Digital,
   Expect,
   JobHero,
+  WantToWork,
   JobText,
   OurService,
   ProjectHero,

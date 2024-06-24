@@ -77,8 +77,8 @@
     }
 
     &__text-item.active {
-      border: 2px solid #006185;
-      background-color: #006185;
+      border: 2px solid #0082b1;
+      background-color: #0082b1;
       font-weight: 600;
       color: white;
       box-shadow: 0 0 20px 2px #1e66e437;

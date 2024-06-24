@@ -435,7 +435,7 @@
 
       &--active {
         font-weight: 900;
-        color: #006185;
+        color: #0082b1;
       }
     }
 
@@ -551,9 +551,9 @@
 
     &__btn {
       border-radius: 40px;
-      border: 1px solid #006185;
+      border: 1px solid #0082b1;
       padding: 8px 30px;
-      color: #006185;
+      color: #0082b1;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
@@ -585,7 +585,7 @@
         content: '';
         width: 100%;
         height: 1px;
-        background: #006185;
+        background: #0082b1;
         transform: rotate(45deg) translate(1px, 0px);
       }
 
@@ -593,7 +593,7 @@
         content: '';
         width: 100%;
         height: 1px;
-        background: #006185;
+        background: #0082b1;
         transform: rotate(135deg) translate(-1px, 0px);
       }
     }
@@ -604,10 +604,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #006185;
+      background: #0082b1;
       box-shadow:
-        0px -5px 0 0px #006185,
-        0px 5px 0 0px #006185;
+        0px -5px 0 0px #0082b1,
+        0px 5px 0 0px #0082b1;
 
       @include media-breakpoint-up(xl) {
         display: none;

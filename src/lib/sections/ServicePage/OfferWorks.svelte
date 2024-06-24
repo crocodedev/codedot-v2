@@ -220,7 +220,7 @@
       align-items: center;
       justify-content: center;
       height: fit-content;
-      background-color: #006185;
+      background-color: #0082b1;
       width: max-content;
       padding: 8px 30px;
       border: none;
@@ -260,7 +260,7 @@
       cursor: pointer;
       font-size: 20px;
       &--active {
-        color: #006185;
+        color: #0082b1;
         font-weight: 900;
       }
     }
@@ -476,7 +476,7 @@
     &__item-category {
       font-size: 24px;
       font-weight: 900;
-      color: #006185;
+      color: #0082b1;
     }
 
     &__tags {

@@ -33,7 +33,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        color: #006185;
+        color: #0082b1;
         font-weight: 600;
 
         @include media-breakpoint-down(lg) {

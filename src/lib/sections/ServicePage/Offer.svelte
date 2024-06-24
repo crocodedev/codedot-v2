@@ -192,7 +192,7 @@
     }
 
     &__price {
-      color: #006185;
+      color: #0082b1;
       font-weight: 600;
       font-size: 18px;
       position: absolute;

@@ -453,7 +453,7 @@
     }
 
     &__tagline:nth-of-type(even) {
-      color: #006185;
+      color: #0082b1;
       display: flex;
       flex-wrap: wrap;
       align-items: center;

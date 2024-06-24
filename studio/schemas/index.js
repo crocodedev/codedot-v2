@@ -33,6 +33,7 @@ import projectHero from './sections/projectHero'
 import projectImages from './sections/projectImages'
 import projectText from './sections/projectText'
 import projectTextImage from './sections/projectTextImage'
+import wantWork from './sections/wantWork'
 import review from './sections/review'
 import roadmap from './sections/roadmap'
 import sectionText from './sections/sectionText'
@@ -54,6 +55,7 @@ export const schemaTypes = [
   hero,
   cases,
   casesPage,
+  wantWork,
   counters,
   dignity,
   text,

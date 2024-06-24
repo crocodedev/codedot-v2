@@ -91,6 +91,8 @@
       opacity: 0;
       overflow: hidden;
       transition: 0.3s linear;
+      font-size: 24px;
+      line-height: 36px;
     }
 
     &__item {
@@ -99,6 +101,7 @@
       padding: 45px 40px;
       position: relative;
       transition: 0.3s linear;
+      cursor: pointer;
     }
 
     &__question-wrapper {
@@ -131,6 +134,8 @@
     &__item--active .faq__answer {
       height: auto;
       opacity: 1;
+
+      padding-top: 18px;
     }
 
     &__item--active .faq__question-wrapper .faq__stroke {
@@ -142,6 +147,9 @@
       font-weight: 600;
       line-height: 60px;
       pointer-events: none;
+    }
+
+    &__answer {
     }
   }
 </style>

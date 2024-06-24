@@ -50,7 +50,7 @@
       flex-direction: column;
       gap: 20px;
       text-align: center;
-      color: #006185;
+      color: #0082b1;
     }
 
     &__text {

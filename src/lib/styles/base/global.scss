@@ -45,7 +45,7 @@ a {
 .btn {
   display: flex;
   justify-content: center;
-  background-color: #006185;
+  background-color: #0082b1;
   width: max-content;
   padding: 8px 30px;
   border: none;
@@ -64,6 +64,10 @@ a {
 
   &--fullwidth {
     width: 100%;
+  }
+
+  &--work {
+    padding: 18px 70px;
   }
 
   &__icon {

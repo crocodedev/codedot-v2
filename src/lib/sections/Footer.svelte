@@ -76,7 +76,7 @@
     }
 
     &__contacts {
-      background-color: #006185;
+      background-color: #0082b1;
 
       @include media-breakpoint-down(lg) {
         padding: 20px 0;
@@ -110,7 +110,7 @@
 
     &__btn {
       border-radius: 40px;
-      background: #006185;
+      background: #0082b1;
       border: none;
       outline: none;
       text-align: center;
@@ -283,7 +283,7 @@
     }
 
     &__blur-box-text {
-      color: #006185;
+      color: #0082b1;
 
       @include media-breakpoint-down(lg) {
         font-size: 16px;
