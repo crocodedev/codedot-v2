@@ -104,7 +104,7 @@
   .cases {
     @include media-breakpoint-down(lg) {
       margin-top: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     @include media-breakpoint-up(lg) {
@@ -178,15 +178,15 @@
 
       .cases__item:nth-of-type(1) {
         @include media-breakpoint-up(lg) {
-          margin-bottom: 30px;
+          margin-bottom: 40px;
           height: 350px;
         }
       }
 
       .cases__item:nth-of-type(2) {
         @include media-breakpoint-up(lg) {
-          height: 670px;
-          margin-bottom: 30px;
+          height: 650px;
+          margin-bottom: 40px;
         }
       }
 

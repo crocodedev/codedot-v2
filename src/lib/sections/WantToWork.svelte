@@ -1,7 +1,5 @@
 <script>
   export let data, openModal
-
-  console.log(data)
 </script>
 
 <section class="want-work">
@@ -18,13 +16,13 @@
 
   .want-work {
     @include media-breakpoint-down(lg) {
-      margin-top: 100px;
-      margin-bottom: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     @include media-breakpoint-up(lg) {
       padding-top: 200px;
-      padding-bottom: 200px;
+      padding-bottom: 100px;
     }
     &__wrapper {
       display: flex;

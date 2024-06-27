@@ -27,7 +27,6 @@
   .project-gallery {
     &__wrapper {
       @include media-breakpoint-down(lg) {
-        padding-top: 100px;
         padding-bottom: 100px;
       }
 

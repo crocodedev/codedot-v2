@@ -194,7 +194,6 @@
 
       @include media-breakpoint-up(md) {
         width: 50%;
-        padding-top: 100px;
       }
 
       @include media-breakpoint-between(md, xl) {

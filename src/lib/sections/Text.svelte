@@ -7,7 +7,6 @@
 
     if (section) {
       let scrollPositionText = 0
-      console.log(document.querySelectorAll('section'))
       const svgPathId = 'animated-path-text'
       window.addEventListener('scroll', () => {
         scrollPositionText = window.scrollY - 5240
@@ -40,15 +39,15 @@
     }
   })
 
-  export let data
+  export let data, openModal
 </script>
 
 {#if data}
-  <section class="text">
+  <div class="text__inner">
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 1920 1323"
+      viewBox="0 0 1920 1317"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       class="text__svg"
@@ -56,26 +55,86 @@
       <path
         class="animated-path-text"
         id="animated-path-text"
-        d="M-58 117.712C48.1791 61.7383 360.849 -44.6345 530.069 22.5341C741.593 106.495 736.093 173.799 898.112 117.712C1060.13 61.625 1096.13 -46.8099 1260.65 91.5384C1425.17 229.887 1353.66 319.286 1565.19 203.713C1776.71 88.1391 2419.79 75.013 1985.74 203.713C1507.68 345.46 1386.67 -57.6874 1675.2 149.665C1911.31 319.34 1544.17 384.839 1326.16 291.412C1056 175.637 892.111 536.156 414.555 411.065C44.5304 314.14 675.586 700.339 596.076 539.895C422.437 189.506 244.447 389.093 123.521 502.504C30.0103 590.204 115.064 714.758 370.55 659.208C791.099 567.769 763.967 740.474 1044 661.952C1324.03 583.43 1202.2 491.179 1480.18 644.251C1609.19 715.295 1856.22 714.955 1952.73 606.86C1941.09 581.624 1882.55 546.293 1741.5 606.86C1565.19 682.569 1579.5 848.11 1439 838.104C1298.5 828.099 1298.5 635.271 1013 861.147C786.261 1040.53 135.5 1016.08 62.5 972.114C-12.5 942.098 -16.5 891.466 -41.5 873.881C-38.8404 849.221 -41.5212 790.201 41 846.29C123.521 902.38 150.687 1187.02 269 1088.54C463.5 926.635 474.151 1273.46 596.076 1218.91C716.399 1165.08 897.928 837.162 1369.5 1065.5C1522.98 1139.81 1592.8 1320.81 1439 1321.99C1289.76 1323.14 1377 1165.55 1524.5 1165.55C1672 1165.55 1709 1192.23 1768 1232.55C1815.2 1264.81 1923.67 1259.94 1972 1253.47"
+        d="M-58 117.182C48.1791 61.4624 360.849 -44.4273 530.069 22.4362C741.593 106.016 736.093 173.014 898.112 117.182C1060.13 61.3496 1096.13 -46.5927 1260.65 91.1271C1425.17 228.847 1353.66 317.84 1565.19 202.792C1776.71 87.7434 2419.79 74.6768 1985.74 202.792C1507.68 343.896 1386.67 -57.4208 1675.2 148.99C1911.31 317.894 1544.17 383.096 1326.16 290.093C1056 174.844 892.111 533.725 414.555 409.202C44.5304 312.718 675.586 697.162 596.076 537.448C422.437 188.65 244.447 387.33 123.521 500.226C30.0103 587.528 115.064 711.516 370.55 656.218C791.099 565.195 763.967 737.115 1044 658.95C1324.03 580.784 1202.2 488.952 1480.18 641.33C1609.19 712.051 1856.22 711.712 1952.73 604.108C1941.09 578.987 1882.55 543.817 1741.5 604.108C1565.19 679.473 1579.5 844.262 1439 834.302C1298.5 824.342 1298.5 632.39 1013 857.24C786.261 1035.81 135.5 1011.47 62.5 967.703C-12.5 937.824 -16.5 887.421 -41.5 869.916C-38.8404 845.369 -41.5212 786.616 41 842.451C123.521 898.286 150.687 1181.64 269 1083.6C463.5 922.431 474.151 1267.68 596.076 1213.38C716.399 1159.79 897.928 833.364 1369.5 1060.66C1522.98 1134.64 1592.8 1314.81 1439 1315.99C1289.76 1317.14 1377 1160.26 1524.5 1160.26C1672 1160.26 1709 1186.82 1768 1226.96C1815.2 1259.07 1923.67 1254.22 1972 1247.78"
         stroke="#212121"
       />
     </svg>
 
-    <div class="text__wrapper">
-      <div class="container container--text">
-        <div class="text__inner">
-          {#each data.textItems as item}
-            <p class="text__item">
-              {item}
-            </p>
-            <div class="text__item-img">
-              <img src="" alt="" />
-            </div>
-          {/each}
+    <section class="text">
+      <div class="text__wrapper">
+        <div class="container container--text">
+          <div class="text__inner">
+            {#each data.textItems as item, index}
+              <p class="text__item">
+                {item}
+              </p>
+              {#if index == 0}
+                <div class="text__item-img-wrapper">
+                  <svg
+                    width="320"
+                    height="105"
+                    viewBox="0 0 320 105"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text__item-img"
+                  >
+                    <path
+                      d="M-34 21.7829C-15.197 11.8156 40.1731 -7.12613 70.14 4.83456C107.598 19.7854 106.624 31.7703 135.316 21.7829C164.008 11.7955 170.384 -7.51349 199.518 17.1221C228.652 41.7578 215.989 57.6771 253.448 37.097C290.906 16.5168 404.787 14.1795 327.922 37.097C243.264 62.3379 221.834 -9.45045 272.93 27.4727C314.741 57.6867 249.726 69.3501 211.119 52.7136C163.276 32.0975 134.253 96.2951 49.6839 74.0201C-15.8431 56.7608 95.9093 125.531 81.8291 96.961C51.0797 34.5672 19.5597 70.1076 -1.85476 90.3027"
+                      stroke="#212121"
+                    />
+                  </svg>
+                </div>
+              {/if}
+              {#if index == 1}
+                <div class="text__item-img-wrapper">
+                  <svg
+                    width="320"
+                    height="104"
+                    viewBox="0 0 320 104"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text__item-img"
+                  >
+                    <path
+                      d="M23.4727 1C7.90502 15.7474 22.0647 36.6921 64.598 27.3509C134.611 11.9748 130.094 41.0164 176.714 27.8123C223.334 14.6083 203.051 -0.904457 249.329 24.8359C270.807 36.7824 311.933 36.7253 328 18.5482C326.062 14.3046 316.315 8.36349 292.834 18.5482C263.482 31.2792 265.864 59.1162 242.473 57.4337C219.083 55.7513 219.083 23.3258 171.553 61.3084C133.805 91.4737 25.4669 87.361 13.3139 79.9684C0.827916 74.921 0.161997 66.4068 -4 63.4497C-3.55723 59.3031 -4.00353 49.3783 9.73459 58.8103C23.4727 68.2422 27.9952 116.107 47.692 99.546"
+                      stroke="#212121"
+                    />
+                  </svg>
+                </div>
+              {/if}
+              {#if index == 2}
+                <div class="text__item-img-wrapper">
+                  <svg
+                    width="320"
+                    height="89"
+                    viewBox="0 0 320 89"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text__item-img"
+                  >
+                    <path
+                      d="M-13 1C1.99997 11.258 6.93784 63.3148 28.4438 45.3034C63.7983 15.6939 65.7343 79.1225 87.8969 69.1463C109.768 59.3013 142.765 -0.669509 228.483 41.0893C256.382 54.6807 269.073 87.7822 241.116 87.9989C213.988 88.2091 229.846 59.3874 256.657 59.3874C283.469 59.3874 290.194 64.2668 300.919 71.6415C309.498 77.5412 329.214 76.6504 338 75.4675"
+                      stroke="#212121"
+                    />
+                  </svg>
+                </div>
+              {/if}
+            {/each}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    {#if data.wantTitle}
+      <section class="want-work">
+        <div class="container">
+          <div class="want-work__wrapper">
+            <p class="want-work__title">{data.wantTitle}</p>
+            <button class="btn btn--work" on:click={openModal}>Связаться с нами</button>
+          </div>
+        </div>
+      </section>
+    {/if}
+  </div>
 {/if}
 
 <style lang="scss">
@@ -97,14 +156,16 @@
   }
 
   .text {
-    position: relative;
-    height: 100%;
-    @include media-breakpoint-down(lg) {
-      padding-top: 40px;
-    }
-    @include media-breakpoint-up(lg) {
-      padding-top: 40px;
-      padding-bottom: 30px;
+    &__inner {
+      position: relative;
+      height: 100%;
+      @include media-breakpoint-down(lg) {
+        padding-top: 40px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-top: 40px;
+        padding-bottom: 30px;
+      }
     }
 
     &__wrapper {
@@ -133,45 +194,78 @@
 
     &__svg {
       position: absolute;
-      @include media-breakpoint-down(sm) {
-        // padding: 251px 0 366px 0;
-      }
-
-      @include media-breakpoint-between(sm, md) {
-        padding: 170px 0 215px 0;
-      }
 
       @include media-breakpoint-down(lg) {
-        // display: none;
+        display: none;
       }
     }
 
     &__item {
-      &:not(&:nth-child(even)) {
+      &:nth-of-type(2) {
         @include media-breakpoint-up(md) {
-          text-align: start;
-          align-self: flex-start;
+          align-self: flex-end;
         }
       }
 
       @include media-breakpoint-up(md) {
         width: 56%;
-        align-self: flex-end;
-        text-align: end;
       }
 
       @include media-breakpoint-down(xl) {
-        font-size: 24px;
+        font-size: 14px;
         line-height: 36px;
       }
 
       @include media-breakpoint-between(xl, xxl) {
-        font-size: 30px;
+        font-size: 22px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 32px;
+        font-size: 24px;
         line-height: 60px;
+      }
+    }
+
+    &__item-img {
+      width: 100%;
+    }
+
+    &__item-img-wrapper {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  .want-work {
+    @include media-breakpoint-down(lg) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    &__title {
+      font-weight: 600;
+      text-align: center;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 90px;
+        line-height: 108px;
       }
     }
   }

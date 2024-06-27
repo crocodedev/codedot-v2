@@ -1,11 +1,13 @@
 <script>
+  import Counters from './Counters.svelte'
   import { onMount } from 'svelte'
-  let showDignity
+  let showDignity = false,
+    countersItems
 
   onMount(() => {
     let svgPath, svgPathLength
     let scrollPositionDignity = 0
-    const section = document.querySelector('.dignity')
+    const section = document.querySelector('.dignity__inner')
 
     if (section) {
       const svgPathId = 'animated-path'
@@ -23,8 +25,8 @@
       }
 
       window.addEventListener('scroll', () => {
-        scrollPositionDignity = window.scrollY - 893
-        if (section.getBoundingClientRect().top <= window.scrollY && window.scrollY <= 2600) {
+        scrollPositionDignity = window.scrollY - 695
+        if (section.getBoundingClientRect().top <= window.scrollY && window.scrollY <= 2439) {
           if (!svgPath) {
             svgPath = document.getElementById(svgPathId)
             svgPathLength = svgPath.getTotalLength()
@@ -39,7 +41,7 @@
                 (section.getBoundingClientRect().height - 600)
             svgPath.style.strokeDashoffset = dashoffset > 0 ? dashoffset : 0
           } else {
-            svgPath.style.strokeDashoffset = 8800
+            svgPath.style.strokeDashoffset = svgPathLength
           }
         }
 
@@ -48,80 +50,104 @@
     }
   })
 
-  export let data
+  export let data, openModal
 </script>
 
 {#if data}
-  <section class="dignity">
-    <div class="container">
-      <div class="dignity__background">
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 1644 1898"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+  <div class="dignity__inner">
+    <div class="dignity__background">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 1561 2496"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        overflow="visible"
+      >
+        <path
+          class="anima"
+          id="animated-path"
+          d="M522 111.5C1217.57 207.512 1204.16 12.0141 1163.83 129.294C1123.51 246.575 1169.9 986.873 648.215 578.519C126.535 170.165 196.092 364.823 736.925 428.018C1279.51 491.418 1825.53 -390.625 1411.26 213.687C916.8 934.977 1084.23 1226.03 867.424 933.641C528.492 476.564 -60.9648 661.795 325.964 768.965L648.215 861.198C904.052 941.482 1173.33 1118.11 1324.79 1558C1424.12 1846.5 1611 2352.5 1365.5 2394C1238 2410 1154 2206 1273.5 2199C1348.5 2210 1338.06 2297.89 1262.5 2371C1185.5 2445.5 626.5 2619.5 517 1906.5C517 2051 563 2303 473.5 2300.5C445 2302.83 367.5 2268.5 285.5 2112.5C235.5 2009 139.715 1814.33 94.5 1804.5C83 1802 38.5 1804.5 1 1884"
+          stroke="#212121"
           shape-rendering="geometricPrecision"
-        >
-          <path
-            class="anima"
-            id="animated-path"
-            d="M370 232.813C1060 421.964 1047.49 89.2251 1007.49 320.277C967.494 551.329 1026 1873.49 508.501 1069C-9.00046 264.508 60 648 596.5 772.5C1134.74 897.404 1721.55 -869.626 1226 566C735.5 1987 860.743 2167.5 624 1590.5C261.499 706.995 -223.803 670.975 116.198 1125.9L508.501 1611.94"
-            stroke="#212121"
-            vector-effect="non-scaling-stroke"
-          />
-        </svg>
-      </div>
-      <div class="dignity__text-wrapper">
-        {#each data.dignityItems as item, idx}
-          <div class="dignity__item">
-            <p class="dignity__name">{item.Name}</p>
-            <p class="dignity__text">
-              {item.Text}
-            </p>
-          </div>
-          {#if idx == 0}
-            <div class="dignity__item-img-wrapper">
-              <svg
-                viewBox="0 0 282 298"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="dignity__item-img"
-              >
-                {#if showDignity}
+        />
+      </svg>
+    </div>
+    <section class="dignity">
+      <div class="container">
+        <div class="dignity__text-wrapper">
+          {#each data.dignityItems as item, idx}
+            <div class="dignity__item">
+              <p class="dignity__name">{item.Name}</p>
+              <p class="dignity__text">
+                {item.Text}
+              </p>
+            </div>
+            {#if idx == 0}
+              <div class="dignity__item-img-wrapper">
+                <svg
+                  viewBox="0 0 282 298"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="dignity__item-img"
+                >
                   <path
                     d="M48.8427 52.839C202.43 95.095 199.646 20.7618 190.742 72.3783C181.839 123.995 194.862 419.363 79.6715 239.641C-35.519 59.9196 -20.1602 145.591 99.2592 173.404C219.066 201.307 349.683 -193.443 239.379 127.272"
                     stroke="#212121"
                     stroke-linecap="round"
                     class="animated-path"
                   />
-                {/if}
-              </svg>
-            </div>
-          {/if}
-          {#if idx == 1}
-            <div class="dignity__item-img-wrapper">
-              <svg
-                viewBox="0 0 282 306"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="dignity__item-img"
-              >
-                {#if showDignity}
+                </svg>
+              </div>
+            {/if}
+            {#if idx == 1}
+              <div class="dignity__item-img-wrapper">
+                <svg
+                  viewBox="0 0 282 306"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="dignity__item-img"
+                >
                   <path
                     d="M281 1C168.895 325.462 197.52 366.676 143.411 234.928C60.5607 33.194 -50.3565 24.9692 27.3516 128.843L117.014 239.824"
                     stroke="#212121"
                     stroke-linecap="round"
                     class="animated-path"
                   />
-                {/if}
-              </svg>
-            </div>
-          {/if}
-        {/each}
+                </svg>
+              </div>
+            {/if}
+          {/each}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    {#if data.countersItems.length}
+      <section class="counters">
+        <div class="container">
+          <div class="counters__wrapper">
+            <div class="counters__items">
+              {#each data?.countersItems as counter}
+                <div class="counters__item">
+                  <span class="counters__number">{counter.number}</span>
+                  <div class="counters__text">{counter.text}</div>
+                </div>
+              {/each}
+            </div>
+          </div>
+        </div>
+      </section>
+    {/if}
+    {#if data.wantTitle}
+      <section class="want-work">
+        <div class="container">
+          <div class="want-work__wrapper">
+            <p class="want-work__title">{data.wantTitle}</p>
+            <button class="btn btn--work" on:click={openModal}>Связаться с нами</button>
+          </div>
+        </div>
+      </section>
+    {/if}
+  </div>
 {/if}
 
 <style lang="scss">
@@ -161,21 +187,47 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
-      // height: 9500px;
-    }
-
     @include media-breakpoint-down(lg) {
       margin-bottom: 30px;
     }
     @include media-breakpoint-up(lg) {
-      margin-bottom: 65px;
+      margin-bottom: 300px;
     }
     position: relative;
 
     &__background {
       @include media-breakpoint-down(lg) {
         display: none;
+      }
+
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include media-breakpoint-between(xl, xxl) {
+        left: 30px;
+        transform: translateY(-55px);
+      }
+
+      @include media-breakpoint-up(xxl) {
+        left: -80px;
+        transform: translateY(-65px);
+      }
+    }
+
+    &__inner {
+      position: relative;
+      // overflow: hidden;
+      @include media-breakpoint-down(lg) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 105px;
+        padding-bottom: 105px;
       }
     }
 
@@ -186,8 +238,7 @@
       width: 100%;
 
       @include media-breakpoint-up(lg) {
-        position: absolute;
-        justify-content: space-around;
+        gap: 150px;
         top: 0;
       }
     }
@@ -197,7 +248,7 @@
       width: max-content;
 
       @include media-breakpoint-down(lg) {
-        font-size: 40px;
+        font-size: 24px;
         line-height: 60px;
         margin-bottom: 5px;
       }
@@ -213,7 +264,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
         line-height: 170px;
       }
     }
@@ -225,7 +276,7 @@
       }
 
       @include media-breakpoint-up(md) {
-        font-size: 18px;
+        font-size: 24px;
         line-height: 27px;
       }
     }
@@ -317,6 +368,119 @@
         top: 0;
         left: 0;
       }
+    }
+  }
+
+  .counters {
+    background-color: #e9f6fb;
+    border-radius: 40px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 65px;
+      margin-bottom: 65px;
+    }
+
+    &__wrapper {
+      @include media-breakpoint-down(lg) {
+        padding-top: 47px;
+        padding-bottom: 70px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 40px;
+        padding-bottom: 84px;
+      }
+    }
+
+    &__items {
+      display: flex;
+      justify-content: space-between;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include media-breakpoint-up(xxl) {
+        &:nth-child(2) {
+          padding-left: 245px;
+          padding-right: 245px;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        &:not(&:last-of-type) {
+          margin-bottom: 77px;
+        }
+      }
+    }
+
+    &__number {
+      font-weight: 800;
+
+      @include media-breakpoint-down(md) {
+        font-size: 80px;
+        line-height: 100px;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 60px;
+        line-height: 85px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 85px;
+        line-height: 150px;
+      }
+    }
+
+    &__text {
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+        line-height: 36px;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 24px;
+        line-height: 40px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        transform: translateY(-10px);
+        font-size: 32px;
+        line-height: 48px;
+      }
+    }
+  }
+
+  .want-work {
+    @include media-breakpoint-down(lg) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    &__title {
+      font-size: 90px;
+      font-weight: 600;
+      line-height: 108px;
+      text-align: center;
     }
   }
 </style>

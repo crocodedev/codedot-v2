@@ -26,5 +26,10 @@ export default {
         },
       ],
     },
+    {
+      name: 'wantTitle',
+      type: 'text',
+      title: 'Want Title',
+    },
   ],
 }

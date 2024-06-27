@@ -35,6 +35,7 @@ import ContactText from '$lib/sections/ContactsPage/ContactText.svelte'
 import SectionText from '$lib/sections/SectionText.svelte'
 import Faq from '$lib/sections/Faq.svelte'
 import WantToWork from '$lib/sections/WantToWork.svelte'
+import OurTeam from '$lib/sections/OurTeam.svelte'
 
 export {
   Header,
@@ -68,6 +69,7 @@ export {
   JobText,
   OurService,
   ProjectHero,
+  OurTeam,
   ProjectImages,
   ProjectTextImage,
   ProjectText,

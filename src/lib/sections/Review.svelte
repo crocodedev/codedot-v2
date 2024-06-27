@@ -197,7 +197,7 @@
 
       &::before {
         @include media-breakpoint-down(xl) {
-          left: -40px;
+          left: -15px;
           top: -20px;
         }
         @include media-breakpoint-up(xl) {

@@ -24,10 +24,21 @@
 </svelte:head>
 
 {#if data && data.content.length > 0}
-  <svelte:component this={Sections.Modal} {closeModal} {activeModal} {data} />
+  <svelte:component
+    this={Sections.Modal}
+    {closeModal}
+    {activeModal}
+    {data}
+    style="overflow: hidden;"
+  />
   {#each data.content as section}
     {#if section.sectionTitle in Sections}
-      <svelte:component this={Sections[section.sectionTitle]} data={section} {openModal} />
+      <svelte:component
+        this={Sections[section.sectionTitle]}
+        data={section}
+        allData={data}
+        {openModal}
+      />
     {/if}
   {/each}
 {:else}

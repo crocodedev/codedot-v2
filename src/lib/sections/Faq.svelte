@@ -83,7 +83,14 @@
     &__items {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+
+      @include media-breakpoint-down(lg) {
+        gap: 20px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        gap: 40px;
+      }
     }
 
     .faq__answer {
@@ -104,18 +111,19 @@
     }
 
     &__item {
-      border-radius: 40px;
       background-color: #fafafa;
       position: relative;
       transition: 0.3s linear;
       cursor: pointer;
 
       @include media-breakpoint-down(lg) {
+        border-radius: 30px;
         padding: 15px;
       }
 
       @include media-breakpoint-up(lg) {
         padding: 45px 40px;
+        border-radius: 40px;
       }
     }
 

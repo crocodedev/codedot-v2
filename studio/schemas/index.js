@@ -42,6 +42,7 @@ import serviceHero from './sections/serviceHero'
 import services from './sections/services'
 import techologies from './sections/techologies'
 import text from './sections/text'
+import ourTeam from './sections/outTeam'
 
 export const schemaTypes = [
   // blocks
@@ -56,6 +57,7 @@ export const schemaTypes = [
   cases,
   casesPage,
   wantWork,
+  ourTeam,
   counters,
   dignity,
   text,
