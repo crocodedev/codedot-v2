@@ -9,7 +9,8 @@
     listItems,
     categoriesList = [],
     activeCategory = 0,
-    sortedArray = []
+    sortedArray = [],
+    liItems = []
 
   register()
 
@@ -55,6 +56,11 @@
   onMount(async () => {
     sortArr(activeCategory)
     reinitSwiper()
+
+    liItems = Array.from(document.querySelectorAll('.offer-works__text-list'))
+    liItems.forEach((el, idx) => {
+      el.querySelector('.offer-works__text-num').textContent = idx + 1
+    })
   })
 
   if (data) {
@@ -88,6 +94,8 @@
     sortArr(idx)
     reinitSwiper()
   }
+
+  console.log(listItems)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -169,13 +177,12 @@
           <div class="offer-works__text-wrapper">
             <h2 class="offer-works__text-title">{data.offerWorksTextTitle}</h2>
             <ul class="offer-works__text-rich">
-              {#each listItems?.split('</br>') as text}
+              {#each listItems?.split('</br>') as text, index}
                 {#if text != '' && text !== '\n'}
                   {#if text.match('<b>')}
                     <li class="offer-works__text-list">
-                      <p>
-                        {@html `${text}`}
-                      </p>
+                      <span class="offer-works__text-num"></span>
+                      <p>{@html `${text}`}</p>
                     </li>
                   {:else}
                     <p class="offer-works__text">{@html `${text}`}</p>
@@ -201,10 +208,14 @@
       padding-top: 65px;
     }
     &__item {
-      display: grid;
-      justify-content: space-between;
+      @include media-breakpoint-down(lg) {
+        display: flex;
+        flex-direction: column;
+      }
 
       @include media-breakpoint-up(lg) {
+        display: grid;
+        justify-content: space-between;
         grid-template-columns: repeat(2, 49%);
       }
     }
@@ -232,6 +243,11 @@
     &__items {
       position: relative;
       margin-top: 40px;
+
+      @include media-breakpoint-down(lg) {
+        order: 2;
+        margin-bottom: 40px;
+      }
     }
 
     &__controls {
@@ -248,11 +264,28 @@
     }
 
     &__contains {
+      display: flex;
+      flex-direction: column;
       @include media-breakpoint-down(xl) {
         padding-bottom: 30px;
       }
       @include media-breakpoint-up(xl) {
         padding-bottom: 65px;
+      }
+    }
+
+    &__text-num {
+      font-weight: 400;
+      color: #0082b1;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 200px;
+        line-height: 300px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        font-size: 96px;
+        line-height: 144px;
       }
     }
 
@@ -269,12 +302,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @include media-breakpoint-down(lg) {
+        order: 1;
+      }
     }
 
     &__text-rich {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 40px;
       padding-inline-start: 0px;
       list-style-type: none;
 
@@ -323,7 +360,8 @@
 
       @include media-breakpoint-down(lg) {
         padding: 20px 0 10px 0;
-        border-bottom: 1px solid gray;
+        border-top: 1px solid gray;
+        order: 3;
       }
 
       @include media-breakpoint-up(lg) {
@@ -346,15 +384,27 @@
 
     &__text-list {
       display: flex;
-      justify-content: center;
+      width: fit-content;
+      align-items: center;
+
+      @include media-breakpoint-down(lg) {
+        gap: 10px;
+      }
 
       @include media-breakpoint-up(lg) {
-        margin-left: 40px;
-        width: 70%;
-        text-align: center;
-        padding-bottom: 60px;
+        text-align: left;
+        gap: 20px;
 
-        &:nth-of-type(even) {
+        &:nth-child(4n + 1) {
+          align-self: flex-start;
+        }
+
+        &:nth-child(4n + 2),
+        &:nth-child(4n + 4) {
+          align-self: center;
+        }
+
+        &:nth-child(4n + 3) {
           align-self: flex-end;
         }
       }
@@ -368,13 +418,13 @@
         }
 
         @include media-breakpoint-between(lg, xxl) {
-          width: 50%;
-          font-size: 24px;
+          width: 480px;
+          font-size: 18px;
         }
 
         @include media-breakpoint-up(xxl) {
-          width: 50%;
-          font-size: 32px;
+          width: 480px;
+          font-size: 24px;
         }
       }
     }
@@ -444,11 +494,12 @@
       overflow: hidden;
 
       @include media-breakpoint-down(lg) {
-        height: 320px;
+        height: 200px;
+        order: 2;
       }
 
       @include media-breakpoint-up(lg) {
-        height: 400px;
+        height: 345px;
       }
 
       img {
@@ -459,36 +510,86 @@
     }
 
     &__info-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+      @include media-breakpoint-down(lg) {
+        display: contents;
+      }
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &__item-name {
-      font-size: 36px;
-      font-weight: 900;
+      font-weight: 700;
+      color: #0082b1;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 32px;
+        line-height: 38.4px;
+        text-align: center;
+        order: 1;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 64px;
+        line-height: 96px;
+      }
     }
 
     &__item-description {
-      font-size: 18px;
+      @include media-breakpoint-down(lg) {
+        font-size: 14px;
+        line-height: 21px;
+        order: 4;
+        padding: 20px 0 10px 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 24px;
+        line-height: 36px;
+        padding: 20px 0;
+      }
     }
 
     &__item-category {
-      font-size: 24px;
-      font-weight: 900;
-      color: #0082b1;
+      font-weight: 500;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 20px;
+        line-height: 30px;
+        order: 3;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 32px;
+        line-height: 48px;
+        width: 520px;
+      }
     }
 
     &__tags {
       display: flex;
       gap: 20px;
+
+      @include media-breakpoint-down(lg) {
+        order: 5;
+      }
     }
 
     &__tag {
-      padding: 5px 10px;
-      background-color: rgb(232 245 250);
-      color: black;
-      border-radius: 25px;
+      color: #0082b1;
+      border: 1px solid #0082b1;
+      font-weight: 500;
+      padding: 6px 20px;
+
+      @include media-breakpoint-down(lg) {
+        border-radius: 30px;
+        font-size: 12px;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 14px;
+        border-radius: 40px;
+      }
     }
   }
 </style>

@@ -225,15 +225,17 @@
     &__filtertag {
       text-transform: uppercase;
       border-radius: 40px;
-      border: 1px solid black;
+      border: 1px solid #0082b1;
       text-wrap: nowrap;
       user-select: none;
+      color: #0082b1;
       cursor: pointer;
       text-align: center;
       width: max-content;
+      transition: 0.3s ease;
 
       &--active {
-        background-color: black;
+        background-color: #0082b1;
         color: #ffffff;
       }
 
@@ -293,31 +295,19 @@
 
       .casespage__item:nth-child(4n + 1) {
         @include media-breakpoint-up(lg) {
-          height: 800px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
-          height: 600px;
+          height: 350px;
         }
       }
 
       .casespage__item:nth-of-type(even) {
         @include media-breakpoint-up(lg) {
-          height: 930px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
-          height: 730px;
+          height: 650px;
         }
       }
 
       .casespage__item:nth-child(3n + 3) {
         @include media-breakpoint-up(lg) {
-          height: 570px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
-          height: 370px;
+          height: 350px;
         }
       }
     }
@@ -333,30 +323,18 @@
 
       .casespage__item:nth-of-type(4n + 1) {
         @include media-breakpoint-up(lg) {
-          height: 635px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
-          height: 370px;
+          height: 500px;
         }
       }
 
       .casespage__item:nth-of-type(even) {
         @include media-breakpoint-up(lg) {
-          height: 1030px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
-          height: 830px;
+          height: 350px;
         }
       }
 
       .casespage__item:nth-of-type(3n + 3) {
         @include media-breakpoint-up(lg) {
-          height: 700px;
-        }
-
-        @include media-breakpoint-between(lg, xl) {
           height: 500px;
         }
       }
@@ -369,11 +347,11 @@
       position: relative;
 
       @include media-breakpoint-down(sm) {
-        height: 360px;
+        height: 200px;
       }
 
       @include media-breakpoint-between(sm, lg) {
-        height: 450px;
+        height: 350px;
       }
 
       @include media-breakpoint-down(lg) {

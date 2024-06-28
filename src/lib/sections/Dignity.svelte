@@ -219,7 +219,7 @@
 
     &__inner {
       position: relative;
-      // overflow: hidden;
+      overflow: hidden;
       @include media-breakpoint-down(lg) {
         padding-top: 25px;
         padding-bottom: 25px;

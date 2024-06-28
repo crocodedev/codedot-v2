@@ -54,8 +54,10 @@
 
     &__exp {
       padding: 8px 20px;
-      color: white;
-      background-color: black;
+      color: #0082b1;
+      background-color: transparent;
+      border: 1px solid #0082b1;
+
       border-radius: 40px;
 
       @include media-breakpoint-down(md) {

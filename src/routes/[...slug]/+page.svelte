@@ -31,6 +31,7 @@
     {data}
     style="overflow: hidden;"
   />
+
   {#each data.content as section}
     {#if section.sectionTitle in Sections}
       <svelte:component
