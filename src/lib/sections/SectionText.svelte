@@ -51,15 +51,18 @@
 
     &__text {
       @include media-breakpoint-up(lg) {
-        align-self: flex-end;
         width: 50%;
+
+        &:nth-child(odd) {
+          align-self: flex-end;
+        }
       }
       @include media-breakpoint-down(lg) {
         padding-bottom: 20px;
         font-size: 16px;
       }
       @include media-breakpoint-up(lg) {
-        padding-bottom: 80px;
+        padding-bottom: 150px;
       }
       @include media-breakpoint-between(lg, xxl) {
         font-size: 24px;

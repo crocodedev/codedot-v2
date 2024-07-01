@@ -1,6 +1,7 @@
 <script>
   export let data
   let listItems
+  let activeIndex = -1
 
   const makeBoldBeforeColon = (text) => {
     const regex = /(.*?)\? */g
@@ -15,6 +16,14 @@
       })
       .join('')
   })
+
+  function handleClick(idx) {
+    if (activeIndex === idx) {
+      activeIndex = -1
+    } else {
+      activeIndex = idx
+    }
+  }
 </script>
 
 {#if data}
@@ -23,11 +32,15 @@
       <div class="offer__wrapper">
         <h2 class="offer__title">{data.offerTitle}</h2>
         {#if data.offerItems?.length > 0}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div class="offer__items">
-            {#each data.offerItems as offerItem}
-              <div class="offer__item">
+            {#each data.offerItems as offerItem, index}
+              <div
+                class={activeIndex === index ? 'offer__item offer__item--active' : 'offer__item'}
+                on:click={() => handleClick(index)}
+              >
                 <p class="offer__name">{offerItem.offerName}</p>
-                <div>
+                <div class="offer__text-item-wrapper">
                   <p class="offer__text">
                     {offerItem.offerText}
                   </p>
@@ -41,6 +54,7 @@
                     </a>
                   {/if}
                 </div>
+                <span class="offer__item-cross"></span>
               </div>
             {/each}
           </div>
@@ -81,14 +95,18 @@
     }
 
     &__btn {
-      position: absolute;
-      bottom: 20px;
+      color: black;
       display: flex;
       padding: 8px 30px;
       align-items: center;
       border: 1px solid black;
       width: max-content;
       border-radius: 40px;
+
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        bottom: 20px;
+      }
     }
 
     &__icon {
@@ -177,19 +195,44 @@
     }
 
     &__item {
-      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
       background-color: #fafafa;
       position: relative;
+      cursor: default;
+      justify-content: space-between;
+      transition: 0.3s ease;
 
-      @include media-breakpoint-down(md) {
-        padding-bottom: 40px;
+      @include media-breakpoint-down(lg) {
         padding: 20px;
-        padding-bottom: 60px;
+        border-radius: 30px;
+        gap: 20px;
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         padding: 40px;
+        border-radius: 40px;
         padding-bottom: 60px;
+        gap: 20px;
+      }
+      &:hover {
+        background-color: #e9f6fb;
+      }
+    }
+
+    &__item--active {
+      @include media-breakpoint-down(lg) {
+        background-color: #e9f6fb;
+      }
+
+      .offer__text-item-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .offer__item-cross {
+        transform: rotate(-45deg);
       }
     }
 
@@ -201,15 +244,16 @@
       bottom: 10px;
     }
 
+    &__text-item-wrapper {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
     &__name {
       font-weight: 700;
       @include media-breakpoint-down(lg) {
-        margin-bottom: 20px;
         font-size: 24px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 40px;
       }
 
       @include media-breakpoint-between(lg, xxl) {
@@ -218,6 +262,24 @@
 
       @include media-breakpoint-up(xxl) {
         font-size: 40px;
+      }
+    }
+
+    &__item-cross {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 25px;
+      right: 15px;
+      min-width: 12px;
+      min-height: 12px;
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      transform: rotate(-135deg);
+      transition: 0.2s ease-in-out;
+
+      @include media-breakpoint-up(lg) {
+        display: none;
       }
     }
 
@@ -231,15 +293,15 @@
 
       @include media-breakpoint-between(lg, xxl) {
         font-size: 16px;
+        padding-bottom: 20px;
         line-height: 24px;
       }
 
       @include media-breakpoint-up(xxl) {
         font-size: 18px;
+        padding-bottom: 20px;
         line-height: 27px;
       }
-
-      padding-bottom: 20px;
     }
   }
 </style>

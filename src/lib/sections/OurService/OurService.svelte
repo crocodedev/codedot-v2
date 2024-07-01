@@ -149,7 +149,7 @@
         padding-bottom: 80px;
       }
 
-      &:not(&--active):hover {
+      &:hover {
         background-color: #e9f6fb;
       }
     }
@@ -235,7 +235,6 @@
 
       @include media-breakpoint-up(lg) {
         position: absolute;
-
         bottom: 20px;
       }
     }
