@@ -18,7 +18,7 @@
             <p class="about-hero__text">
               {data.textBottom}
             </p>
-            <h1 class="about-hero__title">{data.bottomName}</h1>
+            <h1 class="about-hero__title about-hero__title--blue">{data.bottomName}</h1>
           </div>
         </div>
         <div class="about-hero__img-wrapper">
@@ -78,6 +78,10 @@
       }
 
       font-weight: 600;
+
+      &--blue {
+        color: #0082b1;
+      }
     }
 
     &__title-inner {

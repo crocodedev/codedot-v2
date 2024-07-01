@@ -104,7 +104,7 @@
       display: flex;
       align-items: center;
       border-radius: 40px;
-      background-color: black;
+      background-color: #0082b1;
       color: white;
       font-family: Wix Madefor Display;
       font-size: 14px;

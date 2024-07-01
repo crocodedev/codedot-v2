@@ -10,12 +10,10 @@
         <div class="our-services__items">
           {#each data.servicesItems as servicesItem}
             <div class="our-services__item">
-              <div class="our-service__item-text-wrapper">
-                <span class="our-services__name">{servicesItem.serviceName}</span>
-                <p class="our-services__text">
-                  {servicesItem.serviceText}
-                </p>
-              </div>
+              <span class="our-services__name">{servicesItem.serviceName}</span>
+              <p class="our-services__text">
+                {servicesItem.serviceText}
+              </p>
 
               <a href={`${servicesItem.serviceLink}`} class="our-services__btn">
                 Подробнее
@@ -105,6 +103,9 @@
       justify-content: space-between;
       background-color: #fafafa;
       border-radius: 40px;
+      transition: 0.3s ease;
+      gap: 20px;
+      cursor: default;
 
       @include media-breakpoint-down(xl) {
         padding: 20px;
@@ -119,6 +120,10 @@
       @include media-breakpoint-up(xxl) {
         padding: 40px;
         padding-bottom: 80px;
+      }
+
+      &:hover {
+        background-color: #e9f6fb;
       }
     }
 
@@ -144,13 +149,7 @@
       color: #838383;
 
       @include media-breakpoint-down(lg) {
-        margin-top: 20px;
-        margin-top: 40px;
         overflow: hidden;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-top: 40px;
       }
     }
 
