@@ -27,18 +27,20 @@
             {#each data.offerItems as offerItem}
               <div class="offer__item">
                 <p class="offer__name">{offerItem.offerName}</p>
-                <p class="offer__text">
-                  {offerItem.offerText}
-                </p>
-                {#if offerItem.offerPrice}
-                  <span class="offer__price">{offerItem.offerPrice}</span>
-                {/if}
-                {#if offerItem.offerLink}
-                  <a href={`${offerItem.offerLink}`} class="offer__btn">
-                    Подробнее
-                    <img src="../icons/arrow-btn.svg" alt="" class="offer__icon" />
-                  </a>
-                {/if}
+                <div>
+                  <p class="offer__text">
+                    {offerItem.offerText}
+                  </p>
+                  {#if offerItem.offerPrice}
+                    <span class="offer__price">{offerItem.offerPrice}</span>
+                  {/if}
+                  {#if offerItem.offerLink}
+                    <a href={`${offerItem.offerLink}`} class="offer__btn">
+                      Подробнее
+                      <img src="../icons/arrow-btn.svg" alt="" class="offer__icon" />
+                    </a>
+                  {/if}
+                </div>
               </div>
             {/each}
           </div>
@@ -159,11 +161,11 @@
     &__items {
       display: grid;
 
-      @include media-breakpoint-down(md) {
-        gap: 40px;
+      @include media-breakpoint-down(lg) {
+        gap: 20px;
       }
 
-      @include media-breakpoint-between(md, xl) {
+      @include media-breakpoint-between(lg, xl) {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
       }
