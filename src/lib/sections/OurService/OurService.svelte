@@ -4,7 +4,6 @@
   let activeIndex = -1
 
   function handleClick(idx) {
-    console.log('click')
     if (activeIndex === idx) {
       activeIndex = -1
     } else {
@@ -203,6 +202,7 @@
 
       @include media-breakpoint-down(xl) {
         font-size: 24px;
+        width: 90%;
       }
 
       @include media-breakpoint-between(xl, xxl) {

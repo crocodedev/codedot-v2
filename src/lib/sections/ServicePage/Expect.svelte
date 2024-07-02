@@ -51,7 +51,7 @@
         </div>
         <div class="expect__items">
           {#each data.expectItems as expectItem, index}
-            {#if index != data.expectItems.length - 1}
+            {#if index != data.expectItems.length}
               <div class="expect__item-img-wrapper">
                 <img src="../images/expect-{index + 1}.svg" alt="" class="expect__item-img" />
               </div>

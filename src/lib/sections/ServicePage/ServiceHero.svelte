@@ -113,7 +113,7 @@
       position: relative;
 
       @include media-breakpoint-down(sm) {
-        height: 500px;
+        height: 200px;
       }
 
       @include media-breakpoint-between(sm, lg) {

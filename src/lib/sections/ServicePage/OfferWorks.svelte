@@ -94,8 +94,6 @@
     sortArr(idx)
     reinitSwiper()
   }
-
-  console.log(listItems)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -395,16 +393,16 @@
         text-align: left;
         gap: 20px;
 
-        &:nth-child(4n + 1) {
+        &:nth-of-type(4n + 1) {
           align-self: flex-start;
         }
 
-        &:nth-child(4n + 2),
-        &:nth-child(4n + 4) {
+        &:nth-of-type(4n + 2),
+        &:nth-of-type(4n + 4) {
           align-self: center;
         }
 
-        &:nth-child(4n + 3) {
+        &:nth-of-type(4n + 3) {
           align-self: flex-end;
         }
       }
