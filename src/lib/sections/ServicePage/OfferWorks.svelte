@@ -10,7 +10,9 @@
     categoriesList = [],
     activeCategory = 0,
     sortedArray = [],
-    liItems = []
+    counter = 0
+
+  let liItems = []
 
   register()
 
@@ -53,18 +55,8 @@
     }
   }
 
-  onMount(async () => {
-    sortArr(activeCategory)
-    reinitSwiper()
-
-    liItems = Array.from(document.querySelectorAll('.offer-works__text-list'))
-    liItems.forEach((el, idx) => {
-      el.querySelector('.offer-works__text-num').textContent = idx + 1
-    })
-  })
-
   if (data) {
-    data.offerWorksItems.map((el) => {
+    data?.offerWorksItems?.map((el) => {
       categoriesList.push(el.projectCategory)
     })
   }
@@ -76,12 +68,13 @@
       (el) => el.projectCategory === finalCategories[activeCategory]
     )
   }
+
   const makeBoldBeforeColon = (text) => {
     const regex = /(.*?): */g
     return text.replace(regex, (match, p1) => `<b>${p1}:</b> `)
   }
 
-  data?.richTextBlock?.forEach((text) => {
+  data.richTextBlock?.forEach((text) => {
     listItems = data.richTextBlock
       .map((text) => {
         const boldedText = makeBoldBeforeColon(text.children[0].text)
@@ -94,6 +87,11 @@
     sortArr(idx)
     reinitSwiper()
   }
+
+  onMount(() => {
+    sortArr(activeCategory)
+    reinitSwiper()
+  })
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -103,38 +101,42 @@
     <div class="container">
       <div class="offer-works__wrapper">
         <div class="offer-works__contains">
-          <div class="offer-works__title-wrapper">
-            <h2 class="offer-works__title">{data.offerWorksTitle}</h2>
-          </div>
-          <div class="offer-works__categories-wrapper">
-            <div class="offer-works__categories">
-              {#each categoriesList.unique() as category, idx}
-                <span
-                  class={activeCategory === idx
-                    ? 'offer-works__category-item offer-works__category-item--active'
-                    : 'offer-works__category-item'}
-                  on:click={() => handleActive(idx)}
-                >
-                  {category}
-                </span>
-              {/each}
+          {#if data.offerWorksTitle}
+            <div class="offer-works__title-wrapper">
+              <h2 class="offer-works__title">{data?.offerWorksTitle}</h2>
             </div>
-            <div class="offer-works__categories-inner">
-              <div
-                class={sortedArray.length > 1
-                  ? 'offer-works__controls'
-                  : 'offer-works__controls offer-works__controls--disabled'}
-              >
-                <button class="offer-works__btn offer-works__btn--prev">
-                  <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
-                </button>
-                <button class="offer-works__btn offer-works__btn--next">
-                  <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
-                </button>
+          {/if}
+          {#if categoriesList.length}
+            <div class="offer-works__categories-wrapper">
+              <div class="offer-works__categories">
+                {#each categoriesList.unique() as category, idx}
+                  <span
+                    class={activeCategory === idx
+                      ? 'offer-works__category-item offer-works__category-item--active'
+                      : 'offer-works__category-item'}
+                    on:click={() => handleActive(idx)}
+                  >
+                    {category}
+                  </span>
+                {/each}
               </div>
-              <a href="/cases" class="offer-works__btn-link">Все работы</a>
+              <div class="offer-works__categories-inner">
+                <div
+                  class={sortedArray.length > 1
+                    ? 'offer-works__controls'
+                    : 'offer-works__controls offer-works__controls--disabled'}
+                >
+                  <button class="offer-works__btn offer-works__btn--prev">
+                    <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
+                  </button>
+                  <button class="offer-works__btn offer-works__btn--next">
+                    <img src="../icons/arrow-btn.svg" alt="" class="reviews__btn-icon" />
+                  </button>
+                </div>
+                <a href="/cases" class="offer-works__btn-link">Все работы</a>
+              </div>
             </div>
-          </div>
+          {/if}
           <div class="offer-works__items">
             <swiper-container
               slides-per-view="1"
@@ -175,15 +177,16 @@
           <div class="offer-works__text-wrapper">
             <h2 class="offer-works__text-title">{data.offerWorksTextTitle}</h2>
             <ul class="offer-works__text-rich">
-              {#each listItems?.split('</br>') as text, index}
+              {#if data.offerWorksParagraph}
+                <p class="offer-works__text">{data.offerWorksParagraph}</p>
+              {/if}
+              {#each listItems.split('</br>') as text, index}
                 {#if text != '' && text !== '\n'}
                   {#if text.match('<b>')}
-                    <li class="offer-works__text-list">
-                      <span class="offer-works__text-num"></span>
+                    <li class="offer-works__text-list" id="offer-works__text-list">
+                      <span class="offer-works__text-num">{index + 1}</span>
                       <p>{@html `${text}`}</p>
                     </li>
-                  {:else}
-                    <p class="offer-works__text">{@html `${text}`}</p>
                   {/if}
                 {/if}
               {/each}
@@ -460,7 +463,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
         margin-bottom: 50px;
       }
     }
@@ -482,7 +485,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 

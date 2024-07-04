@@ -43,7 +43,11 @@ export default {
       type: 'string',
       title: 'Offer Works Text Title',
     },
-
+    {
+      name: 'offerWorksParagraph',
+      type: 'text',
+      title: 'Offer Works Paragraph',
+    },
     {
       title: 'offerWorksText',
       name: 'richTextBlock',

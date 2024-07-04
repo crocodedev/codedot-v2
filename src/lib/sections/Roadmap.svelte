@@ -363,7 +363,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
         line-height: 83px;
       }
     }

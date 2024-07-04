@@ -1,6 +1,18 @@
 <script>
   export let data
+
+  let activeIndex = -1
+
+  function handleClick(idx) {
+    if (activeIndex === idx) {
+      activeIndex = -1
+    } else {
+      activeIndex = idx
+    }
+  }
 </script>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 
 {#if data}
   <section class="technologies">
@@ -8,9 +20,17 @@
       <div class="technologies__wrapper">
         <h2 class="technologies__title">{data.title}</h2>
         <div class="technologies__items">
-          {#each data.technologiesList as item}
-            <div class="technologies__item">
-              <p class="technologies__name">{item.name}</p>
+          {#each data.technologiesList as item, index}
+            <div
+              class={activeIndex === index
+                ? 'technologies__item technologies__item--active'
+                : 'technologies__item'}
+              on:click={() => handleClick(index)}
+            >
+              <div class="technologies__name-wrapper">
+                <p class="technologies__name">{item.name}</p>
+                <span class="technologies__stroke"></span>
+              </div>
               <div class="technologies__stack">
                 {#each item.subtechnologiesList as subtech}
                   <span class="technologies__stack-item">{subtech}</span>
@@ -76,7 +96,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 
@@ -85,10 +105,31 @@
       flex-direction: column;
     }
 
+    &__stroke {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+      position: relative;
+      width: 12px;
+      height: 12px;
+      min-width: 12px;
+      min-height: 12px;
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      transform: rotate(-135deg);
+    }
+
+    &__name-wrapper {
+      position: relative;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+    }
+
     &__item {
       display: grid;
       align-items: center;
-
+      position: relative;
       border-bottom: 1px solid black;
 
       @include media-breakpoint-down(lg) {
@@ -100,6 +141,21 @@
         grid-template-columns: 35% 65%;
         padding-top: 25px;
         padding-bottom: 33px;
+      }
+
+      &--active {
+        @include media-breakpoint-down(lg) {
+          gap: 10px;
+        }
+        .technologies__stack {
+          @include media-breakpoint-down(lg) {
+            display: flex;
+          }
+        }
+
+        .technologies__name-wrapper .technologies__stroke {
+          transform: rotate(-45deg);
+        }
       }
     }
 
@@ -119,19 +175,18 @@
         font-size: 40px;
         line-height: 60px;
       }
-
-      @include media-breakpoint-between(sm, lg) {
-        margin-bottom: 20px;
-      }
     }
 
     &__stack {
-      display: flex;
       flex-wrap: wrap;
 
       row-gap: 20px;
 
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
       @include media-breakpoint-up(lg) {
+        display: flex;
         justify-content: flex-end;
       }
     }

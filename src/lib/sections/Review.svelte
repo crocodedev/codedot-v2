@@ -107,7 +107,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
         line-height: 157.5px;
       }
     }
@@ -201,7 +201,7 @@
           top: -20px;
         }
         @include media-breakpoint-up(xl) {
-          left: -80px;
+          left: -40px;
           top: -40px;
         }
       }
@@ -219,18 +219,13 @@
         transform: rotate(180deg);
       }
 
-      @include media-breakpoint-down(sm) {
-        font-size: 28px;
-        line-height: 42px;
-      }
-
-      @include media-breakpoint-between(sm, lg) {
-        font-size: 30px;
-        line-height: 45px;
+      @include media-breakpoint-down(lg) {
+        font-size: 24px;
+        line-height: 36px;
       }
 
       @include media-breakpoint-up(lg) {
-        font-size: 32px;
+        font-size: 48px;
       }
     }
 
@@ -241,7 +236,7 @@
       }
 
       @include media-breakpoint-up(lg) {
-        margin-top: 85px;
+        margin-top: 80px;
       }
       display: flex;
     }

@@ -107,7 +107,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 

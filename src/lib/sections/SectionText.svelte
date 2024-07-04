@@ -45,7 +45,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 
@@ -64,12 +64,9 @@
       @include media-breakpoint-up(lg) {
         padding-bottom: 150px;
       }
-      @include media-breakpoint-between(lg, xxl) {
-        font-size: 24px;
-      }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 32px;
+        font-size: 24px;
       }
     }
   }

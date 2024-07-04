@@ -76,7 +76,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 
@@ -122,7 +122,7 @@
       }
 
       @include media-breakpoint-up(lg) {
-        padding: 45px 40px;
+        padding: 20px 40px;
         border-radius: 40px;
       }
     }

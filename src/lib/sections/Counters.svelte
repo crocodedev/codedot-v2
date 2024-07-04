@@ -85,7 +85,7 @@
       }
 
       @include media-breakpoint-up(lg) {
-        font-size: 85px;
+        font-size: 96px;
         line-height: 150px;
       }
     }

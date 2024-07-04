@@ -225,7 +225,7 @@
 
       @include media-breakpoint-up(xl) {
         margin-bottom: 150px;
-        font-size: 85px;
+        font-size: 96px;
         line-height: 127px;
       }
 

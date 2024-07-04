@@ -2,7 +2,6 @@
   import imageUrl from '../js/imageUrlBuilder'
 
   export let data
-
 </script>
 
 {#if data}
@@ -60,7 +59,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        font-size: 85px;
+        font-size: 96px;
       }
     }
 

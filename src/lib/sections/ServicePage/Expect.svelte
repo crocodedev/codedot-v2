@@ -118,7 +118,7 @@
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 85px;
+        font-size: 96px;
       }
 
       @include media-breakpoint-up(lg) {
