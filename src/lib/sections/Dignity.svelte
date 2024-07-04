@@ -206,9 +206,14 @@
         height: 100%;
       }
 
+      @include media-breakpoint-between(lg, xl) {
+        left: 15px;
+        transform: translateY(-13%);
+      }
+
       @include media-breakpoint-between(xl, xxl) {
-        left: 30px;
-        transform: translateY(-55px);
+        left: 15px;
+        transform: translateY(-120px);
       }
 
       @include media-breakpoint-up(xxl) {
