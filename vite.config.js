@@ -1,8 +1,12 @@
-import { sveltekit } from '@sveltejs/kit/vite';
+import preprocessor from 'svelte-preprocess'
+import { sveltekit } from '@sveltejs/kit/vite'
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit()]
-};
+  plugins: [sveltekit()],
+  preprocess: preprocessor({
+    postcss: true,
+  }),
+}
 
-export default config;
+export default config

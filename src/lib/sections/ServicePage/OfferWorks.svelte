@@ -47,8 +47,10 @@
   const reinitSwiper = () => {
     if (data) {
       const initializeSwiper = () => {
-        Object.assign(swiperElSecond, swiperSecondParams)
-        swiperElSecond.initialize()
+        if (swiperElSecond && swiperSecondParams) {
+          Object.assign(swiperElSecond, swiperSecondParams)
+          swiperElSecond.initialize()
+        }
       }
 
       requestAnimationFrame(initializeSwiper)
@@ -64,7 +66,7 @@
   const sortArr = (idx) => {
     activeCategory = idx
     let finalCategories = categoriesList.unique()
-    sortedArray = data.offerWorksItems.filter(
+    sortedArray = data.offerWorksItems?.filter(
       (el) => el.projectCategory === finalCategories[activeCategory]
     )
   }
@@ -137,40 +139,42 @@
               </div>
             </div>
           {/if}
-          <div class="offer-works__items">
-            <swiper-container
-              slides-per-view="1"
-              class="reviews__swiper-wrapper"
-              navigation="true"
-              space-between="100"
-              init="false"
-              bind:this={swiperElSecond}
-            >
-              {#each sortedArray as offerItem}
-                <swiper-slide class="offer-works__item">
-                  <div class="offer-works__img-wrapper">
-                    <img src={imageUrl(offerItem.projectImage)} alt="" />
-                  </div>
-                  <div class="offer-works__info-wrapper">
-                    <p class="offer-works__item-name">
-                      {offerItem.projectName}
-                    </p>
-                    <p class="offer-works__item-category">
-                      {offerItem.projectCategoryText}
-                    </p>
-                    <p class="offer-works__item-description">
-                      {offerItem.projectDescription}
-                    </p>
-                    <div class="offer-works__tags">
-                      {#each offerItem.projectTagsList as tag}
-                        <div class="offer-works__tag">{tag}</div>
-                      {/each}
+          {#if sortedArray?.length > 0}
+            <div class="offer-works__items">
+              <swiper-container
+                slides-per-view="1"
+                class="reviews__swiper-wrapper"
+                navigation="true"
+                space-between="100"
+                init="false"
+                bind:this={swiperElSecond}
+              >
+                {#each sortedArray as offerItem}
+                  <swiper-slide class="offer-works__item">
+                    <div class="offer-works__img-wrapper">
+                      <img src={imageUrl(offerItem.projectImage)} alt="" />
                     </div>
-                  </div>
-                </swiper-slide>
-              {/each}
-            </swiper-container>
-          </div>
+                    <div class="offer-works__info-wrapper">
+                      <p class="offer-works__item-name">
+                        {offerItem.projectName}
+                      </p>
+                      <p class="offer-works__item-category">
+                        {offerItem.projectCategoryText}
+                      </p>
+                      <p class="offer-works__item-description">
+                        {offerItem.projectDescription}
+                      </p>
+                      <div class="offer-works__tags">
+                        {#each offerItem.projectTagsList as tag}
+                          <div class="offer-works__tag">{tag}</div>
+                        {/each}
+                      </div>
+                    </div>
+                  </swiper-slide>
+                {/each}
+              </swiper-container>
+            </div>
+          {/if}
         </div>
 
         {#if data.offerWorksTextTitle}

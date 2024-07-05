@@ -24,6 +24,7 @@
 		"@sanity/default-layout": "^2.36.2",
 		"@sanity/default-login": "^2.36.2",
 		"@sanity/image-url": "^1.0.2",
+		"postcss-load-config": "^6.0.1",
 		"svelte-tel-input": "^3.3.8",
 		"swiper": "^10.1.0"
 	}

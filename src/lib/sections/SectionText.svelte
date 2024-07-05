@@ -1,5 +1,5 @@
 <script>
-  export let data
+  export let data, openModal
 </script>
 
 {#if data}
@@ -13,6 +13,16 @@
       </div>
     </div>
   </section>
+  {#if data.wantTitle}
+    <section class="want-work">
+      <div class="container">
+        <div class="want-work__wrapper">
+          <p class="want-work__title">{data.wantTitle}</p>
+          <button class="btn btn--work" on:click={openModal}>Связаться с нами</button>
+        </div>
+      </div>
+    </section>
+  {/if}
 {/if}
 
 <style lang="scss">
@@ -67,6 +77,39 @@
 
       @include media-breakpoint-up(xxl) {
         font-size: 24px;
+      }
+    }
+  }
+
+  .want-work {
+    @include media-breakpoint-down(lg) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    &__title {
+      font-weight: 600;
+      text-align: center;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 90px;
+        line-height: 108px;
       }
     }
   }

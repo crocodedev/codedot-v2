@@ -150,6 +150,7 @@
         .technologies__stack {
           @include media-breakpoint-down(lg) {
             display: flex;
+            opacity: 1;
           }
         }
 
@@ -179,11 +180,12 @@
 
     &__stack {
       flex-wrap: wrap;
-
+      transition: 0.3s ease;
       row-gap: 20px;
 
       @include media-breakpoint-down(lg) {
         display: none;
+        opacity: 0;
       }
       @include media-breakpoint-up(lg) {
         display: flex;

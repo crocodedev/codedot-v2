@@ -10,5 +10,6 @@ export default {
     },
     {name: 'Title', type: 'string', title: 'Title'},
     {name: 'Text', type: 'text', title: 'Text'},
+    {name: 'wantTitle', type: 'string', title: 'Want to work title'},
   ],
 }
