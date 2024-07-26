@@ -176,20 +176,22 @@
 
     &__text {
       position: relative;
+      
 
       &::before,
       &::after {
         position: absolute;
         content: '';
+        background-image: url('/icons/quote-up.svg');
+        background-size: cover;
 
-        background-image: url('../icons/quote-up.svg');
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
           width: 20px;
           height: 20px;
-          background-size: cover;
+          
         }
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           width: 40px;
           height: 40px;
         }
@@ -222,10 +224,12 @@
       @include media-breakpoint-down(lg) {
         font-size: 24px;
         line-height: 36px;
+        text-indent: 40px;
       }
 
       @include media-breakpoint-up(lg) {
         font-size: 48px;
+        text-indent: 100px;
       }
     }
 

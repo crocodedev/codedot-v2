@@ -25,13 +25,6 @@
   @import '../../styles/base/mixins.scss';
 
   .digital {
-    @include media-breakpoint-down(xl) {
-      margin: 30px 0;
-    }
-
-    @include media-breakpoint-up(xl) {
-      margin: 65px 0;
-    }
     position: relative;
 
     @include media-breakpoint-down(lg) {

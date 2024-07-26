@@ -324,13 +324,14 @@
 
       &:nth-child(5) {
         @include media-breakpoint-between(lg, xl) {
-          transform: translateY(20px) translateX(5px);
+          transform: translateX(5px);
         }
         @include media-breakpoint-between(xl, xxl) {
-          transform: translateY(20px);
+          // transform: translateY(20px);
         }
         @include media-breakpoint-up(xxl) {
-          transform: translateY(7px) translateX(10px);
+          transform: translateX(10px);
+          max-width: 50%;
         }
       }
 
