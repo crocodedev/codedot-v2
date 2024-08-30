@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
 Disallow: /cgi-bin
 Disallow: /static/images/
 Disallow: /static/
