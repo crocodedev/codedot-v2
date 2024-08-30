@@ -9,13 +9,13 @@
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__content">
-          <!-- <div class="footer__socials-nav">
+          <div class="footer__socials-nav">
             {#each data.socailItems as socialItem}
               <a href={socialItem.link} class="footer__socials-nav-item">
                 <img src={imageUrl(socialItem.socialIcon)} alt="social image" />
               </a>
             {/each}
-          </div> -->
+          </div>
           <div class="footer__text">{data.textFooter}</div>
           <button class="footer__btn" on:click={openModal}>Связаться с нами</button>
 
@@ -189,7 +189,6 @@
         font-size: 90px;
         line-height: 108px;
         margin-bottom: 40px;
-        max-width: 600px;
       }
     }
 

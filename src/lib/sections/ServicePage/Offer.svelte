@@ -132,13 +132,11 @@
 
   .offer {
     @include media-breakpoint-down(xl) {
-      padding-top: 30px;
-      padding-bottom: 30px;
+      margin: 30px 0;
     }
 
     @include media-breakpoint-up(xl) {
-      padding-bottom: 65px;
-      padding-top: 65px;
+      margin: 150px 0;
     }
 
     &__text-wrapper {
@@ -217,24 +215,19 @@
         margin-bottom: 25px;
       }
 
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 50px;
-      }
-
       @include media-breakpoint-between(lg, xl) {
         font-size: 60px;
+        margin-bottom: 40px;
       }
 
       @include media-breakpoint-between(xl, xxl) {
         font-size: 80px;
+        margin-bottom: 60px;
       }
 
       @include media-breakpoint-up(xxl) {
         font-size: 96px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: 940px;
+        margin-bottom: 80px;
       }
     }
 

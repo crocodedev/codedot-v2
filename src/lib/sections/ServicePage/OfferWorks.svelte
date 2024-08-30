@@ -206,12 +206,6 @@
   @import '../../styles/base/mixins.scss';
 
   .offer-works {
-    @include media-breakpoint-down(xl) {
-      padding-top: 30px;
-    }
-    @include media-breakpoint-up(xl) {
-      padding-top: 65px;
-    }
     &__item {
       @include media-breakpoint-down(lg) {
         display: flex;

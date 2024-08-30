@@ -33,15 +33,15 @@
       justify-content: center;
 
       @include media-breakpoint-down(sm) {
-        padding: 30px 0;
+        margin: 30px 0;
       }
 
       @include media-breakpoint-between(sm, lg) {
-        padding: 30px 0;
+        margin: 30px 0;
       }
 
       @include media-breakpoint-up(lg) {
-        padding-bottom: 65px;
+        margin-bottom: 65px;
       }
     }
     &__text {
@@ -62,26 +62,22 @@
 
     &__img-wrapper {
       width: 100%;
-      position: relative;
       overflow: hidden;
       border-radius: 1000px;
-
-      @include media-breakpoint-down(lg) {
-        height: 700px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        height: 1080px;
-      }
+      aspect-ratio: 3 / 1;
+      min-height: 200px;
+      max-height: 616px;
     }
 
     &__img {
-      position: absolute;
       width: 100%;
       height: 100%;
-      top: 0;
       object-fit: cover;
-      left: 0;
+      object-position: 50% 75%;
+
+      @include media-breakpoint-down(md) {
+        transform: scale(160%) translateY(-10%);
+      }
     }
   }
 </style>

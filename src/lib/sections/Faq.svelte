@@ -43,13 +43,11 @@
 
   .faq {
     @include media-breakpoint-down(lg) {
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin: 30px 0;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 65px;
-      margin-bottom: 65px;
+      padding-top: 150px;
     }
 
     &__title {

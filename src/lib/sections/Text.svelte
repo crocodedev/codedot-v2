@@ -63,7 +63,7 @@
     <section class="text">
       <div class="text__wrapper">
         <div class="container container--text">
-          <div class="text__inner">
+          <div class="text__items">
             {#each data.textItems as item, index}
               <p class="text__item">
                 {item}
@@ -156,26 +156,17 @@
   }
 
   .text {
+    margin: 0;
     &__inner {
       position: relative;
       height: 100%;
+
       @include media-breakpoint-down(lg) {
         padding-top: 40px;
       }
-      @include media-breakpoint-up(lg) {
-        padding-top: 40px;
-        padding-bottom: 30px;
-      }
     }
 
-    &__wrapper {
-      // position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-    }
-
-    &__inner {
+    &__items {
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -185,10 +176,12 @@
         gap: 40px;
       }
 
-      @include media-breakpoint-up(md) {
-        padding-top: 65px;
-        padding-bottom: 65px;
-        gap: 80px;
+      @include media-breakpoint-between(md, lg) {
+        gap: 60px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        gap: 150px;
       }
     }
 
@@ -211,13 +204,14 @@
         width: 56%;
       }
 
-      @include media-breakpoint-down(xl) {
-        font-size: 14px;
-        line-height: 36px;
+      @include media-breakpoint-between(md, xl) {
+        font-size: 18px;
+        line-height: 32px;
       }
 
       @include media-breakpoint-between(xl, xxl) {
         font-size: 22px;
+        line-height: 36px;
       }
 
       @include media-breakpoint-up(xxl) {
@@ -238,15 +232,16 @@
   }
 
   .want-work {
+    margin: 0;
+
     @include media-breakpoint-down(lg) {
-      margin-top: 50px;
-      margin-bottom: 50px;
+      margin: 50px 0;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 200px;
-      padding-bottom: 100px;
+      padding: 150px 0;
     }
+
     &__wrapper {
       display: flex;
       flex-direction: column;
