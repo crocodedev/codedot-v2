@@ -217,10 +217,12 @@
 
       @include media-breakpoint-between(lg, xl) {
         font-size: 60px;
+        margin-bottom: 40px;
       }
 
       @include media-breakpoint-between(xl, xxl) {
         font-size: 80px;
+        margin-bottom: 60px;
       }
 
       @include media-breakpoint-up(xxl) {

@@ -34,8 +34,8 @@ section {
     margin: 25px 0;
   }
 
-  @include media-breakpoint-betwen(sm, lg) {
-    margin: 50px;
+  @include media-breakpoint-between(sm, lg) {
+    margin: 50px 0;
   }
 
   @include media-breakpoint-up(lg) {

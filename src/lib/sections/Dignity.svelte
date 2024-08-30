@@ -54,7 +54,7 @@
 </script>
 
 {#if data}
-  <div class="dignity__inner">
+  <section class="dignity__inner">
     <div class="dignity__background">
       <svg
         width="100%"
@@ -147,7 +147,7 @@
         </div>
       </section>
     {/if}
-  </div>
+    </section>
 {/if}
 
 <style lang="scss">
@@ -168,7 +168,8 @@
   }
 
   .dignity {
-    overflow: hidden;
+    // overflow: hidden;
+    margin: 0;
     .anima {
       stroke-dashoffset: 8800;
       stroke-dasharray: 8800;
@@ -191,7 +192,8 @@
       margin-bottom: 30px;
     }
     @include media-breakpoint-up(lg) {
-      margin-bottom: 300px;
+      // margin-bottom: 300px;
+      padding-bottom: 150px;
     }
     position: relative;
 
@@ -231,8 +233,8 @@
       }
 
       @include media-breakpoint-up(lg) {
-        padding-top: 105px;
-        padding-bottom: 105px;
+        // padding-top: 105px;
+        // padding-bottom: 105px;
       }
     }
 
@@ -252,10 +254,15 @@
       font-weight: 600;
       width: max-content;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(md) {
+        font-weight: 700;
         font-size: 24px;
         line-height: 60px;
-        margin-bottom: 5px;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 34px;
+        line-height: 70px;
       }
 
       @include media-breakpoint-between(lg, xl) {
@@ -280,7 +287,12 @@
         line-height: 21px;
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-between(md, lg) {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      @include media-breakpoint-up(lg) {
         font-size: 24px;
         line-height: 27px;
       }
@@ -289,6 +301,18 @@
     &__item {
       display: flex;
       flex-direction: column;
+
+      @include media-breakpoint-down(lg) {
+        &:not(&:last-of-type) {
+          transform: translate(-4px, 5px);
+          margin-bottom: 35px;
+        }
+
+        &:last-of-type {
+          transform: translateX(-4px);
+          margin-bottom: 35px;
+        }
+      }
 
       &:nth-child(1) {
         @include media-breakpoint-between(lg, xl) {
@@ -311,26 +335,10 @@
 
       &:nth-child(3) {
         align-self: flex-end;
-        @include media-breakpoint-up(xl) {
-          transform: translateX(-52px) translateY(-10px);
-        }
-      }
-
-      &:nth-child(3) .dignity__text {
-        @include media-breakpoint-up(lg) {
-          width: 509px;
-        }
       }
 
       &:nth-child(5) {
-        @include media-breakpoint-between(lg, xl) {
-          transform: translateX(5px);
-        }
-        @include media-breakpoint-between(xl, xxl) {
-          // transform: translateY(20px);
-        }
-        @include media-breakpoint-up(xxl) {
-          transform: translateX(10px);
+        @include media-breakpoint-up(lg) {
           max-width: 50%;
         }
       }
@@ -338,18 +346,6 @@
       &:nth-child(3) .dignity__text {
         @include media-breakpoint-up(lg) {
           width: 440px;
-        }
-      }
-
-      @include media-breakpoint-down(lg) {
-        &:not(&:last-of-type) {
-          transform: translate(-4px, 5px);
-          margin-bottom: 35px;
-        }
-
-        &:last-of-type {
-          transform: translateX(-4px);
-          margin-bottom: 35px;
         }
       }
     }
@@ -382,8 +378,10 @@
     border-radius: 40px;
 
     @include media-breakpoint-up(lg) {
-      margin-top: 65px;
-      margin-bottom: 65px;
+      // margin: 300px 0;
+      // margin-top: 65px;
+      // margin-bottom: 65px;
+      // padding: 150px 0;
     }
 
     &__wrapper {
@@ -466,14 +464,14 @@
   }
 
   .want-work {
+    margin-bottom: 0;
+
     @include media-breakpoint-down(lg) {
       margin-top: 50px;
-      margin-bottom: 50px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 200px;
-      padding-bottom: 100px;
+      padding: 150px 0;
     }
     &__wrapper {
       display: flex;

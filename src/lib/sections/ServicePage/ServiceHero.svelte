@@ -192,82 +192,73 @@
 
     &__text-wrapper {
       display: flex;
+      flex-direction: column;
       font-family: Wix Madefor Display;
 
       & :global(h3) {
         font-weight: 600;
+        margin-bottom: 20px;
+        
+        @include media-breakpoint-up(xxl) {
+          font-size: 40px;
+        }
+
+        @include media-breakpoint-between(xl, xxl) {
+          font-size: 30px;
+        }
+
+        @include media-breakpoint-between(md, xl) {
+          font-size: 26px;
+        }
+      }
+
+      & :global(.cards) {
+        display: grid;
+
+        @include media-breakpoint-up(xxl) {
+          gap: 180px;
+        }
+
+        @include media-breakpoint-between(xl, xxl) {
+          gap: 100px;
+        }
+
+        @include media-breakpoint-between(md, xl) {
+          gap: 50px;
+        }
+
+        @include media-breakpoint-up(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media-breakpoint-down(md) {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, 1fr);
+          gap: 20px;
+        }
       }
       
       & :global(p) {
         color: #212121;
-      }
 
-      @include media-breakpoint-down(md) {
-        & :global(h3) {
+        @include media-breakpoint-up(xxl) {
           font-size: 24px;
           line-height: 36px;
-          margin-bottom: 20px;
         }
 
-        & :global(p) {
+        @include media-breakpoint-between(xl, xxl) {
+          font-size: 22px;
+          line-height: 30px;
+        }
+
+        @include media-breakpoint-between(md, xl) {
+          font-size: 18px;
+          line-height: 26px;
+        }
+
+        @include media-breakpoint-down(md) {
           font-size: 14px;
           line-height: 21px;
-        }
-      }
-
-      @include media-breakpoint-between(md, xl) {
-        & :global(h3) {
-          font-size: 28px;
-          margin-bottom: 20px;
-        }
-
-        & :global(p) {
-          font-size: 22px;
-        }
-      }
-
-      @include media-breakpoint-down(xl) {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      @include media-breakpoint-between(xl, xxl) {
-        gap: 90px;
-
-        & :global(h3) {
-          font-size: 30px;
-          margin-bottom: 18px;
-        }
-
-        & :global(p) {
-          font-size: 22px;
-          line-height: 32px;
-        }
-      }
-
-      @include media-breakpoint-up(xxl) {
-        gap: 20px;
-        justify-content: space-between;
-
-        & :global(div) {
-          &:nth-child(1) {
-            max-width: 660px;
-          }
-
-          &:nth-child(2) {
-            max-width: 800px;
-          }
-        }
-
-        & :global(h3) {
-          font-size: 40px;
-          line-height: 60px;
-          margin-bottom: 20px;
-        }
-
-        & :global(p) {
-          font-size: 24px;
-          line-height: 36px;
         }
       }
     }

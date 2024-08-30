@@ -88,17 +88,13 @@
   @import '../styles/base/mixins.scss';
 
   .services {
+    position: relative;
     overflow-x: hidden;
+
     @include media-breakpoint-down(lg) {
       padding-top: 30px;
       padding-bottom: 30px;
     }
-
-    @include media-breakpoint-up(lg) {
-      padding: 65px 0;
-    }
-
-    position: relative;
 
     &__title-wrapper {
       display: flex;
@@ -130,7 +126,6 @@
 
       @include media-breakpoint-down(md) {
         font-size: 40px;
-
         margin-bottom: 30px;
       }
 

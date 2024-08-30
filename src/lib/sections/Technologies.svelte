@@ -58,7 +58,7 @@
     &__wrapper {
       @include media-breakpoint-down(md) {
         padding-top: 30px;
-        padding-bottom: 60px;
+        padding-bottom: 40px;
       }
 
       @include media-breakpoint-between(md, xl) {
@@ -76,26 +76,22 @@
       font-weight: 600;
 
       @include media-breakpoint-down(md) {
+        margin-bottom: 25px;
         font-size: 40px;
       }
 
       @include media-breakpoint-between(md, lg) {
+        margin-bottom: 30px;
         font-size: 60px;
       }
 
-      @include media-breakpoint-down(lg) {
-        margin-bottom: 31px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 54px;
-      }
-
       @include media-breakpoint-between(lg, xl) {
+        margin-bottom: 55px;
         font-size: 80px;
       }
 
       @include media-breakpoint-up(xl) {
+        margin-bottom: 55px;
         font-size: 96px;
       }
     }
@@ -163,10 +159,6 @@
     &__name {
       font-weight: 600;
 
-      @include media-breakpoint-down(sm) {
-        margin-bottom: 10px;
-      }
-
       @include media-breakpoint-down(md) {
         font-size: 28px;
         line-height: 42px;
@@ -194,6 +186,7 @@
     }
 
     &__stack-item {
+      
       @include media-breakpoint-down(sm) {
         margin-right: 20px;
         font-size: 14px;

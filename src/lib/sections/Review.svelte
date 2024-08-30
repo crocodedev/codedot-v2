@@ -85,7 +85,7 @@
 
   .reviews {
     @include media-breakpoint-up(lg) {
-      padding-top: 65px;
+      // padding-top: 65px;
     }
     &__title {
       font-weight: 600;
