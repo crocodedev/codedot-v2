@@ -2,6 +2,8 @@
   import imageUrl from '../js/imageUrlBuilder'
 
   export let openModal, data
+
+  console.log('footer data', data)
 </script>
 
 {#if data}
@@ -9,18 +11,20 @@
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__content">
-          <div class="footer__socials-nav">
-            {#each data.socailItems as socialItem}
-              <a href={socialItem.link} class="footer__socials-nav-item">
-                <img src={imageUrl(socialItem.socialIcon)} alt="social image" />
-              </a>
-            {/each}
-          </div>
+          {#if data?.socailItems?.length > 0}
+            <div class="footer__socials-nav">
+              {#each data.socailItems as socialItem}
+                <a href={socialItem.link} class="footer__socials-nav-item">
+                  <img src={imageUrl(socialItem.socialIcon)} alt="social image" />
+                </a>
+              {/each}
+            </div>
+          {/if}
           <div class="footer__text">{data.textFooter}</div>
           <button class="footer__btn" on:click={openModal}>Связаться с нами</button>
 
           <div class="footer__copyright">
-            <span>© 2023 Codedot</span>
+            <span>© {new Date().getFullYear()} Codedot</span>
             <span
               >Все права защищены — <a href="/" class="link">Политика конфиденциальности</a></span
             >
@@ -31,12 +35,12 @@
             <!-- svelte-ignore a11y-img-redundant-alt -->
             <img src={imageUrl(data.imageAside)} alt="image" />
           </div>
-          <div class="footer__blur-box">
+          <a href={`mailto:${data.email}`} class="footer__blur-box">
             <div class="footer__blur-box-text">
               {data.email}
             </div>
-            <a href="#" class="arrow footer__blur-box-arrow" />
-          </div>
+            <span class="arrow footer__blur-box-arrow" />
+          </a>
         </div>
       </div>
     </div>

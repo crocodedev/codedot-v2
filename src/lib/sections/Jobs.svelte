@@ -29,7 +29,7 @@
           <div class="jobs__item">
             <div class="jobs__cannot-wrapper">
               <p class="jobs__cannot">НЕ МОЖЕТЕ НАЙТИ ПОДХОДЯЩУЮ ВАКАНСИЮ? НАПИШИТЕ НАМ</p>
-              <a href="mailto:welcome@code.dot" class="jobs__cannot-link">welcome@code.dot</a>
+              <a href="mailto:codedotby@gmail.com" class="jobs__cannot-link">codedotby@gmail.com</a>
             </div>
           </div>
         </div>

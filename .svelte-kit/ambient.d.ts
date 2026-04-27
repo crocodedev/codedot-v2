@@ -27,6 +27,7 @@
  */
 declare module '$env/static/private' {
 	export const ALLUSERSPROFILE: string;
+	export const ANDROID_HOME: string;
 	export const APPDATA: string;
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
 	export const COLOR: string;
@@ -35,15 +36,17 @@ declare module '$env/static/private' {
 	export const CommonProgramW6432: string;
 	export const COMPUTERNAME: string;
 	export const ComSpec: string;
+	export const COREPACK_ENABLE_DOWNLOAD_PROMPT: string;
+	export const COREPACK_ROOT: string;
 	export const DriverData: string;
 	export const EDITOR: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
-	export const GIT_ASKPASS: string;
-	export const HOME: string;
+	export const GRADLE_HOME: string;
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
 	export const INIT_CWD: string;
+	export const JAVA_HOME: string;
 	export const LANG: string;
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
@@ -67,7 +70,22 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_event: string;
 	export const npm_lifecycle_script: string;
 	export const npm_node_execpath: string;
-	export const npm_package_json: string;
+	export const npm_package_dependencies_postcss_load_config: string;
+	export const npm_package_dependencies_svelte_tel_input: string;
+	export const npm_package_dependencies_swiper: string;
+	export const npm_package_dependencies__sanity_cli: string;
+	export const npm_package_dependencies__sanity_client: string;
+	export const npm_package_dependencies__sanity_core: string;
+	export const npm_package_dependencies__sanity_default_layout: string;
+	export const npm_package_dependencies__sanity_default_login: string;
+	export const npm_package_dependencies__sanity_image_url: string;
+	export const npm_package_devDependencies_sass: string;
+	export const npm_package_devDependencies_svelte: string;
+	export const npm_package_devDependencies_svelte_preprocess: string;
+	export const npm_package_devDependencies_svelte_sitemap: string;
+	export const npm_package_devDependencies_vite: string;
+	export const npm_package_devDependencies__sveltejs_adapter_auto: string;
+	export const npm_package_devDependencies__sveltejs_kit: string;
 	export const npm_package_name: string;
 	export const npm_package_version: string;
 	export const NPM_PREFIX_JS: string;
@@ -75,8 +93,6 @@ declare module '$env/static/private' {
 	export const NUMBER_OF_PROCESSORS: string;
 	export const NVM_HOME: string;
 	export const NVM_SYMLINK: string;
-	export const OneDrive: string;
-	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const OS: string;
 	export const Path: string;
 	export const PATHEXT: string;
@@ -102,12 +118,10 @@ declare module '$env/static/private' {
 	export const USERDOMAIN_ROAMINGPROFILE: string;
 	export const USERNAME: string;
 	export const USERPROFILE: string;
-	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-	export const VSCODE_GIT_ASKPASS_MAIN: string;
-	export const VSCODE_GIT_ASKPASS_NODE: string;
-	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const VSCODE_INJECTION: string;
+	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const windir: string;
+	export const YARN_WRAP_OUTPUT: string;
 }
 
 /**
@@ -138,6 +152,7 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		ALLUSERSPROFILE: string;
+		ANDROID_HOME: string;
 		APPDATA: string;
 		CHROME_CRASHPAD_PIPE_NAME: string;
 		COLOR: string;
@@ -146,15 +161,17 @@ declare module '$env/dynamic/private' {
 		CommonProgramW6432: string;
 		COMPUTERNAME: string;
 		ComSpec: string;
+		COREPACK_ENABLE_DOWNLOAD_PROMPT: string;
+		COREPACK_ROOT: string;
 		DriverData: string;
 		EDITOR: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
-		GIT_ASKPASS: string;
-		HOME: string;
+		GRADLE_HOME: string;
 		HOMEDRIVE: string;
 		HOMEPATH: string;
 		INIT_CWD: string;
+		JAVA_HOME: string;
 		LANG: string;
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
@@ -178,7 +195,22 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_event: string;
 		npm_lifecycle_script: string;
 		npm_node_execpath: string;
-		npm_package_json: string;
+		npm_package_dependencies_postcss_load_config: string;
+		npm_package_dependencies_svelte_tel_input: string;
+		npm_package_dependencies_swiper: string;
+		npm_package_dependencies__sanity_cli: string;
+		npm_package_dependencies__sanity_client: string;
+		npm_package_dependencies__sanity_core: string;
+		npm_package_dependencies__sanity_default_layout: string;
+		npm_package_dependencies__sanity_default_login: string;
+		npm_package_dependencies__sanity_image_url: string;
+		npm_package_devDependencies_sass: string;
+		npm_package_devDependencies_svelte: string;
+		npm_package_devDependencies_svelte_preprocess: string;
+		npm_package_devDependencies_svelte_sitemap: string;
+		npm_package_devDependencies_vite: string;
+		npm_package_devDependencies__sveltejs_adapter_auto: string;
+		npm_package_devDependencies__sveltejs_kit: string;
 		npm_package_name: string;
 		npm_package_version: string;
 		NPM_PREFIX_JS: string;
@@ -186,8 +218,6 @@ declare module '$env/dynamic/private' {
 		NUMBER_OF_PROCESSORS: string;
 		NVM_HOME: string;
 		NVM_SYMLINK: string;
-		OneDrive: string;
-		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		OS: string;
 		Path: string;
 		PATHEXT: string;
@@ -213,12 +243,10 @@ declare module '$env/dynamic/private' {
 		USERDOMAIN_ROAMINGPROFILE: string;
 		USERNAME: string;
 		USERPROFILE: string;
-		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-		VSCODE_GIT_ASKPASS_MAIN: string;
-		VSCODE_GIT_ASKPASS_NODE: string;
-		VSCODE_GIT_IPC_HANDLE: string;
 		VSCODE_INJECTION: string;
+		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		windir: string;
+		YARN_WRAP_OUTPUT: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

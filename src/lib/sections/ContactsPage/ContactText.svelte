@@ -6,6 +6,8 @@
   let activeIndex = 0
 
   function handleClick(idx) {
+    if (activeIndex === idx) return
+
     activeIndex = idx
   }
 </script>
@@ -24,7 +26,7 @@
                     ? `${'contact-us__text-item'} ${'active'}`
                     : 'contact-us__text-item'}
                   data-coords={address.coordinates}
-                  on:click={() => handleClick(idx)}
+                  on:mouseenter={() => handleClick(idx)}
                 >
                   <span>
                     Адрес: <span class="contact-us__address">
@@ -69,6 +71,7 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       padding: 15px;
       border: 1px solid black;
       border-radius: 15px;
