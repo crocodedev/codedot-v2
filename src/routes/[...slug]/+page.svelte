@@ -17,9 +17,9 @@
 <svelte:head>
   {#if data}
     {#if data.title === undefined}
-      <title>404Page | Codedot v.2</title>
+      <title>404Page | Codedot</title>
     {/if}
-    <title>{data.title} | Codedot v.2</title>
+    <title>{data.title} | Codedot</title>
   {/if}
 </svelte:head>
 

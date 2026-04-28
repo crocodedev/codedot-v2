@@ -13,7 +13,7 @@
     if (data) {
       var myMap = new ymaps.Map('YMapsID', {
         center: mainCordsArr,
-        zoom: 6,
+        zoom: 16,
         controls: [],
       })
 
@@ -30,7 +30,7 @@
             balloonContent: el.placemarkText,
           },
           {
-            zoom: 16,
+            zoom: 13,
 
             iconLayout: 'default#image',
             iconImageHref: '/placemark.svg',
